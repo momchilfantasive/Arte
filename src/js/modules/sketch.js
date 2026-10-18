@@ -3,7 +3,7 @@ import { gsap } from '../core.js';
 // Procedural architectural line drawing (elevation of a cantilevered house),
 // drawn stroke-by-stroke as the section scrolls. Replace with your own SVG:
 // any <path> inside [data-sketch] will be animated the same way.
-function buildSketch() {
+function buildSketch(variant) {
   const W = 1440, H = 700, ground = 600;
   const p = [];
   const hatch = [];
@@ -41,6 +41,17 @@ function buildSketch() {
     return d + 'Z';
   };
   p.push(tree(150, 420, 70), tree(1330, 380, 90), tree(1220, 470, 50));
+  if (variant === 'outdoor') {
+    // terrace awnings: sloped fabric with front bar and folding arms
+    [[380, 470, 300], [720, 470, 300], [520, 330, 260]].forEach(([x, y, w]) => {
+      p.push(`M${x} ${y - 6}L${x - 30} ${y + 60}L${x + w + 30} ${y + 60}L${x + w} ${y - 6}`);
+      p.push(line(x - 30, y + 60, x - 30, y + 72), line(x + w + 30, y + 60, x + w + 30, y + 72));
+      for (let fx = x; fx < x + w; fx += 18) hatch.push(line(fx, y - 4, fx - 22 + ((fx - x) / w) * 44, y + 58));
+    });
+    // pergola on the lawn
+    p.push(rect(980, 520, 240, 8), line(990, 528, 990, ground), line(1210, 528, 1210, ground));
+    for (let lx = 990; lx <= 1210; lx += 20) hatch.push(line(lx, 520, lx, 528));
+  }
   for (let bx = 60; bx < W - 60; bx += 30) hatch.push(`M${bx} ${ground}q10 -14 20 0`);
 
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
@@ -52,7 +63,7 @@ function buildSketch() {
 export function initSketch(container) {
   const el = container.querySelector('[data-sketch]');
   if (!el) return;
-  if (!el.querySelector('svg')) el.innerHTML = buildSketch();
+  if (!el.querySelector('svg')) el.innerHTML = buildSketch(el.dataset.sketchVariant);
   const paths = el.querySelectorAll('path');
   paths.forEach((path) => path.setAttribute('pathLength', 1));
   gsap.set(paths, { strokeDasharray: 1, strokeDashoffset: 1 });

@@ -22,7 +22,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
-        about: resolve(import.meta.dirname, 'about.html'),
+        curtains: resolve(import.meta.dirname, 'curtains.html'),
+        albinoni: resolve(import.meta.dirname, 'villa-albinoni.html'),
+        outdoor: resolve(import.meta.dirname, 'outdoor.html'),
+        showrooms: resolve(import.meta.dirname, 'showrooms.html'),
+        professionals: resolve(import.meta.dirname, 'professionals.html'),
         projects: resolve(import.meta.dirname, 'projects.html'),
         contact: resolve(import.meta.dirname, 'contact.html'),
       },

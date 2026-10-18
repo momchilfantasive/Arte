@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showrooms — Arte del Lusso</title>
+  <meta name="description" content="Showrooms in San Pedro de Alcántara." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="showrooms">
+    <section class="section page-hero is-short theme_on-dark" data-bg="dark">
+      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
+        <line x1="50" y1="0" x2="50" y2="100" /><line x1="0" y1="0" x2="50" y2="100" />
+      </svg>
+      <div class="container page-hero_c">
+        <div class="l1" data-hero-fade>Visit Arte del Lusso</div>
+        <h1 class="a2 page-hero_title" data-hero-title>See the materials. Meet the people.</h1>
+        <div class="grid page-hero_b">
+          <p class="p1 page-hero_text" data-hero-fade>Some decisions are easier when you can see a fabric in daylight, feel its texture and talk through a plan together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mission theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="u-96"></div>
+        <div class="grid showroom">
+          <figure class="mission_img is-tall img-w" data-clip-reveal>
+            <img src="img/albinoni2.jpg" alt="Representative interior image; showroom photography to follow" class="img" data-parallax-inner />
+            <figcaption class="media-tag l1">Visual direction · showroom media to follow</figcaption>
+          </figure>
+          <div class="mission_content">
+            <div class="l1">01 / Interiors</div>
+            <h2 class="h1" data-reveal>Curtains &amp; blinds showroom</h2>
+            <p class="p1" data-reveal-fade>Explore fabrics, finishes and window treatments with a specialist. Bring your measurements or photos and we can begin with your space.</p>
+            <p class="h3 showroom_addr">Calle Lagasca 64 · San Pedro de Alcántara, Málaga<br />Mon–Fri · 10:00–18:00*</p>
+            <a href="contact.html?visit=interiors" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Plan your visit</span><span class="l1">Plan your visit</span></span><span class="link-line_ico">→</span></a>
+          </div>
+        </div>
+        <div class="u-128"></div>
+        <div class="grid showroom is-reverse">
+          <figure class="mission_img is-tall img-w" data-clip-reveal>
+            <img src="img/montemayor.jpg" alt="Representative completed project; showroom photography to follow" class="img" data-parallax-inner />
+            <figcaption class="media-tag l1">Visual direction · showroom media to follow</figcaption>
+          </figure>
+          <div class="mission_content">
+            <div class="l1">02 / Outdoor living</div>
+            <h2 class="h1" data-reveal>Outdoor solutions showroom</h2>
+            <p class="p1" data-reveal-fade>Talk through awnings, pergolas and screens for a terrace, garden or development with a member of the team.</p>
+            <p class="h3 showroom_addr">Calle República Checa, nave 19 · San Pedro de Alcántara, Málaga<br />Mon–Fri · 10:00–14:00*</p>
+            <a href="contact.html?visit=outdoor" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Plan your visit</span><span class="l1">Plan your visit</span></span><span class="link-line_ico">→</span></a>
+          </div>
+        </div>
+        <div class="u-96"></div>
+        <p class="l1 text-muted footnote">*Addresses and hours are carried from the current website and require confirmation. Consultation booking is a visual prototype.</p>
+        <div class="u-96"></div>
+      </div>
+    </section>
+
+    <section class="section cta theme_on-color" data-bg="color">
+      <div class="cta_bg img-w" data-parallax-bg><img src="img/quinta.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
+      <div class="container cta_c">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 cta_eyebrow">Prefer to start online?</div>
+          <h2 class="h1 cta_title" data-reveal>We can talk wherever you are.</h2>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid"><div class="cta_desc">
+          <a href="contact.html?visit=online" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Request an online consultation</span><span class="l1">Request an online consultation</span></span><span class="dot"></span></a>
+        </div></div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>

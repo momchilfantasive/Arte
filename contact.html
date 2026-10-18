@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Arte Properties</title>
-  <meta name="description" content="Arte Properties — a boutique residential developer. Starter template." />
+  <title>Contact — Arte del Lusso</title>
+  <meta name="description" content="Book a consultation." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,28 +21,60 @@
         <line x1="50" y1="0" x2="50" y2="100" /><line x1="100" y1="0" x2="50" y2="100" />
       </svg>
       <div class="container page-hero_c">
-        <div class="l1" data-hero-fade>Contact</div>
-        <h1 class="a2 page-hero_title" data-hero-title>Let's<br />Talk</h1>
+        <div class="l1" data-hero-fade>Let’s talk</div>
+        <h1 class="a2 page-hero_title" data-hero-title>Tell us about your space.</h1>
+        <div class="grid page-hero_b">
+          <p class="p1 page-hero_text" data-hero-fade>Choose the kind of project and share what you know. A plan, photo or early idea is enough to begin.</p>
+        </div>
         <div class="u-96"></div>
         <div class="grid contact_grid">
-          <div class="contact_col" data-reveal-fade>
-            <div class="l1 text-muted">General</div>
-            <a class="h2" href="mailto:hello@example.com">hello@example.com</a>
+          <div class="contact_aside">
+            <div class="contact_col" data-reveal-fade>
+              <div class="l1 text-muted">Email</div>
+              <a class="h2" href="mailto:info@artedellusso.es">info@artedellusso.es</a>
+            </div>
+            <div class="contact_col" data-reveal-fade>
+              <div class="l1 text-muted">Phone</div>
+              <a class="h2" href="tel:+34627944228">+34 627 94 42 28</a>
+            </div>
+            <p class="l1 text-muted">Direct contacts used in the prototype — confirm before launch.</p>
           </div>
-          <div class="contact_col" data-reveal-fade>
-            <div class="l1 text-muted">Sales</div>
-            <a class="h2" href="tel:+359000000000">+359 000 000 000</a>
-          </div>
-          <div class="contact_col" data-reveal-fade>
-            <div class="l1 text-muted">Office</div>
-            <div class="h2">Sofia, Bulgaria</div>
-          </div>
-          <div class="contact_col" data-reveal-fade>
-            <button class="link-line" data-modal-open="cta" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Open enquiry form</span><span class="l1">Open enquiry form</span></span>
-              <span class="dot"></span>
+
+          <form class="form contact_form" data-form data-contact-form novalidate>
+            <div class="contact_form_head">
+              <div class="l1">01 / Your project</div>
+              <div class="l1 text-muted">Prototype form · no submission</div>
+            </div>
+            <fieldset class="field field-chips">
+              <legend class="l1">What are you working on?</legend>
+              <label class="chip"><input type="radio" name="type" value="home" id="type-home" checked /><span class="l1">My home</span></label>
+              <label class="chip"><input type="radio" name="type" value="rental" id="type-rental" /><span class="l1">Rental property</span></label>
+              <label class="chip"><input type="radio" name="type" value="sale" id="type-sale" /><span class="l1">Property for sale</span></label>
+              <label class="chip"><input type="radio" name="type" value="professional" id="type-professional" /><span class="l1">Client project</span></label>
+            </fieldset>
+            <label class="field" for="f-name"><span class="l1">Your name</span><input id="f-name" name="name" placeholder="Name" autocomplete="name" /></label>
+            <label class="field" for="f-email"><span class="l1">Email</span><input id="f-email" name="email" type="email" placeholder="name@example.com" autocomplete="email" /></label>
+            <label class="field" for="f-interest"><span class="l1">What would you like help with?</span>
+              <select id="f-interest" name="interest">
+                <option value="exploring">I’m exploring options</option>
+                <option value="curtains">Curtains &amp; blinds</option>
+                <option value="outdoor">Outdoor shading</option>
+                <option value="several">Several solutions</option>
+              </select>
+            </label>
+            <label class="field" for="f-message"><span class="l1">Tell us a little more</span><textarea id="f-message" name="message" rows="3" placeholder="The space, location and timing, if you know them…"></textarea></label>
+            <fieldset class="field field-chips">
+              <legend class="l1">How would you like to meet?</legend>
+              <label class="chip"><input type="radio" name="meeting" value="showroom" id="meet-showroom" checked /><span class="l1">In a showroom</span></label>
+              <label class="chip"><input type="radio" name="meeting" value="online" id="meet-online" /><span class="l1">Online</span></label>
+              <label class="chip"><input type="radio" name="meeting" value="contact" id="meet-contact" /><span class="l1">Contact me first</span></label>
+            </fieldset>
+            <button type="submit" class="link-line" data-hover-roll>
+              <span class="nav-item_label"><span class="l1">Preview enquiry</span><span class="l1">Preview enquiry</span></span>
+              <span class="link-line_ico">→</span>
             </button>
-          </div>
+            <div class="form_success h3" data-form-success role="status">This is a design prototype. No enquiry has been sent. In the final site, this step will connect to the Arte del Lusso team and consultation calendar.</div>
+          </form>
         </div>
         <div class="u-128"></div>
       </div>

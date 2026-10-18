@@ -3,7 +3,7 @@ import barba from '@barba/core';
 import { gsap, ScrollTrigger, lenis } from './core.js';
 import { runPreloader } from './modules/preloader.js';
 import { pageIn, transitionLeave, transitionEnter } from './modules/transition.js';
-import { initHeader, initHeaderTheme } from './modules/header.js';
+import { initHeader, initHeaderTheme, markNav } from './modules/header.js';
 import { initReveals } from './modules/reveal.js';
 import { initParallax } from './modules/parallax.js';
 import { initHero } from './modules/hero.js';
@@ -18,17 +18,22 @@ import { initSlider } from './modules/slider.js';
 import { initCursor } from './modules/cursor.js';
 import { initModals, closeModals } from './modules/modal.js';
 import { initCookies } from './modules/cookies.js';
+import { initAccordion } from './modules/accordion.js';
+import { initLightbox, closeLightbox } from './modules/lightbox.js';
+import { initContactForm } from './modules/contact-form.js';
 
 // Each page module receives the Barba container and may return a cleanup fn.
 const pageModules = [
   initHeaderTheme, initHero, initReveals, initParallax, initProjects, initSketch,
   initPurpose, initTabs, initLeaves, initFooter, initProjectList, initSlider,
+  initAccordion, initContactForm,
 ];
 
 let ctx;
 let cleanups = [];
 
 function initPage(container) {
+  markNav(container.dataset.barbaNamespace);
   ctx = gsap.context(() => {
     cleanups = pageModules.map((init) => init(container)).filter(Boolean);
   }, container);
@@ -47,13 +52,27 @@ initHeader();
 initCursor();
 initModals();
 initCookies();
+initLightbox();
+
+// In-page anchors (#discover, #details…) scroll smoothly through Lenis
+const scrollToHash = (hash, immediate = false) => {
+  const target = hash && document.querySelector(`[data-barba="container"] ${hash}`);
+  if (target) lenis.scrollTo(target, { offset: -48, duration: immediate ? 0 : 1.6, immediate });
+};
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  e.preventDefault();
+  scrollToHash(a.getAttribute('href'));
+});
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 barba.init({
   preventRunning: true,
-  prevent: ({ el }) => el.closest('[data-barba-prevent]') || el.getAttribute('href')?.startsWith('#'),
+  prevent: ({ el }) =>
+    el.closest('[data-barba-prevent]') || el.target === '_blank' || /^(#|mailto:|tel:)/.test(el.getAttribute('href') || ''),
   transitions: [
     {
       name: 'overlay',
@@ -61,9 +80,11 @@ barba.init({
         initPage(next.container);
         await runPreloader();
         pageIn(next.container);
+        if (location.hash) scrollToHash(location.hash);
       },
       leave: async () => {
         closeModals();
+        closeLightbox();
         lenis.stop();
         await transitionLeave();
       },
@@ -77,6 +98,7 @@ barba.init({
         lenis.start();
         await transitionEnter();
         pageIn(next.container);
+        if (location.hash) scrollToHash(location.hash);
       },
     },
   ],

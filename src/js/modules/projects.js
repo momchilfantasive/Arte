@@ -1,4 +1,4 @@
-import { gsap, ScrollTrigger } from '../core.js';
+import { gsap, ScrollTrigger, lenis } from '../core.js';
 
 // Sticky stacked project cards: each card scales back and darkens as the next one slides over it
 export function initProjects(container) {
@@ -8,6 +8,16 @@ export function initProjects(container) {
   const index = root.querySelector('[data-projects-index]');
   const total = root.querySelector('[data-projects-total]');
   if (total) total.textContent = `/ ${String(cards.length).padStart(2, '0')}`;
+  let active = 0;
+
+  // Previous / Next buttons jump between the stacked cards
+  const go = (d) => {
+    const i = Math.max(0, Math.min(cards.length - 1, active + d));
+    const top = root.getBoundingClientRect().top + window.scrollY + i * window.innerHeight;
+    lenis.scrollTo(top, { duration: 1.4 });
+  };
+  root.querySelector('[data-projects-prev]')?.addEventListener('click', () => go(-1));
+  root.querySelector('[data-projects-next]')?.addEventListener('click', () => go(1));
 
   cards.forEach((card, i) => {
     const img = card.querySelector('[data-project-img]');
@@ -32,7 +42,11 @@ export function initProjects(container) {
       trigger: card,
       start: 'top center',
       end: 'bottom center',
-      onToggle: ({ isActive }) => isActive && index && (index.textContent = `P${i + 1}`),
+      onToggle: ({ isActive }) => {
+        if (!isActive) return;
+        active = i;
+        if (index) index.textContent = `P${i + 1}`;
+      },
     });
   });
 }

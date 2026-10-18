@@ -16,6 +16,17 @@ export function initHeader() {
   initClock();
 }
 
+// Mark the current section in the main nav
+const NAV = { home: null, curtains: 'solutions', outdoor: 'solutions', project: 'projects', projects: 'projects', showrooms: 'showrooms', professionals: 'professionals', contact: null };
+export function markNav(namespace) {
+  document.querySelectorAll('[data-nav]').forEach((a) => {
+    const on = a.dataset.nav === NAV[namespace];
+    a.classList.toggle('is-current', on);
+    if (on) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
+}
+
 // Per page: header text colour follows the section currently under it
 export function initHeaderTheme(container) {
   const h = header();

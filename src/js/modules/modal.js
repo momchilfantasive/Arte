@@ -10,6 +10,7 @@ function open(name) {
   openModal = modal;
   lenis.stop();
   modal.classList.add('is-open');
+  document.querySelector('[data-menu-open]')?.setAttribute('aria-expanded', name === 'menu');
   modal.setAttribute('aria-hidden', 'false');
   gsap.timeline()
     .to(modal.querySelector('.modal_over'), { opacity: 1, duration: 0.6, ease: 'power2.out' }, 0)
@@ -22,6 +23,7 @@ export function closeModals(instant = false) {
   if (!modal) return;
   openModal = null;
   lenis.start();
+  document.querySelector('[data-menu-open]')?.setAttribute('aria-expanded', 'false');
   const done = () => {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
@@ -44,12 +46,4 @@ export function initModals() {
   });
   document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModals());
 
-  // Demo form handler — replace with your endpoint (Formspree, API route, …)
-  document.querySelectorAll('[data-form]').forEach((form) =>
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      form.classList.add('is-sent');
-      gsap.from(form.querySelector('[data-form-success]'), { opacity: 0, duration: 0.8 });
-    })
-  );
 }

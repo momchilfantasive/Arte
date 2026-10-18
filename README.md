@@ -28,18 +28,35 @@ npm run preview
 
 ## Структура
 
+Съдържанието следва content handoff документа на ARTE del Lusso (английски текстове, 8 страници).
+Маршрутите от документа са плоски файлове, за да работи билдът от всеки базов URL:
+
+| Маршрут в документа         | Файл                  |
+| --------------------------- | --------------------- |
+| `/`                         | `index.html`          |
+| `/solutions/curtains/`      | `curtains.html`       |
+| `/solutions/outdoor/`       | `outdoor.html`        |
+| `/projects/`                | `projects.html`       |
+| `/projects/villa-albinoni/` | `villa-albinoni.html` |
+| `/showrooms/`               | `showrooms.html`      |
+| `/professionals/`           | `professionals.html`  |
+| `/contact/`                 | `contact.html`        |
+
 ```
-index.html, about.html, projects.html, contact.html   # страници (Barba containers)
 partials/              # споделени части, включвани с <!-- @include partials/x.html -->
   shell-top.html       # прелоудър, преход, cookies, хедър, fluid cursor
-  shell-bottom.html    # floating tip, CTA модал с форма, мобилно меню
+  shell-bottom.html    # floating tip, галерия (lightbox), мобилно меню
   footer.html, logo.html
 src/css/main.css       # токени, флуидна rem скала, 12-колонна решетка, секции
 src/js/core.js         # GSAP плъгини, custom eases, Lenis
 src/js/main.js         # Barba lifecycle: init/destroy на модулите за всяка страница
 src/js/modules/*.js    # по един модул на ефект (виж долу)
-public/img/, public/video/   # снимки и видео клипове на клиента
+public/img/            # снимки на клиента по ключовете от документа (quinta, albinoni…)
+public/video/          # клип с тенти на клиента (Outdoor CTA)
 ```
+
+Формата за контакт е прототип: попълва се от параметрите `?type=`, `?interest=curtains`,
+`?project=villa-albinoni` и `?visit=online` и при изпращане само показва съобщение.
 
 ## Анимации и интеракции
 
@@ -52,17 +69,21 @@ public/img/, public/video/   # снимки и видео клипове на к
 | Fade-up / clip reveal / рисуващи се линии | `data-reveal-fade`, `data-clip-reveal`, `data-bg-lines` | `reveal.js` |
 | Паралакс | `data-parallax-img`, `data-parallax-inner`, `data-parallax-bg` | `parallax.js` |
 | Hero: бавен zoom-out + избутване при скрол | `data-hero-bg`, `data-hero-title` | `hero.js` |
-| Стикнати full-screen проекти, предишният се свива/затъмнява, брояч P1/04 | `data-projects`, `data-project-card` | `projects.js` |
+| Стикнати full-screen проекти, брояч, бутони Previous / Next | `data-projects`, `data-project-card` | `projects.js` |
 | Архитектурна скица, рисувана при скрол | `data-sketch` (или сложете свой `<svg>` вътре) | `sketch.js` |
 | Pinned секция, думите се разтварят | `data-purpose`, `data-purpose-word` | `purpose.js` |
-| Табове с услуги (autoplay, wipe на снимки) | `data-tabs`, `data-tab-*` | `tabs.js` |
+| Табове (стрелки/Home/End, wipe на снимки, autoplay по избор) | `data-tabs`, `data-tab-*`, `data-tabs-autoplay` | `tabs.js` |
 | Курсор-кръг с етикет („View project“) | `data-tip="Текст"` на всеки елемент | `cursor.js` |
 | Светлинна следа след курсора | автоматично (само desktop) | `cursor.js` |
 | Хедърът сменя цвета си според секцията отдолу | `data-bg="dark|light|color"` на секциите | `header.js` |
-| Часовник в хедъра | `data-clock data-tz="Europe/Sofia"` | `header.js` |
+| Часовник в хедъра, активна секция в навигацията | `data-clock data-tz="Europe/Madrid"`, `data-nav` | `header.js` |
 | Футър: огромно лого, „фенерче“ под курсора | `data-footer-logo` | `footer.js` |
 | Списък с проекти с плаващ preview | `data-plist`, `data-plist-item data-img` | `project-list.js` |
-| Модали (CTA форма, мобилно меню) | `data-modal-open="cta"`, `data-modal-close` | `modal.js` |
+| Мобилно меню | `data-menu-open`, `data-modal-close` | `modal.js` |
+| Галерия: брояч, Prev/Next, Escape, стрелки, заключен скрол | `data-gallery-open="0"` + `<ul data-gallery-list>` | `lightbox.js` |
+| Акордеон | `data-accordion`, `data-accordion-btn` | `accordion.js` |
+| Плавен скрол до котви | `<a href="#id">` | `main.js` |
+| Попълване на формата от линка | `?type=…&interest=…` | `contact-form.js` |
 | Cookies банер | автоматично, пази избора в localStorage | `cookies.js` |
 | „Завъртете устройството“ при landscape на телефон | автоматично | CSS |
 
@@ -75,5 +96,5 @@ public/img/, public/video/   # снимки и видео клипове на к
 
 ## Следващи стъпки
 
-- Свържете формата в `modal.js` с реален endpoint.
+- Свържете формата в `contact-form.js` с реален endpoint и календар за консултации.
 - При нужда от CMS: Astro/Eleventy с данни за проектите — HTML структурата е готова за шаблониране.

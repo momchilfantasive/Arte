@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outdoor solutions — Arte del Lusso</title>
+  <meta name="description" content="Awnings, pergolas and screens." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="outdoor">
+    <!-- 1. INTRO -->
+    <section class="section page-hero theme_on-dark" data-bg="dark">
+      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
+        <line x1="50" y1="0" x2="50" y2="100" /><line x1="100" y1="0" x2="50" y2="100" />
+      </svg>
+      <div class="container page-hero_c">
+        <nav class="breadcrumb l1" aria-label="Breadcrumb" data-hero-fade><a href="index.html">Arte</a> / Solutions / Outdoor</nav>
+        <h1 class="a2 page-hero_title" data-hero-title>More time outside.</h1>
+        <div class="grid page-hero_b">
+          <div class="page-hero_text" data-hero-fade>
+            <p class="p1">Shading and outdoor systems that help terraces and gardens work comfortably through the seasons.</p>
+            <a href="contact.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss an outdoor space</span><span class="l1">Discuss an outdoor space</span></span><span class="dot"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section page-media theme_on-color" data-bg="color">
+      <div class="page-media_img img-w" data-parallax-bg><img src="img/montemayor.jpg" alt="Completed villa project on the Costa del Sol" class="img" /></div>
+    </section>
+
+    <!-- 2. THE POSSIBILITIES: scroll-drawn sketch -->
+    <section class="section arch" data-bg="light">
+      <div class="shadow-leaves is-light" data-leaves aria-hidden="true"></div>
+      <div class="container">
+        <div class="arch_inner" data-arch>
+          <div class="grid arch_t">
+            <div class="l1 arch_eyebrow">01 / The possibilities</div>
+            <h2 class="h1 arch_title" data-reveal>Shade with a purpose.</h2>
+          </div>
+          <div class="arch_sketch" data-sketch data-sketch-variant="outdoor" aria-hidden="true"></div>
+          <div class="grid arch_b">
+            <p class="p1 arch_p1" data-reveal-fade>A terrace for long lunches, a quiet place out of the sun, or a more useful outdoor room. The right solution starts with the space and the way you want to use it.</p>
+            <p class="p1 arch_p2" data-reveal-fade>Explore awnings, screens and pergolas with guidance on size, materials, operation and installation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SOLUTIONS -->
+    <section class="section values theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="l1 section-eyebrow">02 / Solutions</div>
+        <div class="u-48"></div>
+        <div class="grid values_grid">
+          <div class="value" data-reveal-fade><div class="l1">01</div><h3 class="h2">Awnings</h3><p class="p1">Flexible shade for terraces, windows and outdoor seating.</p></div>
+          <div class="value" data-reveal-fade><div class="l1">02</div><h3 class="h2">Pergolas</h3><p class="p1">A more defined outdoor space, tailored to the architecture.</p></div>
+          <div class="value" data-reveal-fade><div class="l1">03</div><h3 class="h2">Screens</h3><p class="p1">Light, privacy and protection considered together.</p></div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 4. CTA (client video) -->
+    <section class="section cta theme_on-color" data-bg="color">
+      <div class="cta_bg img-w" data-parallax-bg><video class="img" src="video/outdoor.mp4" poster="video/outdoor-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><div class="overlay-30"></div></div>
+      <div class="container cta_c">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 cta_eyebrow">Start with your space</div>
+          <h2 class="h1 cta_title" data-reveal>Make more of the outdoors.</h2>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid"><div class="cta_desc">
+          <a href="contact.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
+        </div></div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>

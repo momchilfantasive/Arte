@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Albinoni — Arte del Lusso</title>
+  <meta name="description" content="Villa Albinoni, Marbella — sheer voiles and motorised blinds." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="project">
+    <!-- Gallery items for the lightbox (order = gallery index) -->
+    <ul data-gallery-list data-gallery-title="Villa Albinoni" hidden>
+      <li data-src="img/albinoni.jpg" data-caption="Villa Albinoni interior"></li>
+      <li data-src="img/albinoni2.jpg" data-caption="Sheer curtains and the full-height windows"></li>
+      <li data-src="img/albinoni3.jpg" data-caption="Window treatments in the living space"></li>
+    </ul>
+
+    <!-- 1. HERO -->
+    <section class="section hero theme_on-color" data-bg="color">
+      <div class="hero_bg" data-hero-bg>
+        <img src="img/albinoni.jpg" alt="Sheer curtains and Mediterranean light at Villa Albinoni" class="img" />
+        <div class="grad-top"></div>
+        <div class="grad-bot"></div>
+      </div>
+      <div class="container hero_c">
+        <div class="grid hero_b">
+          <div class="hero_eyebrow l1" data-hero-fade>Marbella, Spain</div>
+          <h1 class="h1 hero_title" data-hero-title>Villa Albinoni</h1>
+          <div class="hero_text" data-hero-fade><p class="p1">Light, softened. A home, considered.</p></div>
+          <a href="projects.html" class="hero_meta l1" data-hero-fade>← All projects</a>
+          <a href="#project-overview" class="hero_scroll l1" data-hero-fade data-scroll-to>Explore the project ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. OVERVIEW & FACTS -->
+    <section class="section about theme_on-dark" data-bg="dark" id="project-overview">
+      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
+        <line x1="50" y1="0" x2="50" y2="100" /><line x1="100" y1="100" x2="50" y2="0" />
+      </svg>
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="about_lead is-wide">
+            <span class="l1 about_label">Overview</span>
+            <h2 class="h2 indent" data-reveal>Sheer fabrics bring a gentle layer to this contemporary villa, preserving the feeling of openness while creating a more intimate connection with the room.</h2>
+          </div>
+          <dl class="facts l1" data-reveal-fade>
+            <div><dt class="text-muted">Location</dt><dd>Marbella · Costa del Sol</dd></div>
+            <div><dt class="text-muted">Project type</dt><dd>Private residence</dd></div>
+            <div><dt class="text-muted">Featured solutions</dt><dd>Sheer voiles · Motorised blinds</dd></div>
+            <div><dt class="text-muted">Explore</dt><dd><a href="curtains.html" class="facts_link">Curtains, fabrics &amp; tracks ↗</a></dd></div>
+          </dl>
+          <div class="about_content p1" data-reveal-fade>
+            <p>Window treatments connect the scale of the architecture with the everyday experience of light, privacy and comfort.</p>
+            <p class="l1 text-muted draft-note">Illustrative project narrative for client review.</p>
+          </div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 3. OFFSET PHOTO COMPOSITION -->
+    <section class="section offset theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="grid offset_g">
+          <figure class="offset_a">
+            <button class="offset_btn img-w" data-gallery-open="1" data-tip="View gallery" aria-label="Open gallery at the full-height windows" data-clip-reveal>
+              <img src="img/albinoni2.jpg" alt="Full-height windows and sheer curtains at Villa Albinoni" class="img" data-parallax-inner />
+            </button>
+            <figcaption class="offset_cap">
+              <div class="l1">01 / Light &amp; proportion</div>
+              <p class="h3">Window treatments, shaped around the architecture.</p>
+            </figcaption>
+          </figure>
+          <p class="h2 offset_quote" data-reveal>A fabric is experienced through its light, its movement and its surroundings.</p>
+          <figure class="offset_b">
+            <button class="offset_btn img-w" data-gallery-open="2" data-tip="View gallery" aria-label="Open gallery at the living space" data-clip-reveal>
+              <img src="img/albinoni3.jpg" alt="The living space and window treatments" class="img" data-parallax-inner />
+            </button>
+            <figcaption class="offset_cap"><div class="l1">02 / A different perspective</div></figcaption>
+          </figure>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 4. A CLOSER LOOK: themes (image changes per tab) -->
+    <section class="section services" data-bg="light">
+      <div class="shadow-leaves is-light" data-leaves aria-hidden="true"></div>
+      <div class="container" data-tabs>
+        <div class="u-128"></div>
+        <div class="grid services_head">
+          <h2 class="h1 services_title" data-reveal>A closer look</h2>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid services_grid">
+          <div class="services_img is-portrait">
+            <div class="img-w" data-tab-img><img src="img/albinoni.jpg" alt="Sheer curtains filtering the light" class="img" /></div>
+            <div class="img-w" data-tab-img><img src="img/albinoni2.jpg" alt="Full-height curtains and windows at Villa Albinoni" class="img" /></div>
+            <div class="img-w" data-tab-img><img src="img/albinoni3.jpg" alt="The living space and window treatments" class="img" /></div>
+          </div>
+          <div class="services_list" role="tablist" aria-label="Themes">
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-t-light"><span>01</span><span>Light &amp; sheers</span><i class="dot"></i></button>
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-t-scale"><span>02</span><span>Height &amp; proportion</span><i class="dot"></i></button>
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-t-space"><span>03</span><span>The living space</span><i class="dot"></i></button>
+          </div>
+          <div class="services_content">
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-t-light">
+              <h3 class="h1">Light &amp; sheers</h3>
+              <p class="p1">A translucent layer softens the daylight while keeping the connection with the landscape beyond the windows.</p>
+              <button class="link-line" data-gallery-open="0" data-hover-roll><span class="nav-item_label"><span class="l1">View gallery</span><span class="l1">View gallery</span></span><span class="link-line_ico">+</span></button>
+            </div>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-t-scale">
+              <h3 class="h1">Height &amp; proportion</h3>
+              <p class="p1">Full-height curtains follow the vertical lines of the glazing, bringing a softer rhythm to the scale of the room.</p>
+              <button class="link-line" data-gallery-open="1" data-hover-roll><span class="nav-item_label"><span class="l1">View gallery</span><span class="l1">View gallery</span></span><span class="link-line_ico">+</span></button>
+            </div>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-t-space">
+              <h3 class="h1">The living space</h3>
+              <p class="p1">Seen together, the fabrics, furnishings and surrounding landscape create the atmosphere of the finished room.</p>
+              <button class="link-line" data-gallery-open="2" data-hover-roll><span class="nav-item_label"><span class="l1">View gallery</span><span class="l1">View gallery</span></span><span class="link-line_ico">+</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 5. SOLUTIONS IN THIS PROJECT -->
+    <section class="section plist theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 section-eyebrow">The solutions in this project · From inspiration to your space</div>
+        </div>
+        <h2 class="h1" data-reveal>Explore the details.</h2>
+        <div class="u-48"></div>
+        <div class="plist_list">
+          <a href="curtains.html" class="plist_item" data-tip="Explore">
+            <span class="l1 plist_n">01</span>
+            <span class="h1 plist_name">Curtains &amp; voiles</span>
+            <span class="l1 plist_loc">Soft light</span>
+            <span class="l1 plist_year">↗</span>
+          </a>
+          <a href="curtains.html#details" class="plist_item" data-tip="Explore">
+            <span class="l1 plist_n">02</span>
+            <span class="h1 plist_name">Blinds &amp; tracks</span>
+            <span class="l1 plist_loc">Everyday operation</span>
+            <span class="l1 plist_year">↗</span>
+          </a>
+        </div>
+        <div class="u-32"></div>
+        <p class="p1 text-muted">Discuss the fabric, finish and operation that would suit your own windows.</p>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 6. CTA -->
+    <section class="section cta theme_on-color" data-bg="color">
+      <div class="cta_bg img-w" data-parallax-bg><img src="img/albinoni3.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
+      <div class="container cta_c">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 cta_eyebrow">Inspired by this project?</div>
+          <h2 class="h1 cta_title" data-reveal>Let’s talk about your space.</h2>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid"><div class="cta_desc">
+          <a href="contact.html?interest=curtains&amp;project=villa-albinoni" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
+        </div></div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 7. MORE PROJECTS -->
+    <section class="section projects theme_on-color" data-bg="color">
+      <article class="project-card" data-tip="View collection">
+        <a href="projects.html" class="project-card_link" aria-label="More Arte projects — view the collection"></a>
+        <div class="project-card_img"><img src="img/madrisa.jpg" alt="Villa Madrisa exterior" class="img" data-parallax-inner /></div>
+        <div class="grad-bot"></div>
+        <div class="container project-card_c">
+          <div class="project-card_meta">
+            <div class="l1">Continue exploring</div>
+            <h2 class="h2">More Arte projects</h2>
+            <div class="p1">View the collection ↗</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>

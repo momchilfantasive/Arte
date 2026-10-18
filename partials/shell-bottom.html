@@ -3,32 +3,20 @@
   <div class="floating-tip_circle"><span class="l1" data-floating-tip-label>View</span></div>
 </div>
 
-<!-- CTA modal -->
-<div class="modal" data-modal="cta" aria-hidden="true">
-  <div class="modal_over" data-modal-close></div>
-  <div class="modal_panel theme_on-dark" data-modal-panel data-lenis-prevent>
-    <div class="modal_head">
-      <div class="l1">Get in touch</div>
-      <button class="nav-item" data-modal-close data-hover-roll><span class="nav-item_label"><span class="l1">Close</span><span class="l1">Close</span></span></button>
-    </div>
-    <div class="h2 modal_title" data-modal-p>Let's create something that endures</div>
-    <form class="form" data-form>
-      <label class="field" data-modal-p><span class="l1">Name</span><input name="name" required autocomplete="name" /></label>
-      <label class="field" data-modal-p><span class="l1">Email</span><input name="email" type="email" required autocomplete="email" /></label>
-      <label class="field" data-modal-p><span class="l1">Phone</span><input name="phone" type="tel" autocomplete="tel" /></label>
-      <fieldset class="field field-chips" data-modal-p>
-        <legend class="l1">Interest</legend>
-        <label class="chip"><input type="radio" name="interest" value="buy" checked /><span class="l1">Residence</span></label>
-        <label class="chip"><input type="radio" name="interest" value="invest" /><span class="l1">Investment</span></label>
-        <label class="chip"><input type="radio" name="interest" value="partner" /><span class="l1">Partnership</span></label>
-      </fieldset>
-      <label class="field" data-modal-p><span class="l1">Message</span><textarea name="message" rows="3"></textarea></label>
-      <button type="submit" class="link-line" data-modal-p data-hover-roll>
-        <span class="nav-item_label"><span class="l1">Send request</span><span class="l1">Send request</span></span>
-        <span class="link-line_ico">→</span>
-      </button>
-      <div class="form_success h2" data-form-success>Thank you. We'll be in touch shortly.</div>
-    </form>
+<!-- Gallery lightbox: opened by [data-gallery-open="index"], items from [data-gallery-list] in the page -->
+<div class="lightbox theme_on-dark" data-lightbox role="dialog" aria-modal="true" aria-label="Gallery" aria-hidden="true">
+  <div class="lightbox_head container">
+    <div class="l1" data-lightbox-title>Gallery</div>
+    <div class="l1 lightbox_count" data-lightbox-count>01 / 03</div>
+    <button class="nav-item lightbox_close" data-lightbox-close data-hover-roll><span class="nav-item_label"><span class="l1">Close ×</span><span class="l1">Close ×</span></span></button>
+  </div>
+  <figure class="lightbox_stage">
+    <img alt="" data-lightbox-img />
+    <figcaption class="h3" data-lightbox-caption></figcaption>
+  </figure>
+  <div class="lightbox_nav container">
+    <button class="nav-item" data-lightbox-prev data-hover-roll><span class="nav-item_label"><span class="l1">← Prev</span><span class="l1">← Prev</span></span></button>
+    <button class="nav-item" data-lightbox-next data-hover-roll><span class="nav-item_label"><span class="l1">Next →</span><span class="l1">Next →</span></span></button>
   </div>
 </div>
 
@@ -38,12 +26,14 @@
     <div class="modal_head container">
       <button class="nav-item" data-modal-close data-hover-roll><span class="nav-item_label"><span class="l1">Close</span><span class="l1">Close</span></span></button>
     </div>
-    <nav class="modal_menu_list container">
+    <nav class="modal_menu_list container" aria-label="Mobile">
       <a href="index.html" class="h1 modal_link" data-modal-close data-modal-p>Home</a>
-      <a href="about.html" class="h1 modal_link" data-modal-close data-modal-p>About us</a>
+      <a href="curtains.html" class="h1 modal_link" data-modal-close data-modal-p>Solutions</a>
       <a href="projects.html" class="h1 modal_link" data-modal-close data-modal-p>Projects</a>
-      <a href="contact.html" class="h1 modal_link" data-modal-close data-modal-p>Contact</a>
+      <a href="showrooms.html" class="h1 modal_link" data-modal-close data-modal-p>Showrooms</a>
+      <a href="professionals.html" class="h1 modal_link" data-modal-close data-modal-p>For professionals</a>
+      <a href="contact.html" class="h1 modal_link" data-modal-close data-modal-p>Book a consultation</a>
     </nav>
-    <div class="modal_menu_b container l1" data-modal-p>© <span data-year>0000</span>. Arte group. All rights reserved</div>
+    <div class="modal_menu_b container l1" data-modal-p>Arte del Lusso · Design exploration, October 2026</div>
   </div>
 </div>

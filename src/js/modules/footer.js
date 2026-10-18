@@ -6,7 +6,7 @@ export function initFooter(container) {
   const path = page(location.pathname);
   container.querySelectorAll('[data-nav-link]').forEach((a) => {
     const href = page(new URL(a.href).pathname);
-    a.classList.toggle('is-current', href === path);
+    a.classList.toggle('is-current', href === path || (path === 'outdoor.html' && href === 'curtains.html') || (path === 'villa-albinoni.html' && href === 'projects.html'));
   });
 
   container.querySelector('[data-scroll-top]')?.addEventListener('click', () => lenis.scrollTo(0, { duration: 2 }));

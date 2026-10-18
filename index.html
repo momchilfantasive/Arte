@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arte Properties</title>
-  <meta name="description" content="Arte Properties — a boutique residential developer. Starter template." />
+  <title>Arte del Lusso</title>
+  <meta name="description" content="Arte del Lusso — curtains, voiles, blinds and outdoor shading on the Costa del Sol." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,25 +16,32 @@
   <!-- @include partials/shell-top.html -->
 
   <main data-barba="container" data-barba-namespace="home">
-
-    <!-- HERO -->
+    <!-- 1. HERO -->
     <section class="section hero theme_on-color" data-bg="color">
       <div class="hero_bg" data-hero-bg>
-        <video class="img" src="video/hero.mp4" poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+        <img src="img/quinta.jpg" alt="Daylight through sheer curtains in the La Quinta project" class="img" />
         <div class="grad-top"></div>
         <div class="grad-bot"></div>
       </div>
       <div class="container hero_c">
         <div class="grid hero_b">
-          <div class="hero_meta l1 b-desk" data-hero-fade>Est. 2026 — Sofia</div>
-          <h1 class="h1 hero_title" data-hero-title>Shaping Calm Homes &amp; Lasting Places</h1>
-          <div class="hero_scroll l1" data-hero-fade>Scroll to explore</div>
+          <div class="hero_eyebrow l1" data-hero-fade>Curtains · Shading · Outdoor living</div>
+          <h1 class="h1 hero_title" data-hero-title>Spaces, considered.</h1>
+          <div class="hero_text" data-hero-fade>
+            <p class="p1">Thoughtfully chosen. Precisely made. Solutions for the way you live.</p>
+            <a href="curtains.html" class="link-line" data-hover-roll>
+              <span class="nav-item_label"><span class="l1">Find your solution</span><span class="l1">Find your solution</span></span>
+              <span class="link-line_ico">→</span>
+            </a>
+          </div>
+          <div class="hero_meta l1" data-hero-fade>Villa in La Quinta · Benahavís</div>
+          <a href="#discover" class="hero_scroll l1" data-hero-fade data-scroll-to>Discover Arte ↓</a>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section about theme_on-dark" data-bg="dark">
+    <!-- 2. APPROACH -->
+    <section class="section about theme_on-dark" data-bg="dark" id="discover">
       <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
         <line x1="50" y1="0" x2="50" y2="100" />
         <line x1="0" y1="100" x2="50" y2="0" />
@@ -44,17 +51,20 @@
       <div class="container">
         <div class="u-128"></div>
         <div class="grid">
-          <div class="about_img img-w" data-parallax-img><img src="img/about.jpg" alt="" class="img" /></div>
+          <div class="about_img img-w" data-parallax-img><img src="img/about.jpg" alt="Sheer curtains framing a view over the hills" class="img" /></div>
           <div class="about_lead">
-            <span class="l1 about_label">About</span>
-            <p class="h2 indent" data-reveal>Arte creates residences shaped by architecture, landscape and a quiet sense of craft. Every project starts from one idea — to build homes that feel generous, private and effortless to live in, today and for generations to come.</p>
+            <span class="l1 about_label">01 / A considered approach</span>
+            <h2 class="h2 indent" data-reveal>A thoughtful approach to everyday living.</h2>
           </div>
-          <div class="about_aside l1 text-muted" data-reveal-fade>To build exceptional homes<br />and considered experiences.</div>
+          <div class="about_aside l1 text-muted" data-reveal-fade>Costa del Sol, Spain</div>
           <div class="about_content p1" data-reveal-fade>
-            <p>We bring together development, design and investment expertise under one roof, guiding each property from first sketch to final handover.</p>
-            <p>Every residence is approached with care for detail, materials and light. Our roots are local; our references are global.</p>
-            <a href="about.html" class="link-line" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Learn more</span><span class="l1">Learn more</span></span>
+            <p>The morning light. A little more privacy. A terrace you use for longer. We bring materials and practical expertise together to make a space feel right.</p>
+            <p>From a single room to a complete property, we guide you through the options, take the measurements and look after installation — with support afterwards.</p>
+            <ul class="tick-list l1">
+              <li>Personal advice</li><li>Made to measure</li><li>Careful installation</li><li>Support afterwards</li>
+            </ul>
+            <a href="contact.html" class="link-line" data-hover-roll>
+              <span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span>
               <span class="link-line_ico">↗</span>
             </a>
           </div>
@@ -63,175 +73,180 @@
       </div>
     </section>
 
-    <!-- MISSION -->
+    <!-- 3. INSIDE & OUT -->
     <section class="section mission theme_on-dark" data-bg="dark">
       <div class="container">
         <div class="u-8"></div>
+        <div class="l1 section-eyebrow">02 / Explore the possibilities · Inside &amp; out</div>
         <h2 class="grid h1 mission_title">
-          <span class="mission_title-l b-desk" data-reveal>Thoughtful</span>
-          <span class="mission_title-r" data-reveal><span class="b-mob">Thoughtful </span>Homes<br />&nbsp;&nbsp;for Unhurried<br />Living</span>
+          <span class="mission_title-l b-desk" data-reveal>Inside</span>
+          <span class="mission_title-r" data-reveal><span class="b-mob">Inside </span>&amp; out</span>
         </h2>
         <div class="u-48"></div>
         <div class="grid">
-          <div class="mission_img img-w" data-clip-reveal><img src="img/mission.jpg" alt="" class="img" data-parallax-inner /></div>
-          <div class="mission_content">
-            <div class="l1">Mission</div>
-            <p class="p1" data-reveal-fade>To align vision, design and delivery into one seamless process — so every home we complete keeps its value, character and comfort for decades.</p>
-          </div>
+          <p class="p1 solutions_intro" data-reveal-fade>Begin with the atmosphere you want to create. We’ll help you choose what makes it work.</p>
+        </div>
+        <div class="u-48"></div>
+        <div class="grid solutions">
+          <a href="curtains.html" class="solution-card" data-tip="Explore">
+            <div class="solution-card_img img-w" data-clip-reveal><img src="img/albinoni2.jpg" alt="Sheer voiles in Villa Albinoni" class="img" data-parallax-inner /></div>
+            <div class="l1 text-muted">01 / Interiors</div>
+            <h3 class="h2">Curtains &amp; voiles</h3>
+            <p class="p1">Soft light. Texture. A room that feels complete.</p>
+          </a>
+          <a href="curtains.html#choose" class="solution-card is-offset" data-tip="Explore">
+            <div class="solution-card_img img-w" data-clip-reveal><img src="img/quinta.jpg" alt="Window treatments in a completed La Quinta interior" class="img" data-parallax-inner /></div>
+            <div class="l1 text-muted">02 / Light &amp; privacy</div>
+            <h3 class="h2">Blinds &amp; shading</h3>
+          </a>
+          <a href="outdoor.html" class="solution-card" data-tip="Explore">
+            <div class="solution-card_img img-w" data-clip-reveal><img src="img/montemayor.jpg" alt="Architecture and exterior inspiration from Montemayor" class="img" data-parallax-inner /></div>
+            <div class="l1 text-muted">03 / Outdoor living</div>
+            <h3 class="h2">Terraces, reimagined</h3>
+          </a>
         </div>
         <div class="u-128"></div>
       </div>
     </section>
 
-    <!-- PROJECTS: sticky stacked cards -->
-    <section class="section projects theme_on-color" data-bg="color" data-projects>
-      <article class="project-card" data-project-card data-tip="View project">
-        <a href="projects.html" class="project-card_link" aria-label="Villa Madrisa"></a>
-        <div class="project-card_img"><img src="img/project-1.jpg" alt="" class="img" data-project-img /></div>
-        <div class="grad-bot"></div>
-        <div class="container project-card_c">
-          <div class="project-card_meta">
-            <div class="l1">Nueva Andalucía, Marbella</div>
-            <h3 class="h2">Villa Madrisa</h3>
-          </div>
-        </div>
-      </article>
-      <article class="project-card" data-project-card data-tip="View project">
-        <a href="projects.html" class="project-card_link" aria-label="Villa in Montemayor"></a>
-        <div class="project-card_img"><video class="img" src="video/montemayor.mp4" poster="video/montemayor-poster.jpg" autoplay muted loop playsinline preload="auto" data-project-img></video></div>
-        <div class="grad-bot"></div>
-        <div class="container project-card_c">
-          <div class="project-card_meta">
-            <div class="l1">Benahavís</div>
-            <h3 class="h2">Villa in Montemayor</h3>
-          </div>
-        </div>
-      </article>
-      <article class="project-card" data-project-card data-tip="View project">
-        <a href="projects.html" class="project-card_link" aria-label="Villa Zarina"></a>
-        <div class="project-card_img"><img src="img/project-3.jpg" alt="" class="img" data-project-img /></div>
-        <div class="grad-bot"></div>
-        <div class="container project-card_c">
-          <div class="project-card_meta">
-            <div class="l1">Nueva Andalucía, Marbella</div>
-            <h3 class="h2">Villa Zarina</h3>
-          </div>
-        </div>
-      </article>
-      <article class="project-card" data-project-card data-tip="View project">
-        <a href="projects.html" class="project-card_link" aria-label="Mediterranean Elegance"></a>
-        <div class="project-card_img"><img src="img/project-4.jpg" alt="" class="img" data-project-img /></div>
-        <div class="grad-bot"></div>
-        <div class="container project-card_c">
-          <div class="project-card_meta">
-            <div class="l1">Estepona</div>
-            <h3 class="h2">Mediterranean Elegance</h3>
-          </div>
-        </div>
-      </article>
-      <!-- Sticky HUD: index + learn more -->
-      <div class="projects_hud container" data-projects-hud>
-        <div class="projects_hud_c">
-          <div class="projects_index l1"><span class="projects_chip" data-projects-index>P1</span><span data-projects-total>/ 04</span></div>
-          <a href="projects.html" class="link-line" data-hover-roll>
+    <!-- 4. SELECTED PROJECTS: sticky stacked cards -->
+    <section class="section projects-intro theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="grid projects-intro_g">
+          <div class="l1">03 / Arte in real spaces</div>
+          <h2 class="h1 projects-intro_title" data-reveal>Selected projects</h2>
+          <a href="projects.html" class="link-line projects-intro_link" data-hover-roll>
             <span class="nav-item_label"><span class="l1">All projects</span><span class="l1">All projects</span></span>
             <span class="link-line_ico">↗</span>
           </a>
         </div>
+        <div class="u-48"></div>
       </div>
     </section>
-
-    <!-- ARCHITECTURE: scroll-drawn sketch -->
-    <section class="section arch" data-bg="light">
-      <div class="shadow-leaves is-light" data-leaves aria-hidden="true"></div>
-      <div class="container">
-        <div class="arch_inner" data-arch>
-          <div class="grid arch_t">
-            <h2 class="h1 arch_title" data-reveal>Architecture<br />for a Personal Life</h2>
-          </div>
-          <div class="arch_sketch" data-sketch aria-hidden="true"></div>
-          <div class="grid arch_b">
-            <p class="p1 arch_p1" data-reveal-fade>We don't follow a single style. For every site we bring together architects and designers whose sensibility fits the place, its light and the people who will live there.</p>
-            <p class="p1 arch_p2" data-reveal-fade>Whether it is a private villa or a small residential ensemble, the goal stays the same — buildings that feel rooted, honest and quietly distinctive.</p>
-            <a href="about.html" class="link-line arch_link" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Learn more</span><span class="l1">Learn more</span></span>
-              <span class="link-line_ico">↗</span>
-            </a>
+    <section class="section projects theme_on-color" data-bg="color" data-projects>
+      <article class="project-card" data-project-card data-tip="View project">
+        <a href="villa-albinoni.html" class="project-card_link" aria-label="Villa Albinoni"></a>
+        <div class="project-card_img"><img src="img/albinoni.jpg" alt="Villa Albinoni living space" class="img" data-project-img /></div>
+        <div class="grad-bot"></div>
+        <div class="container project-card_c">
+          <div class="project-card_meta">
+            <div class="l1">Marbella / Residential</div>
+            <h3 class="h2">Villa Albinoni</h3>
+            <div class="p1">Sheer voiles · Motorised blinds</div>
           </div>
         </div>
+      </article>
+      <article class="project-card" data-project-card data-tip="View collection">
+        <a href="projects.html" class="project-card_link" aria-label="Villa Madrisa — view the project collection"></a>
+        <div class="project-card_img"><img src="img/madrisa.jpg" alt="Villa Madrisa exterior" class="img" data-project-img /></div>
+        <div class="grad-bot"></div>
+        <div class="container project-card_c">
+          <div class="project-card_meta">
+            <div class="l1">Nueva Andalucía / Residential</div>
+            <h3 class="h2">Villa Madrisa</h3>
+            <div class="p1">View the project collection</div>
+          </div>
+        </div>
+      </article>
+      <article class="project-card" data-project-card data-tip="View collection">
+        <a href="projects.html" class="project-card_link" aria-label="Villa in La Quinta — view the project collection"></a>
+        <div class="project-card_img"><img src="img/quinta.jpg" alt="La Quinta project" class="img" data-project-img /></div>
+        <div class="grad-bot"></div>
+        <div class="container project-card_c">
+          <div class="project-card_meta">
+            <div class="l1">Benahavís / Residential</div>
+            <h3 class="h2">Villa in La Quinta</h3>
+            <div class="p1">View the project collection</div>
+          </div>
+        </div>
+      </article>
+      <div class="projects_hud container" data-projects-hud>
+        <div class="projects_hud_c">
+          <div class="projects_index l1"><span class="projects_chip" data-projects-index>P1</span><span data-projects-total>/ 03</span></div>
+          <div class="projects_btns">
+            <button class="nav-item" data-projects-prev data-hover-roll><span class="nav-item_label"><span class="l1">← Previous project</span><span class="l1">← Previous project</span></span></button>
+            <button class="nav-item" data-projects-next data-hover-roll><span class="nav-item_label"><span class="l1">Next project →</span><span class="l1">Next project →</span></span></button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PURPOSE: pinned, words drift apart -->
-    <section class="section purpose theme_on-color" data-bg="color" data-purpose>
-      <div class="purpose_bg"><img src="img/purpose.jpg" alt="" class="img" data-purpose-img /><div class="overlay-30"></div></div>
-      <div class="container purpose_c">
-        <div class="purpose_words h1 b-desk">
-          <span data-purpose-word>Building</span>
-          <span data-purpose-word>Generational</span>
-          <span data-purpose-word>Value</span>
-        </div>
-        <div class="purpose_words-mob h1 b-mob">Building<br />Generational<br />Value</div>
-        <div class="grid purpose_b">
-          <p class="p1 purpose_p" data-reveal-fade>Each home begins with a simple brief — create spaces worth passing on. Considered planning, enduring materials and patient craftsmanship make that possible.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES: tabs -->
+    <!-- 5. AUDIENCES: tabs -->
     <section class="section services" data-bg="light">
       <div class="shadow-leaves is-light" data-leaves aria-hidden="true"></div>
-      <div class="container" data-tabs>
+      <div class="container" data-tabs data-tabs-autoplay>
         <div class="u-128"></div>
+        <div class="grid services_head">
+          <div class="l1">04 / Your starting point · A project of every scale</div>
+          <h2 class="h1 services_title" data-reveal>A place to begin</h2>
+          <p class="p1 services_lede" data-reveal-fade>Practical advice, shaped around what you need from the property.</p>
+        </div>
+        <div class="u-96"></div>
         <div class="grid services_grid">
           <div class="services_img">
-            <div class="img-w" data-tab-img><img src="img/service-1.jpg" alt="" class="img" /></div>
-            <div class="img-w" data-tab-img><img src="img/service-2.jpg" alt="" class="img" /></div>
-            <div class="img-w" data-tab-img><img src="img/service-3.jpg" alt="" class="img" /></div>
-            <div class="img-w" data-tab-img><img src="img/service-4.jpg" alt="" class="img" /></div>
-            <div class="img-w" data-tab-img><img src="img/service-5.jpg" alt="" class="img" /></div>
+            <div class="img-w" data-tab-img><img src="img/quinta.jpg" alt="A completed home in La Quinta" class="img" /></div>
           </div>
-          <ul class="services_list" role="tablist">
-            <li><button class="services_tab l1" data-tab-trigger role="tab"><span>1.0</span><span>Site Selection</span><i class="dot"></i></button></li>
-            <li><button class="services_tab l1" data-tab-trigger role="tab"><span>2.0</span><span>Feasibility</span><i class="dot"></i></button></li>
-            <li><button class="services_tab l1" data-tab-trigger role="tab"><span>3.0</span><span>Design Team</span><i class="dot"></i></button></li>
-            <li><button class="services_tab l1" data-tab-trigger role="tab"><span>4.0</span><span>Delivery</span><i class="dot"></i></button></li>
-            <li><button class="services_tab l1" data-tab-trigger role="tab"><span>5.0</span><span>Sales &amp; Aftercare</span><i class="dot"></i></button></li>
-          </ul>
+          <div class="services_list" role="tablist" aria-label="Choose your project type">
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-home"><span>01</span><span>My home</span><i class="dot"></i></button>
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-rental"><span>02</span><span>Rental property</span><i class="dot"></i></button>
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-sale"><span>03</span><span>Property for sale</span><i class="dot"></i></button>
+            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-trade"><span>04</span><span>Architects &amp; designers</span><i class="dot"></i></button>
+          </div>
           <div class="services_content">
-            <div class="services_panel" data-tab-content>
-              <h3 class="h1">Site<br />Selection</h3>
-              <p class="p1">Finding rare plots with the character and potential to carry a lasting residential project.</p>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-home">
+              <div class="l1">For private homes</div>
+              <h3 class="h1">Make every room work for you.</h3>
+              <p class="p1">Explore materials, light control and finishing details with a specialist who can guide the project from first conversation to installation.</p>
+              <a href="contact.html?type=home" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span><span class="dot"></span></a>
             </div>
-            <div class="services_panel" data-tab-content>
-              <h3 class="h1">Feasibility</h3>
-              <p class="p1">Careful financial modelling to test every scenario, control risk and protect long-term value.</p>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-rental">
+              <div class="l1">For rental properties</div>
+              <h3 class="h1">Ready for the next guest.</h3>
+              <p class="p1">Discuss practical materials, privacy and light control for a property that needs to feel welcoming and work well day after day.</p>
+              <a href="contact.html?type=rental" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span><span class="dot"></span></a>
             </div>
-            <div class="services_panel" data-tab-content>
-              <h3 class="h1">Design<br />Team</h3>
-              <p class="p1">Assembling architects, interior and landscape designers who fit the vision of each place.</p>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-sale">
+              <div class="l1">For investors &amp; developers</div>
+              <h3 class="h1">Present a property at its best.</h3>
+              <p class="p1">Bring light, privacy and a finished feeling to a property prepared for sale. Share your priorities, scope and timing with the team.</p>
+              <a href="contact.html?type=sale" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span><span class="dot"></span></a>
             </div>
-            <div class="services_panel" data-tab-content>
-              <h3 class="h1">Delivery</h3>
-              <p class="p1">An in-house team manages every phase on site, keeping schedule, budget and quality aligned.</p>
+            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-trade">
+              <div class="l1">For architects &amp; designers</div>
+              <h3 class="h1">A partner in the details.</h3>
+              <p class="p1">Discuss materials, technical requirements and installation with a team that can work alongside your design process.</p>
+              <a href="contact.html?type=professional" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span><span class="dot"></span></a>
             </div>
-            <div class="services_panel" data-tab-content>
-              <h3 class="h1">Sales &amp;<br />Aftercare</h3>
-              <p class="p1">A clear sales strategy and attentive aftercare that stays with owners long after handover.</p>
-            </div>
-            <button class="link-line services_cta" data-modal-open="cta" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Let's talk</span><span class="l1">Let's talk</span></span>
-              <span class="dot"></span>
-            </button>
           </div>
         </div>
         <div class="u-128"></div>
       </div>
     </section>
 
-    <!-- CTA / QUOTE -->
+    <!-- 6. A CLOSER LOOK: pinned, words drift apart -->
+    <section class="section purpose theme_on-color" data-bg="color" data-purpose>
+      <div class="purpose_bg"><img src="img/albinoni3.jpg" alt="A close look at window treatments from Villa Albinoni" class="img" data-purpose-img /><div class="overlay-30"></div></div>
+      <div class="container purpose_c">
+        <div class="l1 purpose_eyebrow">05 / Come a little closer</div>
+        <h2 class="purpose_words h1 b-desk">
+          <span data-purpose-word>A</span>
+          <span data-purpose-word>closer</span>
+          <span data-purpose-word>look.</span>
+        </h2>
+        <div class="purpose_words-mob h1 b-mob">A closer look.</div>
+        <div class="grid purpose_b">
+          <div class="l1 purpose_caption">Window treatments / Villa Albinoni</div>
+          <div class="purpose_p" data-reveal-fade>
+            <p class="p1">See how a fabric catches the light. Compare textures and finishes. Bring a plan, a photo or a question to our showrooms in San Pedro.</p>
+            <a href="showrooms.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Plan a showroom visit</span><span class="l1">Plan a showroom visit</span></span><span class="link-line_ico">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONSULTATION -->
     <section class="section cta theme_on-color" data-bg="color">
-      <div class="cta_bg img-w" data-parallax-bg><video class="img" src="video/outdoor.mp4" poster="video/outdoor-poster.jpg" autoplay muted loop playsinline preload="auto"></video><div class="overlay-30"></div></div>
+      <div class="cta_bg img-w" data-parallax-bg><img src="img/cta.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
       <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
         <line x1="50" y1="0" x2="50" y2="100" />
         <line x1="100" y1="0" x2="50" y2="50" />
@@ -239,16 +254,14 @@
       <div class="container cta_c">
         <div class="u-128"></div>
         <div class="grid">
-          <blockquote class="h1 cta_title" data-reveal>“We measure every project by one standard — would we live here ourselves?”</blockquote>
+          <div class="l1 cta_eyebrow">A conversation is a good start</div>
+          <h2 class="h1 cta_title" data-reveal>Let’s talk about your space.</h2>
         </div>
         <div class="u-96"></div>
         <div class="grid">
           <div class="cta_desc">
-            <p class="p1" data-reveal-fade>Transparency guides every decision we make, from the partners we choose to the way we report progress to our clients.</p>
-            <button class="link-line" data-modal-open="cta" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Let's talk</span><span class="l1">Let's talk</span></span>
-              <span class="dot"></span>
-            </button>
+            <a href="contact.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
+            <a href="professionals.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">For architects &amp; designers</span><span class="l1">For architects &amp; designers</span></span><span class="link-line_ico">↗</span></a>
           </div>
         </div>
         <div class="u-128"></div>
