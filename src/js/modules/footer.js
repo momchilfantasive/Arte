@@ -2,9 +2,10 @@ import { gsap, lenis, isTouch } from '../core.js';
 
 export function initFooter(container) {
   // Mark current page in the footer nav
-  const path = location.pathname.replace(/index\.html$/, '');
+  const page = (p) => p.split('/').pop() || 'index.html';
+  const path = page(location.pathname);
   container.querySelectorAll('[data-nav-link]').forEach((a) => {
-    const href = new URL(a.href).pathname.replace(/index\.html$/, '');
+    const href = page(new URL(a.href).pathname);
     a.classList.toggle('is-current', href === path);
   });
 

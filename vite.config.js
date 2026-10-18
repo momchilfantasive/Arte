@@ -16,6 +16,7 @@ const htmlInclude = () => ({
 });
 
 export default defineConfig({
+  base: './',
   plugins: [htmlInclude()],
   build: {
     rollupOptions: {
