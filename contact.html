@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Arte Properties</title>
+  <meta name="description" content="Arte Properties — a boutique residential developer. Starter template." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="contact">
+    <section class="section page-hero is-contact theme_on-dark" data-bg="dark">
+      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
+        <line x1="50" y1="0" x2="50" y2="100" /><line x1="100" y1="0" x2="50" y2="100" />
+      </svg>
+      <div class="container page-hero_c">
+        <div class="l1" data-hero-fade>Contact</div>
+        <h1 class="a2 page-hero_title" data-hero-title>Let's<br />Talk</h1>
+        <div class="u-96"></div>
+        <div class="grid contact_grid">
+          <div class="contact_col" data-reveal-fade>
+            <div class="l1 text-muted">General</div>
+            <a class="h2" href="mailto:hello@example.com">hello@example.com</a>
+          </div>
+          <div class="contact_col" data-reveal-fade>
+            <div class="l1 text-muted">Sales</div>
+            <a class="h2" href="tel:+359000000000">+359 000 000 000</a>
+          </div>
+          <div class="contact_col" data-reveal-fade>
+            <div class="l1 text-muted">Office</div>
+            <div class="h2">Sofia, Bulgaria</div>
+          </div>
+          <div class="contact_col" data-reveal-fade>
+            <button class="link-line" data-modal-open="cta" data-hover-roll>
+              <span class="nav-item_label"><span class="l1">Open enquiry form</span><span class="l1">Open enquiry form</span></span>
+              <span class="dot"></span>
+            </button>
+          </div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>

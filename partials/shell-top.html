@@ -1,0 +1,83 @@
+<div class="landscape-cover" aria-hidden="true">
+  <div class="landscape-cover_c">
+    <span class="landscape-cover_icon"></span>
+    <p class="l1">Please rotate your device to portrait mode</p>
+  </div>
+</div>
+
+<!-- Preloader: only on first visit of the session (see preloader.js) -->
+<div class="preloader theme_on-dark" data-preloader>
+  <div class="preloader_lines grid-c fill">
+    <span class="line-v" data-pl-line></span><span class="line-v" data-pl-line></span><span class="line-v" data-pl-line></span>
+  </div>
+  <div class="preloader_c">
+    <div class="preloader_t container">
+      <div class="preloader_logo" data-pl-logo><!-- @include partials/logo.html --></div>
+    </div>
+    <div class="preloader_title container h1" data-pl-title>
+      <span class="preloader_w" data-pl-word><span>Spaces</span></span>
+      <span class="preloader_w" data-pl-word><span>Made</span></span>
+      <span class="preloader_img" data-pl-img><img src="/img/project-1.svg" alt="" /></span>
+      <span class="preloader_w" data-pl-word><span>To</span></span>
+      <span class="preloader_w" data-pl-word><span>Endure</span></span>
+    </div>
+    <div class="preloader_b container">
+      <div class="grid">
+        <div class="preloader_desc" data-pl-fade>
+          <div class="l1">Arte Properties</div>
+          <div class="h3">Residential Development Studio</div>
+        </div>
+      </div>
+      <div class="preloader_loader grid" data-pl-fade>
+        <div class="h3">Loading</div>
+        <div class="h3 preloader_percent" data-pl-percent>00%</div>
+      </div>
+      <div class="preloader_bar"><span data-pl-bar></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Page transition overlay (Barba) -->
+<div class="transition theme_on-dark" data-transition aria-hidden="true">
+  <div class="grid-c fill"><span class="line-v"></span><span class="line-v"></span><span class="line-v"></span></div>
+  <div class="transition_logo"><!-- @include partials/logo.html --></div>
+</div>
+
+<canvas class="fluid-cursor" data-fluid-cursor aria-hidden="true"></canvas>
+
+<div class="cookies" data-cookies>
+  <div class="cookies_card theme_on-dark">
+    <div class="cookies_text">
+      <div class="h3 caps">Cookies</div>
+      <div class="h3">This site uses cookies to improve your visit. You can change your choice at any time.</div>
+    </div>
+    <div class="cookies_btns">
+      <button class="nav-item" data-cookies-btn="accept" data-hover-roll><span class="nav-item_label"><span class="l1">Accept</span><span class="l1">Accept</span></span></button>
+      <button class="nav-item" data-cookies-btn="decline" data-hover-roll><span class="nav-item_label"><span class="l1">Decline</span><span class="l1">Decline</span></span></button>
+    </div>
+  </div>
+</div>
+
+<header class="header" data-header>
+  <div class="container">
+    <div class="grid header_grid">
+      <button class="header_menu b-mob" data-menu-open aria-label="Open menu">
+        <span class="header_burger"><span></span><span></span></span>
+        <span class="l1">Menu</span>
+      </button>
+      <nav class="header_nav b-desk">
+        <a href="/about.html" class="nav-item" data-hover-roll><span class="nav-item_label"><span class="l1">About us</span><span class="l1">About us</span></span></a>
+        <a href="/projects.html" class="nav-item" data-hover-roll><span class="nav-item_label"><span class="l1">Projects</span><span class="l1">Projects</span></span></a>
+        <a href="/contact.html" class="nav-item" data-hover-roll><span class="nav-item_label"><span class="l1">Contact</span><span class="l1">Contact</span></span></a>
+      </nav>
+      <a href="/" class="header_logo" aria-label="Arte — home" data-header-logo><!-- @include partials/logo.html --></a>
+      <div class="header_cta">
+        <div class="header_clock l1 b-desk"><span data-clock data-tz="Europe/Sofia">00:00</span> <span>BG</span></div>
+        <button class="nav-item has-dot" data-modal-open="cta" data-hover-roll>
+          <span class="dot"></span>
+          <span class="nav-item_label"><span class="l1">Let's talk</span><span class="l1">Let's talk</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

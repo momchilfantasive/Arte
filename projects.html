@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Arte Properties</title>
+  <meta name="description" content="Arte Properties — a boutique residential developer. Starter template." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="projects">
+
+    <section class="section page-hero is-short theme_on-dark" data-bg="dark">
+      <div class="container page-hero_c">
+        <div class="l1" data-hero-fade>Projects — 04</div>
+        <h1 class="a2 page-hero_title" data-hero-title>Selected<br />Works</h1>
+      </div>
+    </section>
+    <section class="section plist theme_on-dark" data-bg="dark" data-plist>
+      <div class="plist_preview" data-plist-preview aria-hidden="true"><img alt="" class="img" /></div>
+      <div class="container">
+        <div class="plist_head grid l1 text-muted"><span>No.</span><span>Name</span><span>Location</span><span>Completion</span></div>
+        <div class="plist_list">
+          <a href="#" class="plist_item" data-plist-item data-img="/img/project-1.svg" data-tip="View project">
+            <span class="l1 plist_n">P1</span>
+            <span class="h1 plist_name">Project One</span>
+            <span class="l1 plist_loc">Lozenets, Sofia</span>
+            <span class="l1 plist_year">2027</span>
+          </a>
+          <a href="#" class="plist_item" data-plist-item data-img="/img/project-2.svg" data-tip="View project">
+            <span class="l1 plist_n">P2</span>
+            <span class="h1 plist_name">Project Two</span>
+            <span class="l1 plist_loc">Boyana, Sofia</span>
+            <span class="l1 plist_year">2027</span>
+          </a>
+          <a href="#" class="plist_item" data-plist-item data-img="/img/project-3.svg" data-tip="View project">
+            <span class="l1 plist_n">P3</span>
+            <span class="h1 plist_name">Project Three</span>
+            <span class="l1 plist_loc">Sozopol, Black Sea</span>
+            <span class="l1 plist_year">2028</span>
+          </a>
+          <a href="#" class="plist_item" data-plist-item data-img="/img/project-4.svg" data-tip="View project">
+            <span class="l1 plist_n">P4</span>
+            <span class="h1 plist_name">The Courtyard</span>
+            <span class="l1 plist_loc">Plovdiv</span>
+            <span class="l1 plist_year">2029</span>
+          </a>
+        </div>
+        <div class="u-192"></div>
+      </div>
+    </section>
+    <section class="section swiper-sec theme_on-dark" data-bg="dark">
+      <div class="container">
+        <div class="grid"><div class="l1 swiper-sec_label">Gallery</div></div>
+        <div class="u-32"></div>
+      </div>
+      <div class="swiper" data-swiper>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/project-1.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">Project One</div></div>
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/project-2.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">Project Two</div></div>
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/service-2.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">Interior study</div></div>
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/project-3.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">Project Three</div></div>
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/service-4.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">Courtyard</div></div>
+          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="/img/project-4.svg" alt="" class="img" /></div><div class="l1 swiper-slide_label">The Courtyard</div></div>
+        </div>
+      </div>
+      <div class="u-128"></div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>
