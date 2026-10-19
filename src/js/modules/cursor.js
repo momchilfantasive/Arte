@@ -66,8 +66,8 @@ function initFluidCursor() {
         continue;
       }
       const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-      g.addColorStop(0, `rgba(255, 240, 220, ${0.12 * p.life})`);
-      g.addColorStop(1, 'rgba(255, 240, 220, 0)');
+      g.addColorStop(0, `rgba(150, 220, 225, ${0.12 * p.life})`);
+      g.addColorStop(1, 'rgba(150, 220, 225, 0)');
       ctx.fillStyle = g;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
