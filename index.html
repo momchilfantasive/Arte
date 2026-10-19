@@ -19,7 +19,9 @@
     <!-- 1. HERO -->
     <section class="section hero theme_on-color" data-bg="color">
       <div class="hero_bg" data-hero-bg>
-        <img src="img/quinta.jpg" alt="Daylight through sheer curtains in the La Quinta project" class="img" />
+        <!-- Hero video: add <source src="video/hero.mp4" type="video/mp4" /> when ready; the poster shows until then -->
+        <video class="img" poster="img/quinta.jpg" autoplay muted loop playsinline preload="auto" aria-label="Daylight through sheer curtains in the La Quinta project"></video>
+        <div class="hero_shade"></div>
         <div class="grad-top"></div>
         <div class="grad-bot"></div>
       </div>
@@ -31,17 +33,17 @@
             <p class="p1">Thoughtfully chosen. Precisely made. Solutions for the way you live.</p>
             <a href="curtains.html" class="link-line" data-hover-roll>
               <span class="nav-item_label"><span class="l1">Find your solution</span><span class="l1">Find your solution</span></span>
-              <span class="link-line_ico">→</span>
+              
             </a>
           </div>
           <div class="hero_meta l1" data-hero-fade>Villa in La Quinta · Benahavís</div>
-          <a href="#discover" class="hero_scroll l1" data-hero-fade data-scroll-to>Discover Arte ↓</a>
+          <a href="#discover" class="hero_scroll l1" data-hero-fade data-scroll-to>Discover Arte</a>
         </div>
       </div>
     </section>
 
     <!-- 2. APPROACH -->
-    <section class="section about theme_on-dark" data-bg="dark" id="discover">
+    <section class="section approach theme_on-dark" data-bg="dark" id="discover">
       <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
         <line x1="50" y1="0" x2="50" y2="100" />
         <line x1="0" y1="100" x2="50" y2="0" />
@@ -50,22 +52,21 @@
       <div class="shadow-leaves" data-leaves aria-hidden="true"></div>
       <div class="container">
         <div class="u-128"></div>
-        <div class="grid">
-          <div class="about_img img-w" data-parallax-img><img src="img/about.jpg" alt="Sheer curtains framing a view over the hills" class="img" /></div>
-          <div class="about_lead">
-            <span class="l1 about_label">01 / A considered approach</span>
-            <h2 class="h2 indent" data-reveal>A thoughtful approach to everyday living.</h2>
-          </div>
-          <div class="about_aside l1 text-muted" data-reveal-fade>Costa del Sol, Spain</div>
-          <div class="about_content p1" data-reveal-fade>
-            <p>The morning light. A little more privacy. A terrace you use for longer. We bring materials and practical expertise together to make a space feel right.</p>
-            <p>From a single room to a complete property, we guide you through the options, take the measurements and look after installation — with support afterwards.</p>
-            <ul class="tick-list l1">
+        <div class="grid approach_g">
+          <!-- Portrait reel (9:16): swap the image for <video class="img" src="video/reel.mp4" autoplay muted loop playsinline> -->
+          <div class="approach_media img-w" data-parallax-img><img src="img/about.jpg" alt="Sheer curtains framing a view over the hills" class="img" /></div>
+          <div class="approach_body">
+            <div class="l1">01 / A considered approach · Costa del Sol, Spain</div>
+            <h2 class="h2" data-reveal>A thoughtful approach to everyday living.</h2>
+            <div class="approach_text" data-reveal-fade>
+              <p class="p1">The morning light. A little more privacy. A terrace you use for longer. We bring materials and practical expertise together to make a space feel right.</p>
+              <p class="p1">From a single room to a complete property, we guide you through the options, take the measurements and look after installation — with support afterwards.</p>
+            </div>
+            <ul class="tick-list l1" data-reveal-fade>
               <li>Personal advice</li><li>Made to measure</li><li>Careful installation</li><li>Support afterwards</li>
             </ul>
             <a href="contact.html" class="link-line" data-hover-roll>
               <span class="nav-item_label"><span class="l1">Discuss your project</span><span class="l1">Discuss your project</span></span>
-              <span class="link-line_ico">↗</span>
             </a>
           </div>
         </div>
@@ -117,7 +118,7 @@
           <h2 class="h1 projects-intro_title" data-reveal>Selected projects</h2>
           <a href="projects.html" class="link-line projects-intro_link" data-hover-roll>
             <span class="nav-item_label"><span class="l1">All projects</span><span class="l1">All projects</span></span>
-            <span class="link-line_ico">↗</span>
+            
           </a>
         </div>
         <div class="u-48"></div>
@@ -164,8 +165,8 @@
         <div class="projects_hud_c">
           <div class="projects_index l1"><span class="projects_chip" data-projects-index>P1</span><span data-projects-total>/ 03</span></div>
           <div class="projects_btns">
-            <button class="nav-item" data-projects-prev data-hover-roll><span class="nav-item_label"><span class="l1">← Previous project</span><span class="l1">← Previous project</span></span></button>
-            <button class="nav-item" data-projects-next data-hover-roll><span class="nav-item_label"><span class="l1">Next project →</span><span class="l1">Next project →</span></span></button>
+            <button class="nav-item" data-projects-prev data-hover-roll><span class="nav-item_label"><span class="l1">Previous project</span><span class="l1">Previous project</span></span></button>
+            <button class="nav-item" data-projects-next data-hover-roll><span class="nav-item_label"><span class="l1">Next project</span><span class="l1">Next project</span></span></button>
           </div>
         </div>
       </div>
@@ -238,7 +239,7 @@
           <div class="l1 purpose_caption">Window treatments / Villa Albinoni</div>
           <div class="purpose_p" data-reveal-fade>
             <p class="p1">See how a fabric catches the light. Compare textures and finishes. Bring a plan, a photo or a question to our showrooms in San Pedro.</p>
-            <a href="showrooms.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Plan a showroom visit</span><span class="l1">Plan a showroom visit</span></span><span class="link-line_ico">→</span></a>
+            <a href="showrooms.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Plan a showroom visit</span><span class="l1">Plan a showroom visit</span></span></a>
           </div>
         </div>
       </div>
@@ -261,7 +262,7 @@
         <div class="grid">
           <div class="cta_desc">
             <a href="contact.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
-            <a href="professionals.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">For architects &amp; designers</span><span class="l1">For architects &amp; designers</span></span><span class="link-line_ico">↗</span></a>
+            <a href="professionals.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">For architects &amp; designers</span><span class="l1">For architects &amp; designers</span></span></a>
           </div>
         </div>
         <div class="u-128"></div>

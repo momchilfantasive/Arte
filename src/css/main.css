@@ -186,10 +186,11 @@ html.lenis, html.lenis body { height: auto; }
 .header, .preloader, .transition, .cookies, .modal, .lightbox, .floating-tip { --accent: var(--c-accent); }
 .header {
   position: fixed; inset: 0 0 auto; z-index: 50; height: var(--header-h);
-  color: var(--header-fg, var(--c-light)); transition: color 0.5s ease;
+  color: var(--header-fg, var(--c-light)); transition: color 0.5s ease, transform 0.7s var(--ease-out);
   pointer-events: none;
 }
 .header[data-theme="light"] { --header-fg: var(--c-dark); }
+.header.is-hidden { transform: translateY(-110%); }
 .header[data-theme="light"] .header_logo { color: var(--c-accent-ink); }
 .header > .container { height: 100%; }
 .header_grid { height: 100%; align-items: center; }
@@ -288,15 +289,24 @@ html.lenis, html.lenis body { height: auto; }
 .hero { height: var(--vh); }
 .hero_bg { position: absolute; inset: 0; will-change: transform; }
 .hero_c { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; position: relative; z-index: 1; padding-bottom: 0.5rem; }
-.hero_b { row-gap: 1.5rem; align-items: end; }
-.hero_eyebrow { grid-column: 7 / span 5; grid-row: 1; }
-.hero_title { grid-column: 7 / span 5; grid-row: 2; }
-.hero_text { grid-column: 7 / span 3; grid-row: 3; display: grid; gap: 1.5rem; justify-items: start; margin-bottom: 2rem; }
-.hero_meta { grid-column: 1 / span 4; grid-row: 4; }
-.hero_scroll { grid-column: 7 / span 3; grid-row: 4; }
+.hero_shade { position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(rgb(22 20 40 / 0.55), transparent 22%),
+    linear-gradient(90deg, rgb(22 20 40 / 0.5), transparent 65%),
+    rgb(22 20 40 / 0.18); }
+/* Text block sits left, a little above centre; meta + scroll cue on the bottom row */
+.hero_b { height: 100%; grid-template-rows: 1.15fr auto auto auto 1fr auto; row-gap: 1.5rem; }
+.hero_c { padding-top: var(--header-h); }
+.hero_eyebrow { grid-column: 1 / span 6; grid-row: 2; }
+.hero_title { grid-column: 1 / span 6; grid-row: 3; }
+.hero_text { grid-column: 1 / span 4; grid-row: 4; display: grid; gap: 1.5rem; justify-items: start; }
+.hero_meta { grid-column: 1 / span 4; grid-row: 6; align-self: end; }
+.hero_scroll { grid-column: 7 / span 3; grid-row: 6; align-self: end; }
+@media (min-width: 768px) and (max-width: 1279px) { .hero_text { grid-column: 1 / span 6; } .hero_title { grid-column: 1 / span 8; } }
 @media (max-width: 767px) {
-  .hero_eyebrow, .hero_title, .hero_text, .hero_scroll { grid-column: 1 / -1; }
-  .hero_meta { grid-column: 1 / -1; grid-row: 5; }
+  .hero_eyebrow, .hero_title, .hero_text { grid-column: 1 / -1; }
+  .hero_meta { grid-column: 1 / span 2; }
+  .hero_scroll { grid-column: 3 / span 2; justify-self: end; }
 }
 
 .about .grid { row-gap: 5rem; position: relative; z-index: 1; }
@@ -645,9 +655,19 @@ html.lenis, html.lenis body { height: auto; }
 .lightbox_stage { margin: 0; min-height: 0; display: grid; grid-template-rows: 1fr auto; justify-items: center; gap: 1rem; padding: 1rem var(--offset); }
 .lightbox_stage img { max-height: 100%; max-width: 100%; min-height: 0; object-fit: contain; }
 
+/* Approach (Home): tall portrait reel + one compact text column */
+.approach_g { align-items: center; row-gap: 3rem; position: relative; z-index: 1; }
+.approach_media { grid-column: 1 / span 4; aspect-ratio: 9 / 16; max-height: 86vh; }
+.approach_body { grid-column: 7 / span 5; display: grid; gap: 1.25rem; justify-items: start; }
+.approach_body .h2 { margin-bottom: 1rem; }
+.approach_text { display: grid; gap: 1rem; }
+.approach_body .tick-list { margin-block: 0.5rem 1rem; }
+@media (min-width: 768px) and (max-width: 1279px) { .approach_media { grid-column: 1 / span 5; } .approach_body { grid-column: 7 / span 6; } }
+@media (max-width: 767px) { .approach_media { grid-column: 1 / span 3; max-height: none; } .approach_body { grid-column: 1 / -1; } }
+
 /* Tablet (incl. iPad landscape): give narrow text columns more room */
 @media (min-width: 768px) and (max-width: 1279px) {
-  .hero_text, .page-hero_text, .solutions_intro, .services_lede, .purpose_p,
+  .page-hero_text, .solutions_intro, .services_lede, .purpose_p,
   .mission_content, .showroom .mission_content, .arch_p1, .facts, .cta_desc { grid-column: 7 / span 6; }
   .arch_p2 { grid-column: 7 / span 6; }
   .about_aside, .about_content { grid-column: 7 / span 6; }

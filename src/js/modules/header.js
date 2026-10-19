@@ -1,4 +1,4 @@
-import { ScrollTrigger } from '../core.js';
+import { ScrollTrigger, lenis } from '../core.js';
 
 const header = () => document.querySelector('[data-header]');
 
@@ -12,8 +12,25 @@ function initClock() {
   setInterval(tick, 10_000);
 }
 
+// Hide the header while scrolling down, bring it back on scroll up or near the top
+function initAutoHide() {
+  const h = header();
+  if (!h) return;
+  let last = 0;
+  lenis.on('scroll', ({ scroll }) => {
+    const delta = scroll - last;
+    if (Math.abs(delta) < 4) return;
+    const menuOpen = document.querySelector('.modal.is-open');
+    h.classList.toggle('is-hidden', delta > 0 && scroll > 120 && !menuOpen);
+    last = scroll;
+  });
+  // keyboard users: reveal the header when focus moves into it
+  h.addEventListener('focusin', () => h.classList.remove('is-hidden'));
+}
+
 export function initHeader() {
   initClock();
+  initAutoHide();
 }
 
 // Mark the current section in the main nav
