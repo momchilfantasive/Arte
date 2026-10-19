@@ -19,10 +19,14 @@ export function runPreloader() {
   const percent = el.querySelector('[data-pl-percent]');
   const bar = el.querySelector('[data-pl-bar]');
   const imgWrap = el.querySelector('[data-pl-img]');
-  // Use the page's hero image (or video poster) as the thumbnail, so it can grow into it
-  const heroMedia = document.querySelector('[data-barba="container"] [data-hero-bg] img, [data-barba="container"] [data-hero-bg] video');
-  const heroSrc = heroMedia && (heroMedia.getAttribute('poster') || heroMedia.getAttribute('src'));
-  if (heroSrc) imgWrap.querySelector('img').src = heroSrc;
+  // The thumbnail is a scaled-down copy of the page's hero layer (same media, same crop,
+  // same shading). At the end it simply scales back to 1:1, so the hand-off is seamless.
+  const heroBg = document.querySelector('[data-barba="container"] [data-hero-bg]');
+  const layer = heroBg ? buildLayer(heroBg) : null;
+  if (layer) {
+    imgWrap.style.visibility = 'hidden';
+    el.appendChild(layer);
+  }
   const progress = { v: 0 };
 
   return new Promise((resolve) => {
@@ -57,28 +61,35 @@ export function runPreloader() {
         title.classList.add('is-spread');
         Flip.from(state, { duration: 1.4, ease: 'arte' });
       })
-      .to(imgWrap, { clipPath: 'inset(0 0%)', duration: 1.2 }, '+=0.5')
-      .to(imgWrap.querySelector('img'), { scale: 1, duration: 1.6, startAt: { scale: 1.4 } }, '<')
-      .add(() => (heroSrc ? growIntoHero() : wipeUp()), '+=0.3');
+      .add(() => (layer ? placeThumb() : null), '+=0.4')
+      .to(layer || imgWrap, { clipPath: 'inset(0% 0%)', duration: 1.2 })
+      .to(layer ? layer.querySelector('.img') : imgWrap.querySelector('img'), { scale: 1, duration: 1.6, startAt: { scale: 1.3 } }, '<')
+      .add(() => (layer ? growIntoHero() : wipeUp()), '+=0.3');
 
-    // The thumbnail expands to fill the screen and becomes the hero background
-    function growIntoHero() {
+    // Shrink the full-screen layer onto the thumbnail slot, keeping the viewport's proportions
+    function placeThumb() {
       const r = imgWrap.getBoundingClientRect();
-      const shade = document.createElement('div');
-      shade.className = 'hero_shade';
-      shade.style.opacity = 0;
-      imgWrap.appendChild(shade);
-      gsap.set(imgWrap, { position: 'fixed', top: r.top, left: r.left, width: r.width, height: r.height, margin: 0, zIndex: 2 });
+      const s = r.width / window.innerWidth;
+      gsap.set(layer, {
+        x: r.left + r.width / 2 - window.innerWidth / 2,
+        y: r.top + r.height / 2 - window.innerHeight / 2,
+        scale: s, clipPath: 'inset(0% 50%)', visibility: 'visible',
+      });
+    }
+
+    function growIntoHero() {
+      const shades = layer.querySelectorAll('.hero_shade, .grad-top, .grad-bot');
       gsap.timeline({ defaults: { ease: 'arte' } })
         .to(el.querySelectorAll('[data-pl-word], [data-pl-fade], [data-pl-logo], [data-pl-line], .preloader_bar'), { opacity: 0, duration: 0.6, ease: 'power2.out' }, 0)
-        .to(imgWrap, { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight, duration: 1.6 }, 0.1)
-        .to(shade, { opacity: 1, duration: 1.2 }, 0.5)
+        .to(layer, { x: 0, y: 0, scale: 1, duration: 1.6 }, 0.1)
+        .fromTo(shades, { opacity: 0 }, { opacity: 1, duration: 1.4, ease: 'power1.inOut' }, 0.2)
         .add(() => {
+          syncVideo();
           resolve();
           lenis.start();
-        }, 1.1)
-        .to(el, { opacity: 0, duration: 0.5, ease: 'power1.out' }, 1.7)
-        .add(() => el.remove());
+        }, 1.6)
+        // the layer now matches the hero pixel for pixel: drop the preloader
+        .add(() => el.remove(), 1.75);
     }
 
     function wipeUp() {
@@ -92,3 +103,27 @@ export function runPreloader() {
     }
   });
 }
+
+// Full-viewport copy of the hero background (image or video + its shading layers)
+function buildLayer(heroBg) {
+  const layer = heroBg.cloneNode(true);
+  layer.removeAttribute('data-hero-bg');
+  layer.className = 'preloader_layer';
+  const video = layer.querySelector('video');
+  if (video) {
+    video.muted = true;
+    video.play?.().catch(() => {});
+  }
+  return layer;
+}
+
+// Keep the real hero video in step with the copy that was playing in the preloader
+function syncVideo() {
+  const copy = document.querySelector('.preloader_layer video');
+  const real = document.querySelector('[data-hero-bg] video');
+  if (copy && real && copy.currentTime) {
+    try { real.currentTime = copy.currentTime; } catch { /* not seekable yet */ }
+    real.play?.().catch(() => {});
+  }
+}
+

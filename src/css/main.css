@@ -245,6 +245,7 @@ html.lenis, html.lenis body { height: auto; }
   .preloader_img { width: 5rem; margin-left: -2.5rem; }
 }
 
+.preloader_layer { position: fixed; inset: 0; z-index: 2; visibility: hidden; transform-origin: 50% 50%; overflow: hidden; pointer-events: none; }
 .transition { visibility: hidden; clip-path: inset(100% 0 0 0); display: grid; place-items: center; }
 .transition_logo { width: max(72px, 6rem); position: relative; color: var(--c-accent); }
 
