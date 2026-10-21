@@ -22,12 +22,13 @@ import { initAccordion } from './modules/accordion.js';
 import { initLightbox, closeLightbox } from './modules/lightbox.js';
 import { initContactForm } from './modules/contact-form.js';
 import { initSiteTheme } from './modules/site-theme.js';
+import { initReels } from './modules/reels.js';
 
 // Each page module receives the Barba container and may return a cleanup fn.
 const pageModules = [
   initHeaderTheme, initHero, initReveals, initParallax, initProjects, initSketch,
   initPurpose, initTabs, initLeaves, initFooter, initProjectList, initSlider,
-  initAccordion, initContactForm,
+  initAccordion, initContactForm, initReels,
 ];
 
 let ctx;
