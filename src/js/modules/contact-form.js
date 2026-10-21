@@ -10,7 +10,8 @@ export function initContactForm(container) {
 
   const type = q.get('type');
   if (TYPES.includes(type)) form.querySelector(`input[name="type"][value="${type}"]`).checked = true;
-  if (q.get('interest') === 'curtains') form.interest.value = 'curtains';
+  const interest = q.get('interest');
+  if (['curtains', 'outdoor', 'several'].includes(interest)) form.interest.value = interest;
   const project = PROJECTS[q.get('project')];
   if (project) form.message.value = `I’m interested in a solution inspired by ${project}.`;
   if (q.get('visit') === 'online') form.querySelector('input[name="meeting"][value="online"]').checked = true;

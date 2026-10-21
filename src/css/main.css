@@ -550,8 +550,11 @@ html.lenis, html.lenis body { height: auto; }
 /* Solution cards (Home: Inside & out) */
 .solutions_intro { grid-column: 7 / span 4; }
 .solutions { row-gap: 4rem; align-items: start; }
-.solution-card { grid-column: span 4; display: grid; gap: 0.75rem; }
+.solution-card { grid-column: span 3; display: grid; gap: 0.75rem; align-content: start; }
 .solution-card.is-offset { margin-top: 8rem; }
+.cta_lede { grid-column: 7 / span 4; margin-top: 1.5rem; }
+@media (max-width: 767px) { .cta_lede { grid-column: 1 / -1; } }
+@media (min-width: 768px) and (max-width: 1279px) { .solution-card { grid-column: span 6; } .solution-card.is-offset { margin-top: 6rem; } .cta_lede { grid-column: 7 / span 6; } }
 .solution-card_img { aspect-ratio: 4 / 5; margin-bottom: 0.75rem; }
 .solution-card_img .img { transform: scale(1.12); transition: filter 0.6s ease; }
 @media (hover: hover) { .solution-card:hover .solution-card_img .img { filter: brightness(0.85); } }
