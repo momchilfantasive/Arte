@@ -694,6 +694,27 @@ a.pgrid_item .pgrid_status { color: var(--accent); }
   .pgrid_head > :first-child, .pgrid_count { grid-column: auto; }
 }
 
+/* Plain light variants (no background media) */
+.purpose.is-plain, .cta.is-plain { background: var(--c-light); }
+.cta.is-plain + .footer, .purpose.is-plain + .cta.is-plain { border-top: 1px solid var(--line); }
+.purpose.is-plain .purpose_words { color: var(--fg); }
+
+/* "A place to begin": tall reel + roomy tabs and copy */
+.services_grid.is-reel { align-items: start; row-gap: 3rem; }
+.services_img.is-reel { grid-column: 1 / span 4; aspect-ratio: 9 / 16; max-height: 88vh; }
+.services_grid.is-reel .services_list { grid-column: 6 / span 3; padding-right: 0; }
+.services_grid.is-reel .services_tab { padding-block: 1rem; }
+.services_grid.is-reel .services_content { grid-column: 9 / span 4; min-height: 30rem; }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .services_img.is-reel { grid-column: 1 / span 5; grid-row: 1 / span 2; }
+  .services_grid.is-reel .services_list { grid-column: 7 / span 6; }
+  .services_grid.is-reel .services_content { grid-column: 7 / span 6; margin-top: 1.5rem; min-height: 24rem; }
+}
+@media (max-width: 767px) {
+  .services_img.is-reel { grid-column: 1 / span 3; }
+  .services_grid.is-reel .services_list, .services_grid.is-reel .services_content { grid-column: 1 / -1; }
+}
+
 /* Tablet (incl. iPad landscape): give narrow text columns more room */
 @media (min-width: 768px) and (max-width: 1279px) {
   .page-hero_text, .solutions_intro, .services_lede, .purpose_p,

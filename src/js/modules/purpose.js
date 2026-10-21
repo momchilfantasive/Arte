@@ -16,9 +16,10 @@ export function initPurpose(container) {
     tl.from(a, { x: () => root.offsetWidth / 2 - a.offsetLeft - a.offsetWidth, ease: 'none' }, 0)
       .from(c, { x: () => -(c.offsetLeft - root.offsetWidth / 2), ease: 'none' }, 0)
       .from(b, { scale: 0.8, opacity: 0.4, ease: 'none' }, 0)
-      .fromTo(img, { scale: 1.2 }, { scale: 1, ease: 'none' }, 0);
+      ;
+    if (img) tl.fromTo(img, { scale: 1.2 }, { scale: 1, ease: 'none' }, 0);
   });
   mm.add('(max-width: 767px)', () => {
-    gsap.fromTo(img, { scale: 1.2 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: root, scrub: true } });
+    if (img) gsap.fromTo(img, { scale: 1.2 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: root, scrub: true } });
   });
 }
