@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* apply the chosen site theme before first paint (?theme=light|dark or saved choice) */
+    (function () {
+      var t = new URLSearchParams(location.search).get('theme');
+      try { t = t || localStorage.getItem('arte:site'); } catch (e) {}
+      document.documentElement.dataset.site = t === 'light' ? 'light' : 'dark';
+    })();
+  </script>
   <title>Projects — Arte del Lusso</title>
   <meta name="description" content="Completed Arte del Lusso projects." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />

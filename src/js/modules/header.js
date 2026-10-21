@@ -1,4 +1,5 @@
 import { ScrollTrigger, lenis } from '../core.js';
+import { getSiteTheme } from './site-theme.js';
 
 const header = () => document.querySelector('[data-header]');
 
@@ -44,11 +45,24 @@ export function markNav(namespace) {
   });
 }
 
-// Per page: header text colour follows the section currently under it
+// Per page: header text colour follows the section currently under it.
+// "dark" sections turn white in the light site theme, so they need dark header text there.
+let currentBg = null;
+const applyHeaderTheme = () => {
+  const h = header();
+  if (!h || !currentBg) return;
+  const light = currentBg === 'light' || (currentBg === 'dark' && getSiteTheme() === 'light');
+  h.dataset.theme = light ? 'light' : 'dark';
+};
+document.addEventListener('site:theme', applyHeaderTheme);
+
 export function initHeaderTheme(container) {
   const h = header();
   const sections = container.querySelectorAll('[data-bg]');
-  const set = (bg) => h && (h.dataset.theme = bg === 'light' ? 'light' : 'dark');
+  const set = (bg) => {
+    currentBg = bg;
+    applyHeaderTheme();
+  };
   set(sections[0]?.dataset.bg);
   sections.forEach((section) => {
     ScrollTrigger.create({

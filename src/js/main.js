@@ -21,6 +21,7 @@ import { initCookies } from './modules/cookies.js';
 import { initAccordion } from './modules/accordion.js';
 import { initLightbox, closeLightbox } from './modules/lightbox.js';
 import { initContactForm } from './modules/contact-form.js';
+import { initSiteTheme } from './modules/site-theme.js';
 
 // Each page module receives the Barba container and may return a cleanup fn.
 const pageModules = [
@@ -53,6 +54,7 @@ initCursor();
 initModals();
 initCookies();
 initLightbox();
+initSiteTheme();
 
 // In-page anchors (#discover, #details…) scroll smoothly through Lenis
 const scrollToHash = (hash, immediate = false) => {
