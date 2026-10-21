@@ -49,7 +49,10 @@ export function initTabs(container) {
       const title = panel.querySelector('.h1');
       const split = SplitText.create(title, { type: 'lines', mask: 'lines', linesClass: 'split-line' });
       gsap.from(split.lines, { yPercent: 110, duration: 1.1, stagger: 0.08, onComplete: () => split.revert() });
-      gsap.from(panel.querySelectorAll('.p1, .l1, .link-line'), { opacity: 0, y: 12, duration: 1, delay: 0.15, stagger: 0.05 });
+      // only the panel's own blocks: animating the labels inside a button would clip them
+      const blocks = panel.querySelectorAll(':scope > .p1, :scope > .l1, :scope > .link-line, :scope > button');
+      gsap.killTweensOf(blocks);
+      gsap.fromTo(blocks, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1, delay: 0.15, stagger: 0.05, clearProps: 'transform' });
     };
 
     const stop = () => clearInterval(timer);

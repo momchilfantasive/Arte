@@ -398,7 +398,9 @@ html.lenis, html.lenis body { height: auto; }
 @media (hover: hover) { .services_tab:hover { color: var(--fg); } }
 .services_content { grid-column: 10 / span 3; position: relative; display: flex; flex-direction: column; min-height: 26rem; }
 .services_panel { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; visibility: hidden; }
-.services_panel .link-line { margin-top: auto; }
+.services_panel .link-line { margin-top: auto; flex: none; }
+.services_panel .nav-item_label > * { transform: none; }
+@media (hover: hover) { .services_panel [data-hover-roll]:hover .nav-item_label > * { transform: translateY(-100%); } }
 .services_panel.is-active { visibility: visible; }
 .services_cta { margin-top: auto; align-self: flex-start; }
 @media (max-width: 767px) {
@@ -702,9 +704,9 @@ a.pgrid_item .pgrid_status { color: var(--accent); }
 /* "A place to begin": tall reel + roomy tabs and copy */
 .services_grid.is-reel { align-items: start; row-gap: 3rem; }
 .services_img.is-reel { grid-column: 1 / span 4; aspect-ratio: 9 / 16; max-height: 88vh; }
-.services_grid.is-reel .services_list { grid-column: 6 / span 3; padding-right: 0; }
+.services_grid.is-reel .services_list { grid-column: 5 / span 3; padding-right: 0; }
 .services_grid.is-reel .services_tab { padding-block: 1rem; }
-.services_grid.is-reel .services_content { grid-column: 9 / span 4; min-height: 30rem; }
+.services_grid.is-reel .services_content { grid-column: 9 / span 4; min-height: 30rem; padding-left: 1rem; }
 @media (min-width: 768px) and (max-width: 1279px) {
   .services_img.is-reel { grid-column: 1 / span 5; grid-row: 1 / span 2; }
   .services_grid.is-reel .services_list { grid-column: 7 / span 6; }
