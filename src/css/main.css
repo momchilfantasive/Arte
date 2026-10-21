@@ -339,6 +339,7 @@ html.lenis, html.lenis body { height: auto; }
 .projects { background: var(--c-dark); }
 .project-card { position: sticky; top: 0; height: var(--vh); overflow: hidden; }
 /* dwell: each card stays fully visible for a while before the next one arrives */
+[data-projects] .project-card { position: relative; } /* pinned by projects.js */
 [data-projects] .project-card:not(:last-of-type) { margin-bottom: 45vh; }
 .project-card_link { position: absolute; inset: 0; z-index: 2; }
 .project-card_dim { position: absolute; inset: 0; background: var(--c-dark); opacity: 0; pointer-events: none; }

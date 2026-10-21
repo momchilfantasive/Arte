@@ -19,6 +19,19 @@ export function initProjects(container) {
   root.querySelector('[data-projects-prev]')?.addEventListener('click', () => go(-1));
   root.querySelector('[data-projects-next]')?.addEventListener('click', () => go(1));
 
+  // Pin each card with GSAP instead of CSS sticky: Safari/iOS lets a sticky card drift
+  // away during the dwell gap. Pinned cards stay put until the last card arrives on top.
+  const last = cards[cards.length - 1];
+  cards.forEach((card, i) => {
+    card.style.zIndex = i + 1;
+    if (card !== last) {
+      ScrollTrigger.create({
+        trigger: card, start: 'top top', endTrigger: last, end: 'top top',
+        pin: true, pinSpacing: false, anticipatePin: 1,
+      });
+    }
+  });
+
   cards.forEach((card, i) => {
     const img = card.querySelector('[data-project-img]');
     gsap.fromTo(img, { yPercent: -6 }, {
