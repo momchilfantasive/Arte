@@ -761,6 +761,14 @@ a.pgrid_item .pgrid_status { color: var(--accent); }
   .sr-map { aspect-ratio: 3 / 4; }
 }
 
+/* FAQ: minimal list on white */
+.faq .details_head { gap: 1.25rem; justify-items: start; }
+.faq_list .accordion_btn .h2 { font-size: clamp(20px, 1.75rem, 30px); line-height: 1.2; text-align: left; }
+.faq_list .accordion_btn { gap: 1rem; padding-block: 1.75rem; }
+.faq_list .accordion_panel p { max-width: 40rem; }
+.faq + .cta.is-plain { border-top: 1px solid var(--line); }
+@media (max-width: 767px) { .faq_list .accordion_btn .h2 { font-size: 21px; } .faq_list .accordion_btn { grid-template-columns: 2.25rem 1fr auto; padding-block: 1.25rem; } .faq_list .accordion_panel p { padding-left: 2.25rem; } }
+
 /* Plain light variants (no background media) */
 .purpose.is-plain, .cta.is-plain { background: var(--bg); }
 .cta.is-plain + .footer, .purpose.is-plain + .cta.is-plain { border-top: 1px solid var(--line); }
