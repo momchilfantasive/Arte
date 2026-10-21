@@ -11,7 +11,7 @@
       document.documentElement.dataset.site = t === 'light' ? 'light' : 'dark';
     })();
   </script>
-  <title>Contact — Arte del Lusso</title>
+  <title>Book a consultation — Arte del Lusso</title>
   <meta name="description" content="Book a consultation." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,65 +24,117 @@
   <!-- @include partials/shell-top.html -->
 
   <main data-barba="container" data-barba-namespace="contact">
-    <section class="section page-hero is-contact theme_on-dark" data-bg="dark">
-      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
-        <line x1="50" y1="0" x2="50" y2="100" /><line x1="100" y1="0" x2="50" y2="100" />
-      </svg>
+    <section class="section page-hero is-short" data-bg="light">
       <div class="container page-hero_c">
-        <div class="l1" data-hero-fade>Let’s talk</div>
+        <div class="l1" data-hero-fade>Book a consultation</div>
         <h1 class="a2 page-hero_title" data-hero-title>Tell us about your space.</h1>
         <div class="grid page-hero_b">
-          <p class="p1 page-hero_text" data-hero-fade>Choose the kind of project and share what you know. A plan, photo or early idea is enough to begin.</p>
-        </div>
-        <div class="u-96"></div>
-        <div class="grid contact_grid">
-          <div class="contact_aside">
-            <div class="contact_col" data-reveal-fade>
-              <div class="l1 text-muted">Email</div>
-              <a class="h2" href="mailto:info@artedellusso.es">info@artedellusso.es</a>
+          <div class="page-hero_text" data-hero-fade>
+            <p class="p1">Choose how you’d like to meet, what you’re interested in and a time that suits you. A plan, a photo or an early idea is enough to begin.</p>
+            <div class="sr-actions">
+              <a class="chip-btn l1" href="tel:+34627944228">Call +34 627 94 42 28</a>
+              <a class="chip-btn l1" href="https://wa.me/34627944228" target="_blank" rel="noopener" data-barba-prevent>WhatsApp</a>
+              <a class="chip-btn l1" href="mailto:info@artedellusso.es">info@artedellusso.es</a>
             </div>
-            <div class="contact_col" data-reveal-fade>
-              <div class="l1 text-muted">Phone</div>
-              <a class="h2" href="tel:+34627944228">+34 627 94 42 28</a>
-            </div>
-            <p class="l1 text-muted">Direct contacts used in the prototype — confirm before launch.</p>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <form class="form contact_form" data-form data-contact-form novalidate>
-            <div class="contact_form_head">
-              <div class="l1">01 / Your project</div>
-              <div class="l1 text-muted">Prototype form · no submission</div>
+    <!-- Booking wizard (prototype: nothing is sent; availability is sample data) -->
+    <section class="section booking" data-bg="light">
+      <div class="container">
+        <div class="grid booking_g">
+          <form class="booking_form" data-booking novalidate>
+            <ol class="booking_steps l1" aria-label="Booking steps">
+              <li data-step-tab="1">Meeting</li><li data-step-tab="2">Interest</li><li data-step-tab="3">Date &amp; time</li><li data-step-tab="4">Details</li><li data-step-tab="5">Review</li>
+            </ol>
+
+            <fieldset class="step" data-step="1">
+              <legend class="h2">How would you like to meet?</legend>
+              <label class="opt"><input type="radio" name="meeting" value="showroom" /><span class="opt_box"><span class="opt_title h3">In a showroom</span><span class="p1 text-muted">See fabrics and systems in person with a specialist.</span></span></label>
+              <div class="step_sub" data-show-if="meeting=showroom">
+                <div class="l1 text-muted">Choose a showroom</div>
+              <label class="opt"><input type="radio" name="showroom" value="interiors" /><span class="opt_box"><span class="opt_title h3">Curtains &amp; blinds</span><span class="p1 text-muted">Calle Lagasca 64, San Pedro de Alcántara</span><span class="l1 text-muted opt_meta">Mon–Fri · 10:00–18:00</span></span></label>
+              <label class="opt"><input type="radio" name="showroom" value="outdoor" /><span class="opt_box"><span class="opt_title h3">Awnings, pergolas &amp; screens</span><span class="p1 text-muted">Calle República Checa 19, San Pedro de Alcántara</span><span class="l1 text-muted opt_meta">Mon–Fri · 10:00–14:00</span></span></label>
+              </div>
+              <label class="opt"><input type="radio" name="meeting" value="property" /><span class="opt_box"><span class="opt_title h3">At your property</span><span class="p1 text-muted">We visit to look at the space, discuss options and take initial measurements.</span><span class="l1 text-muted opt_meta">Costa del Sol</span></span></label>
+              <label class="opt"><input type="radio" name="meeting" value="online" /><span class="opt_box"><span class="opt_title h3">Online video call</span><span class="p1 text-muted">A first conversation from wherever you are. Share photos or plans on the call.</span><span class="l1 text-muted opt_meta">Google Meet, Zoom or WhatsApp video</span></span></label>
+              <p class="step_err p1" data-err="1" hidden>Please choose how you’d like to meet (and a showroom).</p>
+            </fieldset>
+
+            <fieldset class="step" data-step="2" hidden>
+              <legend class="h2">What are you interested in?</legend>
+              <div class="l1 text-muted">Products · choose any</div>
+              <div class="chips"><label class="chip"><input type="checkbox" name="products" value="curtains" /><span class="l1">Curtains &amp; voiles</span></label><label class="chip"><input type="checkbox" name="products" value="blinds" /><span class="l1">Blinds &amp; shades</span></label><label class="chip"><input type="checkbox" name="products" value="tracks" /><span class="l1">Electric tracks &amp; poles</span></label><label class="chip"><input type="checkbox" name="products" value="outdoor" /><span class="l1">Awnings, pergolas &amp; screens</span></label><label class="chip"><input type="checkbox" name="products" value="skylight" /><span class="l1">Skylight systems</span></label><label class="chip"><input type="checkbox" name="products" value="motorisation" /><span class="l1">Motorisation</span></label><label class="chip"><input type="checkbox" name="products" value="carpets" /><span class="l1">Carpets &amp; rugs</span></label><label class="chip"><input type="checkbox" name="products" value="wallpaper" /><span class="l1">Wallpapers</span></label><label class="chip"><input type="checkbox" name="products" value="film" /><span class="l1">Window film</span></label><label class="chip"><input type="checkbox" name="products" value="unsure" /><span class="l1">Not sure yet</span></label></div>
+              <div class="l1 text-muted">Project</div>
+              <div class="chips"><label class="chip"><input type="radio" name="type" value="home" /><span class="l1">My home</span></label><label class="chip"><input type="radio" name="type" value="rental" /><span class="l1">Rental property</span></label><label class="chip"><input type="radio" name="type" value="sale" /><span class="l1">Property for sale</span></label><label class="chip"><input type="radio" name="type" value="professional" /><span class="l1">Client project (trade)</span></label></div>
+              <div class="l1 text-muted">Timing</div>
+              <div class="chips"><label class="chip"><input type="radio" name="timing" value="asap" /><span class="l1">As soon as possible</span></label><label class="chip"><input type="radio" name="timing" value="1-3" /><span class="l1">In 1–3 months</span></label><label class="chip"><input type="radio" name="timing" value="3-6" /><span class="l1">In 3–6 months</span></label><label class="chip"><input type="radio" name="timing" value="exploring" /><span class="l1">Just exploring</span></label></div>
+              <label class="field" for="b-message"><span class="l1">Anything we should know?</span><textarea id="b-message" name="message" rows="3" placeholder="Rooms, number of windows, location, style…"></textarea></label>
+              <label class="field field-file" for="b-files"><span class="l1">Photos or plans (optional)</span><input id="b-files" name="files" type="file" accept="image/*,.pdf" multiple /><span class="p1 text-muted" data-file-list>No files chosen</span></label>
+              <p class="step_err p1" data-err="2" hidden>Please choose at least one product (or “Not sure yet”).</p>
+            </fieldset>
+
+            <fieldset class="step" data-step="3" hidden>
+              <legend class="h2">Choose a day and time</legend>
+              <div class="cal" data-cal>
+                <div class="cal_head"><button type="button" class="chip-btn l1" data-cal-prev aria-label="Previous month">Prev</button><div class="h3" data-cal-title></div><button type="button" class="chip-btn l1" data-cal-next aria-label="Next month">Next</button></div>
+                <div class="cal_dow l1 text-muted"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+                <div class="cal_grid" data-cal-grid role="grid"></div>
+              </div>
+              <div class="slots">
+                <div class="l1 text-muted" data-slots-title>Select a day to see available times</div>
+                <div class="slots_list" data-slots></div>
+                <p class="l1 text-muted">Times in Marbella (CET/CEST) · sample availability</p>
+              </div>
+              <label class="chip chip-wide"><input type="checkbox" name="callme" value="yes" /><span class="l1">No preferred time — call me to arrange</span></label>
+              <p class="step_err p1" data-err="3" hidden>Please choose a day and time, or ask us to call you.</p>
+            </fieldset>
+
+            <fieldset class="step" data-step="4" hidden>
+              <legend class="h2">Your details</legend>
+              <label class="field" for="b-name"><span class="l1">Name</span><input id="b-name" name="name" autocomplete="name" required /></label>
+              <label class="field" for="b-email"><span class="l1">Email</span><input id="b-email" name="email" type="email" autocomplete="email" required placeholder="name@example.com" /></label>
+              <label class="field" for="b-phone"><span class="l1">Phone</span><input id="b-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+34 …" /></label>
+              <label class="field" for="b-address" data-show-if="meeting=property"><span class="l1">Property address or area</span><input id="b-address" name="address" autocomplete="street-address" placeholder="e.g. Nueva Andalucía, Marbella" /></label>
+              <div class="l1 text-muted">Best way to reach you</div>
+              <div class="chips"><label class="chip"><input type="radio" name="contact" value="phone" /><span class="l1">Phone call</span></label><label class="chip"><input type="radio" name="contact" value="whatsapp" /><span class="l1">WhatsApp</span></label><label class="chip"><input type="radio" name="contact" value="email" /><span class="l1">Email</span></label></div>
+              <div class="l1 text-muted">Preferred language</div>
+              <div class="chips"><label class="chip"><input type="radio" name="lang" value="en" /><span class="l1">English</span></label><label class="chip"><input type="radio" name="lang" value="es" /><span class="l1">Español</span></label></div>
+              <label class="chip chip-wide"><input type="checkbox" name="consent" value="yes" /><span class="l1">I agree that Arte del Lusso may contact me about this request</span></label>
+              <p class="step_err p1" data-err="4" hidden>Please add your name, a valid email and phone, and agree to be contacted.</p>
+            </fieldset>
+
+            <fieldset class="step" data-step="5" hidden>
+              <legend class="h2">Review your request</legend>
+              <dl class="facts review l1" data-review></dl>
+              <p class="p1 text-muted">This is a design prototype: no request is sent. In the final site this step connects to the Arte del Lusso team and consultation calendar.</p>
+            </fieldset>
+
+            <div class="booking_nav">
+              <button type="button" class="btn-ghost l1" data-back>Back</button>
+              <button type="button" class="btn-solid l1" data-next>Continue</button>
             </div>
-            <fieldset class="field field-chips">
-              <legend class="l1">What are you working on?</legend>
-              <label class="chip"><input type="radio" name="type" value="home" id="type-home" checked /><span class="l1">My home</span></label>
-              <label class="chip"><input type="radio" name="type" value="rental" id="type-rental" /><span class="l1">Rental property</span></label>
-              <label class="chip"><input type="radio" name="type" value="sale" id="type-sale" /><span class="l1">Property for sale</span></label>
-              <label class="chip"><input type="radio" name="type" value="professional" id="type-professional" /><span class="l1">Client project</span></label>
-            </fieldset>
-            <label class="field" for="f-name"><span class="l1">Your name</span><input id="f-name" name="name" placeholder="Name" autocomplete="name" /></label>
-            <label class="field" for="f-email"><span class="l1">Email</span><input id="f-email" name="email" type="email" placeholder="name@example.com" autocomplete="email" /></label>
-            <label class="field" for="f-interest"><span class="l1">What would you like help with?</span>
-              <select id="f-interest" name="interest">
-                <option value="exploring">I’m exploring options</option>
-                <option value="curtains">Curtains &amp; blinds</option>
-                <option value="outdoor">Outdoor shading</option>
-                <option value="several">Several solutions</option>
-              </select>
-            </label>
-            <label class="field" for="f-message"><span class="l1">Tell us a little more</span><textarea id="f-message" name="message" rows="3" placeholder="The space, location and timing, if you know them…"></textarea></label>
-            <fieldset class="field field-chips">
-              <legend class="l1">How would you like to meet?</legend>
-              <label class="chip"><input type="radio" name="meeting" value="showroom" id="meet-showroom" checked /><span class="l1">In a showroom</span></label>
-              <label class="chip"><input type="radio" name="meeting" value="online" id="meet-online" /><span class="l1">Online</span></label>
-              <label class="chip"><input type="radio" name="meeting" value="contact" id="meet-contact" /><span class="l1">Contact me first</span></label>
-            </fieldset>
-            <button type="submit" class="link-line" data-hover-roll>
-              <span class="nav-item_label"><span class="l1">Preview enquiry</span><span class="l1">Preview enquiry</span></span>
-              
-            </button>
-            <div class="form_success h3" data-form-success role="status">This is a design prototype. No enquiry has been sent. In the final site, this step will connect to the Arte del Lusso team and consultation calendar.</div>
+
+            <div class="booking_done" data-done hidden tabindex="-1">
+              <div class="l1">Request received · prototype</div>
+              <h2 class="h1">Thank you.</h2>
+              <p class="p1" data-done-text></p>
+              <ol class="done_steps p1">
+                <li>We confirm your appointment by your preferred contact method, usually within one working day.</li>
+                <li>Bring measurements, photos or plans if you have them — or we can take care of measuring.</li>
+                <li>After the consultation you receive a tailored proposal.</li>
+              </ol>
+              <div class="sr-links"><button type="button" class="btn-ghost l1" data-ics>Add to calendar</button><a href="index.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Back to home</span><span class="l1">Back to home</span></span></a></div>
+            </div>
           </form>
+
+          <aside class="booking_summary" aria-live="polite">
+            <div class="l1">Your consultation</div>
+            <dl class="facts l1" data-summary></dl>
+            <p class="p1 text-muted">We recommend booking in advance, especially from April to September.</p>
+          </aside>
         </div>
         <div class="u-128"></div>
       </div>
