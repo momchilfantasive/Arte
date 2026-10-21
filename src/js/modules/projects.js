@@ -1,6 +1,7 @@
 import { gsap, ScrollTrigger, lenis } from '../core.js';
 
-// Sticky stacked project cards: each card scales back and darkens as the next one slides over it
+// Sticky stacked project cards. Each card holds fully visible for a moment (the CSS
+// margin under it), then the next card slides over while this one eases back and dims.
 export function initProjects(container) {
   const root = container.querySelector('[data-projects]');
   if (!root) return;
@@ -13,35 +14,38 @@ export function initProjects(container) {
   // Previous / Next buttons jump between the stacked cards
   const go = (d) => {
     const i = Math.max(0, Math.min(cards.length - 1, active + d));
-    const top = root.getBoundingClientRect().top + window.scrollY + i * window.innerHeight;
-    lenis.scrollTo(top, { duration: 1.4 });
+    lenis.scrollTo(cards[i], { duration: 1.6 });
   };
   root.querySelector('[data-projects-prev]')?.addEventListener('click', () => go(-1));
   root.querySelector('[data-projects-next]')?.addEventListener('click', () => go(1));
 
   cards.forEach((card, i) => {
     const img = card.querySelector('[data-project-img]');
-    gsap.fromTo(img, { yPercent: -8 }, {
-      yPercent: 8, ease: 'none',
-      scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true },
+    gsap.fromTo(img, { yPercent: -6 }, {
+      yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 0.6 },
     });
 
     const next = cards[i + 1];
     if (next) {
-      gsap.to(card.querySelector('.project-card_img'), {
-        scale: 0.9, filter: 'brightness(0.4)', ease: 'none',
-        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top top', scrub: true },
-      });
-      gsap.to(card.querySelector('.project-card_c'), {
-        opacity: 0, yPercent: -40, ease: 'none',
-        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top 40%', scrub: true },
-      });
+      // A dimming layer (cheaper and smoother than a CSS filter, esp. on iPad)
+      const dim = document.createElement('div');
+      dim.className = 'project-card_dim';
+      card.querySelector('.project-card_img').after(dim);
+
+      gsap.timeline({
+        scrollTrigger: { trigger: next, start: 'top 85%', end: 'top top', scrub: 0.8 },
+        defaults: { ease: 'sine.inOut' },
+      })
+        .to(card.querySelector('.project-card_img'), { scale: 0.94 }, 0)
+        .fromTo(dim, { opacity: 0 }, { opacity: 0.55 }, 0)
+        .to(card.querySelector('.project-card_c'), { opacity: 0, y: -40, ease: 'power1.in', duration: 0.6 }, 0);
     }
 
     ScrollTrigger.create({
       trigger: card,
       start: 'top center',
-      end: 'bottom center',
+      end: () => `+=${card.offsetHeight + parseFloat(getComputedStyle(card).marginBottom)}`,
       onToggle: ({ isActive }) => {
         if (!isActive) return;
         active = i;
