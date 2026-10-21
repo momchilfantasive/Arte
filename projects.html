@@ -16,56 +16,74 @@
   <!-- @include partials/shell-top.html -->
 
   <main data-barba="container" data-barba-namespace="projects">
-    <section class="section page-hero is-short theme_on-dark" data-bg="dark">
-      <div class="container page-hero_c">
-        <div class="l1" data-hero-fade>Our work</div>
-        <h1 class="a2 page-hero_title" data-hero-title>Real spaces. Thoughtful solutions.</h1>
-        <div class="grid page-hero_b">
-          <p class="p1 page-hero_text" data-hero-fade>Explore how materials, light and practical needs came together in completed projects.</p>
+    <!-- 1. HERO -->
+    <section class="section hero theme_on-color" data-bg="color">
+      <div class="hero_bg" data-hero-bg>
+        <img src="img/madrisa.jpg" alt="Villa Madrisa, Nueva Andalucía" class="img" />
+        <div class="hero_shade"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bot"></div>
+      </div>
+      <div class="container hero_c">
+        <div class="grid hero_b">
+          <div class="hero_eyebrow l1" data-hero-fade>Our work</div>
+          <h1 class="h1 hero_title" data-hero-title>Real spaces. Thoughtful solutions.</h1>
+          <div class="hero_text" data-hero-fade><p class="p1">Explore how materials, light and practical needs came together in completed projects.</p></div>
+          <div class="hero_meta l1" data-hero-fade>Villa Madrisa · Nueva Andalucía</div>
+          <a href="#collection" class="hero_scroll l1" data-hero-fade data-scroll-to>Discover</a>
         </div>
       </div>
     </section>
 
-    <section class="section plist theme_on-dark" data-bg="dark" data-plist>
-      <div class="plist_preview" data-plist-preview aria-hidden="true"><img alt="" class="img" /></div>
+    <!-- 2. COLLECTION: clean staggered grid -->
+    <section class="section pgrid" data-bg="light" id="collection">
       <div class="container">
-        <div class="plist_head grid l1 text-muted"><span>No.</span><span>Project</span><span>Location · Type</span><span>Story</span></div>
-        <div class="plist_list">
-          <a href="villa-albinoni.html" class="plist_item" data-plist-item data-img="img/albinoni.jpg" data-tip="View project">
-            <span class="l1 plist_n">P1</span><span class="h1 plist_name">Villa Albinoni</span><span class="l1 plist_loc">Marbella · Villa</span><span class="l1 plist_year">Explore project</span>
+        <div class="u-96"></div>
+        <div class="grid pgrid_head">
+          <div class="l1">The collection</div>
+          <div class="l1 text-muted pgrid_count">04 projects</div>
+        </div>
+        <div class="u-48"></div>
+        <div class="pgrid_list">
+          <a href="villa-albinoni.html" class="pgrid_item" data-tip="View project">
+            <div class="pgrid_img img-w" data-clip-reveal><img src="img/albinoni.jpg" alt="Villa Albinoni project" class="img" data-parallax-inner loading="lazy" /></div>
+            <div class="pgrid_cap">
+              <h2 class="h3 pgrid_name">Villa Albinoni</h2>
+              <div class="l1 pgrid_status">Explore project</div>
+              <div class="l1 text-muted">Marbella · Villa</div>
+            </div>
           </a>
-          <div class="plist_item is-static" data-plist-item data-img="img/madrisa.jpg">
-            <span class="l1 plist_n">P2</span><span class="h1 plist_name">Villa Madrisa</span><span class="l1 plist_loc">Nueva Andalucía · Villa</span><span class="l1 plist_year text-muted">Project story in preparation</span>
+          <div class="pgrid_item is-offset">
+            <div class="pgrid_img img-w" data-clip-reveal><img src="img/madrisa.jpg" alt="Villa Madrisa project" class="img" data-parallax-inner loading="lazy" /></div>
+            <div class="pgrid_cap">
+              <h2 class="h3 pgrid_name">Villa Madrisa</h2>
+              <div class="l1 pgrid_status text-muted">Project story in preparation</div>
+              <div class="l1 text-muted">Nueva Andalucía · Villa</div>
+            </div>
           </div>
-          <div class="plist_item is-static" data-plist-item data-img="img/montemayor.jpg">
-            <span class="l1 plist_n">P3</span><span class="h1 plist_name">Montemayor</span><span class="l1 plist_loc">Benahavís · Villa</span><span class="l1 plist_year text-muted">Project story in preparation</span>
+          <div class="pgrid_item">
+            <div class="pgrid_img img-w" data-clip-reveal><img src="img/montemayor.jpg" alt="Montemayor project" class="img" data-parallax-inner loading="lazy" /></div>
+            <div class="pgrid_cap">
+              <h2 class="h3 pgrid_name">Montemayor</h2>
+              <div class="l1 pgrid_status text-muted">Project story in preparation</div>
+              <div class="l1 text-muted">Benahavís · Villa</div>
+            </div>
           </div>
-          <div class="plist_item is-static" data-plist-item data-img="img/quinta.jpg">
-            <span class="l1 plist_n">P4</span><span class="h1 plist_name">Villa in La Quinta</span><span class="l1 plist_loc">Benahavís · Villa</span><span class="l1 plist_year text-muted">Project story in preparation</span>
+          <div class="pgrid_item is-offset">
+            <div class="pgrid_img img-w" data-clip-reveal><img src="img/quinta.jpg" alt="La Quinta project" class="img" data-parallax-inner loading="lazy" /></div>
+            <div class="pgrid_cap">
+              <h2 class="h3 pgrid_name">Villa in La Quinta</h2>
+              <div class="l1 pgrid_status text-muted">Project story in preparation</div>
+              <div class="l1 text-muted">Benahavís · Villa</div>
+            </div>
           </div>
         </div>
-        <div class="u-128"></div>
+        <div class="u-192"></div>
       </div>
-    </section>
-
-    <section class="section swiper-sec theme_on-dark" data-bg="dark">
-      <div class="container">
-        <div class="grid"><div class="l1 swiper-sec_label">The collection · Drag to explore</div></div>
-        <div class="u-32"></div>
-      </div>
-      <div class="swiper" data-swiper>
-        <div class="swiper-wrapper">
-          <a href="villa-albinoni.html" class="swiper-slide" data-tip="View project"><div class="img-w"><img src="img/albinoni.jpg" alt="Villa Albinoni project" class="img" /></div><div class="l1">Marbella · Villa</div><div class="h2">Villa Albinoni</div></a>
-          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="img/madrisa.jpg" alt="Villa Madrisa project" class="img" loading="lazy" /></div><div class="l1">Nueva Andalucía · Villa</div><div class="h2">Villa Madrisa</div></div>
-          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="img/montemayor.jpg" alt="Montemayor project" class="img" loading="lazy" /></div><div class="l1">Benahavís · Villa</div><div class="h2">Montemayor</div></div>
-          <div class="swiper-slide" data-tip="Drag"><div class="img-w"><img src="img/quinta.jpg" alt="La Quinta project" class="img" loading="lazy" /></div><div class="l1">Benahavís · Villa</div><div class="h2">Villa in La Quinta</div></div>
-        </div>
-      </div>
-      <div class="u-128"></div>
     </section>
 
     <section class="section cta theme_on-color" data-bg="color">
-      <div class="cta_bg img-w" data-parallax-bg><img src="img/madrisa.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
+      <div class="cta_bg img-w" data-parallax-bg><img src="img/albinoni2.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
       <div class="container cta_c">
         <div class="u-128"></div>
         <div class="grid">
