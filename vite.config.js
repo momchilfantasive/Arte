@@ -26,6 +26,8 @@ export default defineConfig({
         albinoni: resolve(import.meta.dirname, 'villa-albinoni.html'),
         outdoor: resolve(import.meta.dirname, 'outdoor.html'),
         showrooms: resolve(import.meta.dirname, 'showrooms.html'),
+        showroomInteriors: resolve(import.meta.dirname, 'showroom-interiors.html'),
+        showroomOutdoor: resolve(import.meta.dirname, 'showroom-outdoor.html'),
         professionals: resolve(import.meta.dirname, 'professionals.html'),
         projects: resolve(import.meta.dirname, 'projects.html'),
         contact: resolve(import.meta.dirname, 'contact.html'),

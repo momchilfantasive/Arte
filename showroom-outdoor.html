@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* apply the chosen site theme before first paint (?theme=light|dark or saved choice) */
+    (function () {
+      var t = new URLSearchParams(location.search).get('theme');
+      try { t = t || localStorage.getItem('arte:site'); } catch (e) {}
+      document.documentElement.dataset.site = t === 'light' ? 'light' : 'dark';
+    })();
+  </script>
+  <title>Outdoor solutions showroom — Arte del Lusso</title>
+  <meta name="description" content="Outdoor solutions showroom in San Pedro de Alcántara, Marbella." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <main data-barba="container" data-barba-namespace="showroom">
+    <!-- Showroom page (draft: details from artedellusso.es/contacts — confirm before launch) -->
+    <section class="section page-hero is-short" data-bg="light">
+      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
+        <line x1="50" y1="0" x2="50" y2="100" /><line x1="0" y1="0" x2="50" y2="100" />
+      </svg>
+      <div class="container page-hero_c">
+        <nav class="breadcrumb l1" aria-label="Breadcrumb" data-hero-fade><a href="index.html">Arte</a> / <a href="showrooms.html">Showrooms</a> / Outdoor living</nav>
+        <h1 class="a2 page-hero_title" data-hero-title>Outdoor solutions showroom</h1>
+        <div class="grid page-hero_b">
+          <div class="page-hero_text" data-hero-fade>
+            <p class="p1">Talk through awnings, pergolas and screens for a terrace, garden or development with a member of the team.</p>
+            <div class="sr-actions">
+              <a class="chip-btn l1" href="tel:+34603714734">Call</a>
+              <a class="chip-btn l1" href="https://wa.me/34603714734" target="_blank" rel="noopener" data-barba-prevent>WhatsApp</a>
+              <a class="chip-btn l1" href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+Rep%C3%BAblica+Checa+19%2C+29670+San+Pedro+de+Alc%C3%A1ntara%2C+M%C3%A1laga%2C+Spain" target="_blank" rel="noopener" data-barba-prevent>Directions</a>
+              <a class="chip-btn l1" href="mailto:info@artedellusso.es">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sr-detail" data-bg="light">
+      <div class="container">
+        <div class="u-96"></div>
+        <div class="grid sr-detail_g">
+          <div class="sr-detail_media reel_media img-w" data-reel data-clip-reveal>
+              <video class="img" poster="video/reel-3-poster.jpg" muted loop playsinline preload="metadata" aria-label="Outdoor solutions showroom">
+                <source src="video/reel-3.mp4" type="video/mp4" /><source src="video/reel-3.webm" type="video/webm" />
+              </video>
+            <span class="media-tag l1">Sample clip · showroom media to follow</span>
+          </div>
+          <div class="sr-detail_info">
+            <dl class="facts l1">
+              <div><dt class="text-muted">Address</dt><dd class="h3">Calle República Checa 19<br />29670 San Pedro de Alcántara<br />Marbella, Málaga</dd></div>
+              <div><dt class="text-muted">Opening hours</dt><dd>Mon–Fri · 10:00–14:00</dd></div>
+              <div><dt class="text-muted">Mobile</dt><dd><a href="tel:+34603714734">+34 603 71 47 34</a></dd></div>
+              <div><dt class="text-muted">Telephone</dt><dd><a href="tel:+34952001485">+34 952 001 485</a></dd></div>
+              <div><dt class="text-muted">Email</dt><dd><a href="mailto:info@artedellusso.es">info@artedellusso.es</a></dd></div>
+            </dl>
+            <p class="p1 text-muted">We recommend booking your visit in advance, especially from April to September.</p>
+            <div class="sr-links"><a href="contact.html?visit=outdoor&amp;interest=outdoor" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a visit</span><span class="l1">Book a visit</span></span></a><a href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Rep%C3%BAblica+Checa+19%2C+29670+San+Pedro+de+Alc%C3%A1ntara%2C+M%C3%A1laga%2C+Spain" class="link-line" target="_blank" rel="noopener" data-barba-prevent data-hover-roll><span class="nav-item_label"><span class="l1">Open in Google Maps</span><span class="l1">Open in Google Maps</span></span></a></div>
+          </div>
+        </div>
+        <div class="u-96"></div>
+        <div class="sr-map" data-reveal-fade>
+          <iframe title="Map: Outdoor solutions showroom" src="https://www.google.com/maps?q=Calle+Rep%C3%BAblica+Checa+19%2C+29670+San+Pedro+de+Alc%C3%A1ntara%2C+M%C3%A1laga%2C+Spain&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <section class="section cta is-plain" data-bg="light">
+      <div class="container cta_c">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 cta_eyebrow">Also in San Pedro</div>
+          <h2 class="h1 cta_title" data-reveal>Curtains &amp; blinds showroom</h2>
+          <p class="p1 cta_lede" data-reveal-fade>Calle Lagasca 64 · Mon–Fri · 10:00–18:00</p>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid"><div class="cta_desc"><a href="showroom-interiors.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">View showroom</span><span class="l1">View showroom</span></span></a><a href="showrooms.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">All showrooms</span><span class="l1">All showrooms</span></span></a></div></div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>
