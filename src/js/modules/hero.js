@@ -1,9 +1,9 @@
-import { gsap } from '../core.js';
+import { gsap, reducedMotion } from '../core.js';
 
 // Hero: slow settle on load, then pushes back while the next section covers it
 export function initHero(container) {
   const bg = container.querySelector('[data-hero-bg]');
-  if (!bg) return;
+  if (!bg || reducedMotion) return;
   const hero = bg.closest('section');
   // On the very first load the preloader image grows into the hero, so skip the zoom there
   if (!document.querySelector('[data-preloader]')) {

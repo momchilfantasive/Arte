@@ -1,6 +1,7 @@
-import { gsap } from '../core.js';
+import { gsap, reducedMotion } from '../core.js';
 
 export function initParallax(container) {
+  if (reducedMotion) return;
   // Image drifts inside its frame
   container.querySelectorAll('[data-parallax-img]').forEach((frame) => {
     const img = frame.querySelector('img');

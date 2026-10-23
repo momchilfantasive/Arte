@@ -36,7 +36,7 @@ export default defineConfig({
     ...engines.map((engine) => ({
       name: `${engine}-reduced-1180`,
       testMatch: /reduced-motion/,
-      use: { browserName: engine, viewport: { width: 1180, height: 820 }, hasTouch: true, reducedMotion: 'reduce' },
+      use: { browserName: engine, viewport: { width: 1180, height: 820 }, hasTouch: true, contextOptions: { reducedMotion: 'reduce' } },
     })),
   ],
   webServer: process.env.QA_BASE_URL ? undefined : {

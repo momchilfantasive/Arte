@@ -1,4 +1,4 @@
-import { gsap, Flip, lenis } from '../core.js';
+import { gsap, Flip, lenis, reducedMotion } from '../core.js';
 
 // Resolves when every <img> on the page has loaded (or failed)
 const imagesLoaded = () =>
@@ -11,6 +11,7 @@ const imagesLoaded = () =>
 export function runPreloader() {
   const el = document.querySelector('[data-preloader]');
   if (!el) return Promise.resolve();
+  if (reducedMotion) return quickPreloader(el);
 
   lenis.stop();
   const title = el.querySelector('[data-pl-title]');
@@ -102,6 +103,21 @@ export function runPreloader() {
         .add(() => el.remove());
     }
   });
+}
+
+// Reduced motion: no choreography. Show the static loader briefly, then fade it out
+// (images get at most ~1 s; the page lays out fine while the rest finish).
+function quickPreloader(el) {
+  gsap.set(el.querySelectorAll('[data-pl-line]'), { scaleY: 1 });
+  gsap.set(el.querySelectorAll('[data-pl-logo], [data-pl-fade]'), { opacity: 1 });
+  gsap.set(el.querySelectorAll('[data-pl-word] > span'), { y: 0 });
+  const wait = Promise.race([imagesLoaded(), new Promise((r) => setTimeout(r, 1000))]);
+  return wait.then(() => new Promise((resolve) => {
+    gsap.to(el, {
+      opacity: 0, duration: 0.4, ease: 'power1.out',
+      onComplete: () => { el.remove(); resolve(); },
+    });
+  }));
 }
 
 // Full-viewport copy of the hero background (image or video + its shading layers)

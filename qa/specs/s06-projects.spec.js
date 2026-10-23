@@ -60,17 +60,33 @@ test('S06 rapid interrupted wheel scrolling settles without gaps', async ({ page
 test('S06 Previous / Next buttons step through cards', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name.includes('phone'), 'HUD buttons are hidden on phones by design');
   await open(page, '/');
-  const { top } = await sectionRange(page);
+  const { top, end } = await sectionRange(page);
   await scrollToY(page, top + 5, 800);
   const idx = () => page.textContent('[data-projects-index]');
+  const n = await page.locator('[data-project-card]').count();
+  const rec = frameRecorder(testInfo, 'S06-prevnext');
+  const step = async (sel, want, label) => {
+    await page.click(sel); await page.waitForTimeout(2200);
+    const p = await probe(page);
+    await rec.shot(page, `${label}-${want}`, { probe: p });
+    expect.soft(await idx(), `${label} → ${want}`).toBe(want);
+    expect.soft(p.some((x) => x.bare), `blank gap after ${label}`).toBe(false);
+  };
   expect(await idx()).toBe('P1');
-  await page.click('[data-projects-next]'); await page.waitForTimeout(2200);
-  expect(await idx()).toBe('P2');
-  await page.click('[data-projects-next]'); await page.waitForTimeout(2200);
-  expect(await idx()).toBe('P3');
-  await page.click('[data-projects-prev]'); await page.waitForTimeout(2200);
-  expect(await idx()).toBe('P2');
-  expect((await probe(page)).some((x) => x.bare)).toBe(false);
+  // Forward to the last card, then all the way back
+  for (let i = 2; i <= n; i++) await step('[data-projects-next]', `P${i}`, 'next');
+  await step('[data-projects-next]', `P${n}`, 'next-at-end');
+  for (let i = n - 1; i >= 1; i--) await step('[data-projects-prev]', `P${i}`, 'prev');
+  await step('[data-projects-prev]', 'P1', 'prev-at-start');
+  // After manual scrolling: the buttons continue from the card in view
+  await scrollToY(page, top + (end - top) * 0.6, 900);
+  const here = await idx();
+  expect(Number(here.slice(1)), 'manual scroll lands mid-stack').toBeGreaterThan(1);
+  await rec.shot(page, `manual-${here}`, { probe: await probe(page) });
+  const k = Number(here.slice(1));
+  await step('[data-projects-prev]', `P${k - 1}`, 'manual-prev');
+  await step('[data-projects-next]', `P${k}`, 'manual-next');
+  rec.save();
 });
 
 test('S06 reload in the middle of the stack', async ({ page }, testInfo) => {

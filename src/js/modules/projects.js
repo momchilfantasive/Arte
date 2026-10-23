@@ -1,4 +1,4 @@
-import { gsap, ScrollTrigger, lenis } from '../core.js';
+import { gsap, ScrollTrigger, lenis, reducedMotion } from '../core.js';
 
 // Sticky stacked project cards. Each card holds fully visible for a moment (the CSS
 // margin under it), then the next card slides over while this one eases back and dims.
@@ -10,11 +10,12 @@ export function initProjects(container) {
   const total = root.querySelector('[data-projects-total]');
   if (total) total.textContent = `/ ${String(cards.length).padStart(2, '0')}`;
   let active = 0;
+  const stops = []; // scroll position where each card settles (pinned cards all read top 0)
 
   // Previous / Next buttons jump between the stacked cards
   const go = (d) => {
     const i = Math.max(0, Math.min(cards.length - 1, active + d));
-    lenis.scrollTo(cards[i], { duration: 1.6 });
+    if (stops[i]) lenis.scrollTo(stops[i].start, { duration: 1.6 });
   };
   root.querySelector('[data-projects-prev]')?.addEventListener('click', () => go(-1));
   root.querySelector('[data-projects-next]')?.addEventListener('click', () => go(1));
@@ -24,17 +25,17 @@ export function initProjects(container) {
   const last = cards[cards.length - 1];
   cards.forEach((card, i) => {
     card.style.zIndex = i + 1;
-    if (card !== last) {
-      ScrollTrigger.create({
+    stops[i] = card !== last
+      ? ScrollTrigger.create({
         trigger: card, start: 'top top', endTrigger: last, end: 'top top',
         pin: true, pinSpacing: false, anticipatePin: 1,
-      });
-    }
+      })
+      : ScrollTrigger.create({ trigger: card, start: 'top top' });
   });
 
   cards.forEach((card, i) => {
     const img = card.querySelector('[data-project-img]');
-    gsap.fromTo(img, { yPercent: -6 }, {
+    if (!reducedMotion) gsap.fromTo(img, { yPercent: -6 }, {
       yPercent: 6, ease: 'none',
       scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 0.6 },
     });
