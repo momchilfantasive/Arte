@@ -1,3 +1,6 @@
 node_modules
 dist
 .DS_Store
+qa/artifacts/
+qa/test-results/
+playwright-report/

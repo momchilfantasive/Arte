@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "qa": "playwright test -c qa/playwright.config.js --project=\"chromium-*\"",
+    "qa:all": "playwright test -c qa/playwright.config.js"
   },
   "dependencies": {
     "@barba/core": "2.10.3",
@@ -15,6 +17,7 @@
     "swiper": "11.2.10"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "vite": "8.3.4"
   }
 }
