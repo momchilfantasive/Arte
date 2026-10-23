@@ -17,7 +17,8 @@
   --font-body: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
 
   --gap: 1rem;
-  --offset: 0.5rem;
+  /* side gutter: never tighter than 20px, a little more on large screens */
+  --offset: clamp(20px, 2.5rem, 48px);
   --header-h: 3rem;
   --vh: 100vh;
 
@@ -266,11 +267,11 @@ html.lenis, html.lenis body { height: auto; }
 }
 @media (hover: none) { .floating-tip { display: none; } }
 
-.cookies { position: fixed; left: 0.5rem; bottom: 0.5rem; z-index: 60; width: calc(50% - 1rem); display: none; }
+.cookies { position: fixed; left: var(--offset); bottom: max(12px, 0.75rem); z-index: 60; width: calc(50% - 2 * var(--offset)); display: none; }
 .cookies.is-visible { display: block; }
-.cookies_card { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem 0.5rem 0.75rem; display: grid; gap: 2rem; }
+.cookies_card { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 1rem 1.25rem 1.25rem; display: grid; gap: 2rem; }
 .cookies_btns { display: flex; gap: 1rem; }
-@media (max-width: 767px) { .cookies { width: calc(100% - 1rem); } }
+@media (max-width: 767px) { .cookies { width: calc(100% - 2 * var(--offset)); } }
 
 .landscape-cover { display: none; }
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) {
@@ -636,7 +637,7 @@ html.lenis, html.lenis body { height: auto; }
 .showroom.is-reverse .mission_content { grid-column: 2 / span 4; grid-row: 1; }
 .showroom .mission_content { grid-column: 7 / span 4; }
 .showroom_addr { color: var(--fg-muted); }
-.media-tag { position: absolute; left: 0.5rem; bottom: 0.5rem; z-index: 1; padding: 0.25rem 0.5rem; background: rgb(36 34 58 / 0.65); color: var(--c-light); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.media-tag { position: absolute; left: 0.75rem; bottom: 0.75rem; z-index: 1; padding: 0.25rem 0.5rem; background: rgb(36 34 58 / 0.65); color: var(--c-light); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .footnote, .draft-note { max-width: 36rem; }
 @media (max-width: 767px) {
   .mission_img.is-tall, .showroom .mission_content, .showroom.is-reverse .mission_img, .showroom.is-reverse .mission_content { grid-column: 1 / -1; grid-row: auto; }
@@ -890,7 +891,7 @@ html[data-site="light"] .fluid-cursor { mix-blend-mode: multiply; opacity: 0.5; 
 
 /* Theme switcher (for comparing the two directions) */
 .site-switch {
-  position: fixed; right: 0.5rem; bottom: 0.5rem; z-index: 70; display: flex; gap: 0.25rem; padding: 0.25rem;
+  position: fixed; right: var(--offset); bottom: max(12px, 0.75rem); z-index: 70; display: flex; gap: 0.25rem; padding: 0.25rem;
   border-radius: 2rem; background: color-mix(in srgb, var(--bg) 88%, transparent); color: var(--fg);
   box-shadow: 0 0 0 1px var(--line); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
 }
