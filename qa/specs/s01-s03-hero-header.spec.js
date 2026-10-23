@@ -1,9 +1,9 @@
 // S01 preloader → hero hand-off, S02 hero scroll-out, S03 header auto-hide.
-import { test, expect, url, frameRecorder, stateShot, scrollToY } from '../helpers.js';
+import { test, expect, url, frameRecorder, stateShot, scrollToY, QUICK } from '../helpers.js';
 
-test.use({ video: 'on' });
+test.use({ video: QUICK ? 'retain-on-failure' : 'on' }); // full runs keep video as evidence
 
-test('S01 preloader hands off seamlessly into the hero', async ({ page }, testInfo) => {
+test('S01 preloader hands off seamlessly into the hero', { tag: '@quick' }, async ({ page }, testInfo) => {
   const rec = frameRecorder(testInfo, 'S01-preloader');
   const t0 = Date.now();
   await page.goto(url('/'), { waitUntil: 'domcontentloaded' });

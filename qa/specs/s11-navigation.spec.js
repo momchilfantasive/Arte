@@ -1,10 +1,12 @@
 // S11 Barba page transitions, history, mobile menu, theme switcher.
-import { test, expect, open, frameRecorder } from '../helpers.js';
+import { test, expect, open, frameRecorder, QUICK } from '../helpers.js';
 
-test.use({ video: 'on' });
-const pages = ['curtains.html', 'villa-albinoni.html', 'outdoor.html', 'projects.html', 'showrooms.html', 'showroom-interiors.html', 'showroom-outdoor.html', 'professionals.html', 'contact.html'];
+test.use({ video: QUICK ? 'retain-on-failure' : 'on' }); // full runs keep video as evidence
+const all = ['curtains.html', 'villa-albinoni.html', 'outdoor.html', 'projects.html', 'showrooms.html', 'showroom-interiors.html', 'showroom-outdoor.html', 'professionals.html', 'contact.html'];
+// Quick: one page per template (solution, project, listing, showroom, booking)
+const pages = QUICK ? ['curtains.html', 'villa-albinoni.html', 'projects.html', 'showroom-interiors.html', 'contact.html'] : all;
 
-test('S11 every page loads through the page transition and history works', async ({ page }, testInfo) => {
+test('S11 every page loads through the page transition and history works', { tag: '@quick' }, async ({ page }, testInfo) => {
   await open(page, '/');
   const rec = frameRecorder(testInfo, 'S11-navigation');
   const results = [];
@@ -30,10 +32,10 @@ test('S11 every page loads through the page transition and history works', async
     expect(r.overlay, `${r.p}: overlay hidden after transition`).toBe('hidden');
     expect(r.h1, `${r.p}: has a heading`).toBeTruthy();
   }
-  expect(back, 'history back returns to the previous page').toContain('professionals');
+  expect(back, 'history back returns to the previous page').toContain(pages.at(-2).replace('.html', ''));
 });
 
-test('S11 mobile menu opens and closes', async ({ page }, testInfo) => {
+test('S11 mobile menu opens and closes', { tag: '@quick' }, async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('phone'), 'menu button only on phones');
   await open(page, '/');
   await page.click('[data-menu-open]'); await page.waitForTimeout(1200);

@@ -1,7 +1,7 @@
 // Reduced-motion pass: content must be readable and reachable without waiting for animation.
 import { test, expect, url, scrollToY, topOf, stateShot } from '../helpers.js';
 
-test('Reduced motion: preloader duration and immediate content', async ({ page }, testInfo) => {
+test('Reduced motion: preloader duration and immediate content', { tag: '@quick' }, async ({ page }, testInfo) => {
   // Guard: fail loudly if the project stops emulating the preference (it once silently did)
   await page.goto('about:blank');
   expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches), 'reduced motion emulated').toBe(true);

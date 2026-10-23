@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export const THEME = process.env.QA_THEME || 'light';
+// Quick suite (npm run qa:quick): same assertions, coarser sampling where a test samples a range.
+export const QUICK = !!process.env.QA_QUICK;
 const ART = path.resolve(import.meta.dirname, 'artifacts');
 
 // Auto fixture: collects page errors, console errors and failed requests for every test.
@@ -29,7 +31,15 @@ export { expect };
 export const url = (p, q = '') => `${p}${p.includes('?') ? '&' : '?'}theme=${THEME}${q}`;
 
 // Load a page and wait for the preloader hand-off, fonts and the hero intro.
-export async function open(page, p, { q = '', preloaderTimeout = 20_000 } = {}) {
+// Quick runs skip the first-load preloader (~10 s per test) unless a test asks for it: the page then
+// starts like after a page transition (hero intro, no loader). S01 always covers the real preloader.
+export async function open(page, p, { q = '', preloaderTimeout = 20_000, preloader = !QUICK } = {}) {
+  if (!preloader) {
+    await page.addInitScript(() => new MutationObserver((_, mo) => {
+      const el = document.querySelector('[data-preloader]');
+      if (el) { el.remove(); mo.disconnect(); }
+    }).observe(document, { childList: true, subtree: true }));
+  }
   await page.goto(url(p, q), { waitUntil: 'load' });
   await page.waitForFunction(() => !document.querySelector('[data-preloader]'), null, { timeout: preloaderTimeout });
   await page.evaluate(() => document.fonts.ready);

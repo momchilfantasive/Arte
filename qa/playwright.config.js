@@ -9,15 +9,19 @@ const viewports = [
   { id: 'desktop-1440', use: { viewport: { width: 1440, height: 900 } } },
 ];
 const engines = ['chromium', 'webkit'];
+// npm run qa:quick → @quick-tagged tests on the everyday devices only
+const QUICK = !!process.env.QA_QUICK;
+const quickProjects = ['chromium-ipad-1180', 'chromium-phone-390', 'chromium-reduced-1180'];
 
 export default defineConfig({
   testDir: './specs',
+  grep: QUICK ? /@quick/ : undefined,
   outputDir: './artifacts/test-results',
   timeout: 120_000,
   expect: { timeout: 10_000 },
   fullyParallel: true,
-  workers: process.env.QA_WORKERS ? Number(process.env.QA_WORKERS) : 3,
-  reporter: [['list'], ['json', { outputFile: 'artifacts/results.json' }]],
+  workers: process.env.QA_WORKERS ? Number(process.env.QA_WORKERS) : QUICK ? 4 : 3,
+  reporter: [['list'], ['json', { outputFile: QUICK ? 'artifacts/results-quick.json' : 'artifacts/results.json' }]],
   use: {
     baseURL: process.env.QA_BASE_URL || 'http://localhost:4173',
     trace: 'retain-on-failure',
@@ -38,7 +42,7 @@ export default defineConfig({
       testMatch: /reduced-motion/,
       use: { browserName: engine, viewport: { width: 1180, height: 820 }, hasTouch: true, contextOptions: { reducedMotion: 'reduce' } },
     })),
-  ],
+  ].filter((p) => !QUICK || quickProjects.includes(p.name)),
   webServer: process.env.QA_BASE_URL ? undefined : {
     command: 'npm run build && npx vite preview --port 4173 --strictPort',
     cwd: '..',

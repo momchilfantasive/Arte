@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "qa": "playwright test -c qa/playwright.config.js --project=\"chromium-*\"",
+    "qa:quick": "QA_QUICK=1 playwright test -c qa/playwright.config.js",
     "qa:all": "playwright test -c qa/playwright.config.js"
   },
   "dependencies": {

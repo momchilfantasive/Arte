@@ -1,7 +1,7 @@
 // S06 stacked pinned project cards: dwell, slide-over, no blank gaps, reverse, interruption, reload, resize.
-import { test, expect, open, frameRecorder, scrollToY, topOf, probe } from '../helpers.js';
+import { test, expect, open, frameRecorder, scrollToY, topOf, probe, QUICK } from '../helpers.js';
 
-test.use({ video: 'on' });
+test.use({ video: QUICK ? 'retain-on-failure' : 'on' }); // full runs keep video as evidence
 
 async function sectionRange(page) {
   const top = await topOf(page, '[data-projects]');
@@ -10,12 +10,12 @@ async function sectionRange(page) {
   return { top, end: top + h - vh, vh };
 }
 
-test('S06 forward and reverse scroll keep a card on screen (no blank gaps)', async ({ page }, testInfo) => {
+test('S06 forward and reverse scroll keep a card on screen (no blank gaps)', { tag: '@quick' }, async ({ page }, testInfo) => {
   await open(page, '/');
   const { top, end, vh } = await sectionRange(page);
   const rec = frameRecorder(testInfo, 'S06-projects');
   const steps = [];
-  for (let y = top; y <= end; y += vh * 0.2) steps.push(y);
+  for (let y = top; y <= end; y += vh * (QUICK ? 0.35 : 0.2)) steps.push(y);
   const gaps = [];
   for (const y of steps) {
     await scrollToY(page, y, 600);
@@ -57,7 +57,7 @@ test('S06 rapid interrupted wheel scrolling settles without gaps', async ({ page
   expect(gaps, 'blank gaps during rapid scrolling').toEqual([]);
 });
 
-test('S06 Previous / Next buttons step through cards', async ({ page }, testInfo) => {
+test('S06 Previous / Next buttons step through cards', { tag: '@quick' }, async ({ page }, testInfo) => {
   test.skip(testInfo.project.name.includes('phone'), 'HUD buttons are hidden on phones by design');
   await open(page, '/');
   const { top, end } = await sectionRange(page);
