@@ -40,7 +40,7 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 
 ## Baseline and evidence
 - Creative lock: not yet approved (see `CREATIVE.md`).
-- QA: first harness run 2026-10-23 (Chromium only; WebKit unavailable) — 89 pass / 5 fail / 7 skip. Defects: D1 Prev button broken (major), D2 reduced motion partial (minor a11y), D3 cookie banner covers content (obs.). Report `qa/reports/2026-10-23.md`. Fixes await creative director priorities.
+- QA 2026-10-23 (Chromium only; WebKit unavailable): first run 89/5/7 → after fixes 94 pass / 0 fail / 7 skip. D1 Prev/Next and D2 reduced motion fixed; cookie banner overlap = proposal pending approval. Reports: `qa/reports/2026-10-23.md`, `qa/reports/2026-10-23-fixes.md`.
 
 ## Session handoff
 Last meaningful change: Fantasive v2.1 docs + QA harness (`qa/`). Resume by reading the QA report and the open-items table above.

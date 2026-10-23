@@ -23,7 +23,7 @@ Shared guidance (load selectively; a link is not proof of reading): https://gith
 Label mocks: the booking form sends nothing, availability and reels are samples, showroom data must be confirmed. Never present WebKit emulation as iPad/iOS Safari testing. Report checks as passed / failed / not run.
 
 ## QA
-Harness: `qa/` (Playwright, Chromium + WebKit projects, scene IDs from the choreography map). Run `npm run qa` (Chromium) or `npm run qa:all`. Reports live in `qa/reports/`; raw artifacts in `qa/artifacts/` (git-ignored). Physical iPad/iPhone Safari passes are separate and owned by the creative director.
+Harness: `qa/` (Playwright, Chromium + WebKit projects, scene IDs from the choreography map). Run `npm run qa` (Chromium) or `npm run qa:all`. Reports live in `qa/reports/`; raw artifacts in `qa/artifacts/` (git-ignored). Physical iPad/iPhone Safari passes are separate and owned by the creative director. Never rebuild `dist/` while a run is using the preview server. Report before/after with the fix reverted against the same specs.
 
 ## Creative lock and knowledge
 Creative lock = human approval of a named commit; record it in `CREATIVE.md`. Not a code freeze. Propose reusable learnings to fantasive-knowledge only via a reviewed PR with evidence; never push to its default branch.
