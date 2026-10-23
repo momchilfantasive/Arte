@@ -4,7 +4,7 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 
 ## Current phase and next action
 - **Phase 4 — Creative evolution** (Fantasive Project Standard v2.1). Phases 1–2 done (Lenval principles reference, runnable prototype); phase 3 rules were implicit and are now recorded in `CREATIVE.md`.
-- **Next action:** review the first Visual & Motion QA report (`qa/reports/`), decide which findings to fix (owner: creative director → agent). In parallel: client decision on dark vs light theme (owner: creative director with client).
+- **Next action:** creative director runs the Safari device pass (iPad / Mac / iPhone checklist at the end of `qa/reports/2026-10-23-fixes.md`) and reports per item. Then: theme decision → remove switch → `npm run qa` in the chosen theme → creative-lock decision.
 
 ## Confirmed decisions (creative director, Oct 2026)
 - Content/structure from the client handoff document; English UI copy; home copy revised per CD review (hero “Your space, in a new light.”).
@@ -40,7 +40,7 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 
 ## Baseline and evidence
 - Creative lock: not yet approved (see `CREATIVE.md`).
-- QA 2026-10-23 (Chromium only; WebKit unavailable): first run 89/5/7 → after fixes 94 pass / 0 fail / 7 skip. D1 Prev/Next and D2 reduced motion fixed; cookie banner overlap = proposal pending approval. Reports: `qa/reports/2026-10-23.md`, `qa/reports/2026-10-23-fixes.md`.
+- QA 2026-10-23 (Chromium only; WebKit unavailable here): D1 Prev/Next, D2 reduced motion, D3 cookie-banner overlap fixed and verified. Full `npm run qa` 748 s, 98 pass / 4 expected-fail (D3, before its fix) / 7 skip; after D3: overlaps + consent 16/16 (light), 8/8 (dark); `npm run qa:quick` 106 s, 19 pass / 2 skip. Open: Safari device pass, theme switch covers the hero label on the phone (temporary), dark theme full run. Reports: `qa/reports/2026-10-23.md`, `qa/reports/2026-10-23-fixes.md`. Candidate learnings: fantasive-knowledge PR #4.
 
 ## Session handoff
-Last meaningful change: Fantasive v2.1 docs + QA harness (`qa/`). Resume by reading the QA report and the open-items table above.
+Last meaningful change: QA cycle closed 2026-10-23 (fixes D1–D3, `qa:quick`). Resume by reading `qa/reports/2026-10-23-fixes.md` (iteration close section) and the open-items table above.

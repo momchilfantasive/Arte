@@ -33,20 +33,42 @@ test('Critical overlaps: header, hero and projects HUD (cookie choice made)', { 
   expect(card, 'fixed UI covers project card content').toEqual([]);
 });
 
-// Known issue (qa/reports/2026-10-23-fixes.md): the banner covers card content on every viewport.
-// test.fail keeps it visible in every run; when the fix lands this reports "unexpected pass" — then delete the line.
-
+// Banner visible (no consent yet): it must sit clear of hero CTAs, card content, HUD and the theme switch.
 test('Cookie banner leaves hero and project card content uncovered', { tag: '@quick' }, async ({ page }, testInfo) => {
-  test.fail(true, 'known: cookie banner overlap, fix pending approval');
   await open(page, '/');
-  await page.waitForFunction(() => {
-    const el = document.querySelector('.cookies.is-visible'); if (!el) return false;
-    return getComputedStyle(el).transform === 'none' || new DOMMatrix(getComputedStyle(el).transform).f === 0;
-  }, null, { timeout: 15_000 });
+  await bannerShown(page);
   const hero = await collisions(page, [['.cookies', '.hero_c h1'], ['.cookies', '.hero_c a']]);
+  await stateShot(page, testInfo, 'cookies-hero');
   await atFirstCard(page);
-  const card = await collisions(page, [...CARD(['.cookies']), ['.cookies', '[data-projects-prev]'], ['.cookies', '[data-projects-next]'], ['.site-switch', '.cookies_btns']]);
-  await stateShot(page, testInfo, 'overlaps-cookies');
-  testInfo.annotations.push({ type: 'cookie overlaps', description: JSON.stringify({ hero, card }) });
+  const card = await collisions(page, [...CARD(['.cookies']), ['.cookies', '[data-projects-prev]'], ['.cookies', '[data-projects-next]'], ['.cookies', '.site-switch']]);
+  const box = await page.evaluate(() => { const b = document.querySelector('.cookies').getBoundingClientRect(); return { h: Math.round(b.height), bottomGap: Math.round(innerHeight - b.bottom) }; });
+  await stateShot(page, testInfo, 'cookies-card');
+  testInfo.annotations.push({ type: 'cookie banner', description: JSON.stringify({ hero, card, ...box }) });
   expect([...hero, ...card], 'cookie banner covers key UI').toEqual([]);
 });
+
+const bannerShown = (page) => page.waitForFunction(() => {
+  const el = document.querySelector('.cookies.is-visible');
+  return el && +getComputedStyle(el).opacity === 1 && ['none', 'matrix(1, 0, 0, 1, 0, 0)'].includes(getComputedStyle(el).transform);
+}, null, { timeout: 15_000 });
+
+// Consent keeps working: reachable by keyboard, choice persists across Barba navigation and reload.
+for (const choice of ['accept', 'decline']) {
+  test(`Cookie consent (${choice}): keyboard, navigation and reload`, { tag: choice === 'accept' ? '@quick' : [] }, async ({ page }, testInfo) => {
+    await open(page, '/');
+    await bannerShown(page);
+    let tabs = 0;
+    while (tabs < 60 && !(await page.evaluate((c) => document.activeElement?.matches(`[data-cookies-btn="${c}"]`), choice))) { await page.keyboard.press('Tab'); tabs++; }
+    testInfo.annotations.push({ type: 'tabs to reach button', description: String(tabs) });
+    expect(tabs, `${choice} reachable by keyboard`).toBeLessThan(60);
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(900);
+    expect(await page.locator('[data-cookies]').count(), 'banner removed after choice').toBe(0);
+    expect(await page.evaluate(() => localStorage.getItem('arte:cookies'))).toBe(choice);
+    await page.evaluate(() => { const a = document.createElement('a'); a.href = 'projects.html'; document.querySelector('[data-barba="container"]').appendChild(a); a.click(); });
+    await page.waitForTimeout(3200);
+    expect(await page.locator('.cookies.is-visible').count(), 'no banner after page transition').toBe(0);
+    await page.reload(); await page.waitForTimeout(6500);
+    expect(await page.locator('.cookies.is-visible').count(), 'no banner after reload').toBe(0);
+  });
+}

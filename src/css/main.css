@@ -267,11 +267,19 @@ html.lenis, html.lenis body { height: auto; }
 }
 @media (hover: none) { .floating-tip { display: none; } }
 
-.cookies { position: fixed; left: var(--offset); bottom: max(12px, 0.75rem); z-index: 60; width: calc(50% - 2 * var(--offset)); display: none; }
+/* Compact consent bar, bottom-left, sitting above the bottom UI lane (projects HUD, theme switch)
+   so it never covers the counter, Prev/Next or the switch; clear of the home indicator / safe areas. */
+.cookies {
+  --lane: max(2.75rem, 44px);
+  position: fixed; z-index: 60; display: none;
+  left: max(var(--offset), env(safe-area-inset-left, 0px));
+  bottom: calc(max(12px, 0.75rem, env(safe-area-inset-bottom, 0px)) + var(--lane));
+  width: min(34rem, calc(100% - 2 * var(--offset)));
+}
 .cookies.is-visible { display: block; }
-.cookies_card { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 1rem 1.25rem 1.25rem; display: grid; gap: 2rem; }
-.cookies_btns { display: flex; gap: 1rem; }
-@media (max-width: 767px) { .cookies { width: calc(100% - 2 * var(--offset)); } }
+.cookies_card { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.875rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.cookies_btns { display: flex; gap: 1rem; flex-shrink: 0; }
+@media (max-width: 767px) { .cookies_card { padding: 0.75rem 1rem; gap: 1rem; } }
 
 .landscape-cover { display: none; }
 @media (orientation: landscape) and (max-height: 500px) and (hover: none) {
@@ -864,7 +872,6 @@ a.pgrid_item .pgrid_status { color: var(--accent); }
   .footer_contact { grid-column: 9 / span 4; }
   .footer_copy { grid-column: 1 / span 5; }
   .footer_credits { grid-column: 6 / span 4; }
-  .cookies { width: min(32rem, calc(100% - 1rem)); }
 }
 
 /* =========================================================================
