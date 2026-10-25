@@ -1,4 +1,4 @@
-import { gsap, SplitText } from '../core.js';
+import { gsap, SplitText, reducedMotion } from '../core.js';
 
 // Scroll-triggered reveals driven by data attributes:
 //   [data-reveal]       – text split into masked lines that rise in
@@ -42,6 +42,16 @@ export function initReveals(container) {
     gsap.to(lines, {
       strokeDashoffset: 0, duration: 2.2, stagger: 0.15, ease: 'arte',
       scrollTrigger: { trigger: svg.parentElement, start: 'top 70%', once: true },
+    });
+  });
+
+  // Outlined logo mark: the contour draws in once, like the lines
+  if (reducedMotion) return;
+  container.querySelectorAll('[data-bg-logo] path').forEach((path) => {
+    path.setAttribute('pathLength', 1);
+    gsap.fromTo(path, { strokeDasharray: 1, strokeDashoffset: 1 }, {
+      strokeDashoffset: 0, duration: 3, ease: 'arte',
+      scrollTrigger: { trigger: path.closest('section'), start: 'top 70%', once: true },
     });
   });
 }

@@ -146,6 +146,10 @@ html.lenis, html.lenis body { height: auto; }
 
 .bg-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .bg-lines line { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+/* Large outlined logo mark as a section background (instead of lines) */
+.bg-logo { position: absolute; z-index: 0; pointer-events: none; left: var(--offset); top: 50%; width: calc(50% - 2 * var(--offset)); height: 80%; transform: translateY(-50%); }
+.bg-logo path { fill: none; stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+@media (max-width: 767px) { .bg-logo { left: 50%; width: calc(100% - 2 * var(--offset)); height: 60%; transform: translate(-50%, -50%); } }
 
 .dot { display: inline-block; width: 0.4375rem; height: 0.4375rem; border-radius: 50%; background: var(--accent); flex: none; }
 
