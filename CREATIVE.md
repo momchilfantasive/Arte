@@ -11,7 +11,7 @@
 - **Palette:** indigo `#2e2c47` (dark surfaces, dark text), teal `#62c4ca` (accent on dark/media), deep teal `#2a8a90` (accent on light), off-white `#f6f5f2`; light theme uses white `#ffffff`. Dark/Light switcher is a temporary A/B tool pending client choice.
 - **Type:** Newsreader 300 (display: `.a2` 8rem, `.h1` 4rem, `.h2` 2.5rem; hero title and project names +40%) + Inter Tight 400/500 (body ≥16px, labels ≥11.5px uppercase +0.04em).
 - **Grid:** 12 columns (4 on phones), 16px gap, side gutter `clamp(20px, 2.5rem, 48px)`; fluid rem (`1rem` = 16 design px at 1440 / 375). Tablet range 768–1279px widens narrow text columns.
-- **Composition:** media full-bleed or tall portrait (4:5, 9:16 reels); text left, one compact column; offset/staggered pairs; thin vertical lines (no diagonals, CD 2026-10-25) and leaf-shadow texture on light sections; home closing CTA trials a large grey-outline logo mark instead of lines (contour draws in once).
+- **Composition:** media full-bleed or tall portrait (4:5, 9:16 reels); text left, one compact column; offset/staggered pairs; thin vertical lines (no diagonals, CD 2026-10-25) and leaf-shadow texture on light sections, moved by a light breeze (slow drift + flutter + an occasional soft gust every ~6–12 s; paused off-screen; static under reduced motion); home closing CTA trials a large grey-outline logo mark instead of lines (contour draws in once).
 - **Avoid:** arrow glyphs in buttons (iOS renders some as emoji), dark overlays on plain sections, text against screen edges, background photos behind long copy.
 
 ## Motion DNA
