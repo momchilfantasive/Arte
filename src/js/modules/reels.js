@@ -3,9 +3,21 @@ import { gsap, ScrollTrigger, isTouch, reducedMotion } from '../core.js';
 // Portrait reels: staggered parallax; video plays on hover (desktop) or while
 // mostly in view (touch devices), and rests on its poster otherwise.
 export function initReels(container) {
-  const reels = container.querySelectorAll('[data-reel]');
-  if (!reels.length) return;
   const cleanups = [];
+
+  // Section videos: play muted while in view, rest on the poster otherwise (and always under reduced motion)
+  if (!reducedMotion) {
+    container.querySelectorAll('video[data-inview-play]').forEach((video) => {
+      const st = ScrollTrigger.create({
+        trigger: video, start: 'top bottom', end: 'bottom top',
+        onToggle: ({ isActive }) => (isActive ? video.play?.().catch(() => {}) : video.pause()),
+      });
+      cleanups.push(() => st.kill());
+    });
+  }
+
+  const reels = container.querySelectorAll('[data-reel]');
+  if (!reels.length) return () => cleanups.forEach((fn) => fn());
 
   reels.forEach((reel) => {
     const video = reel.querySelector('video');

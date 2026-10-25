@@ -4,7 +4,7 @@ export function initParallax(container) {
   if (reducedMotion) return;
   // Image drifts inside its frame
   container.querySelectorAll('[data-parallax-img]').forEach((frame) => {
-    const img = frame.querySelector('img');
+    const img = frame.querySelector('img, video');
     gsap.set(img, { scale: 1.15 });
     gsap.fromTo(img, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: frame, scrub: true } });
   });
