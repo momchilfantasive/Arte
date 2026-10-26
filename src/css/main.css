@@ -584,6 +584,23 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 /* Selected projects heading */
+/* Brands: monochrome logo masks in a slow marquee (follows the theme colour) */
+.brands { border-top: 1px solid var(--line); overflow: hidden; }
+.brands_head { row-gap: 1rem; }
+.brands_head > * { grid-column: 1 / span 8; }
+.brands_marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.brands_track { display: flex; width: max-content; animation: brands-scroll 60s linear infinite; }
+.brands_marquee:hover .brands_track { animation-play-state: paused; }
+.brands_list { display: flex; align-items: center; gap: max(4rem, 56px); padding-right: max(4rem, 56px); list-style: none; margin: 0; }
+.brand { flex: none; width: var(--w); height: var(--h); background: var(--fg); opacity: 0.6;
+  -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
+@keyframes brands-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 767px) { .brands_head > * { grid-column: 1 / -1; } .brand { width: calc(var(--w) * 0.8); height: calc(var(--h) * 0.8); } .brands_list { gap: 2.5rem; padding-right: 2.5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .brands_track { animation: none; width: auto; }
+  .brands_track .brands_list[aria-hidden] { display: none; }
+  .brands_list { flex-wrap: wrap; justify-content: center; row-gap: 2.5rem; padding: 0 var(--offset); }
+}
 .projects-intro_g { align-items: end; row-gap: 1rem; }
 .projects-intro_g > .l1 { grid-column: 1 / span 6; }
 .projects-intro_title { grid-column: 1 / span 6; grid-row: 2; }
