@@ -294,9 +294,9 @@ html.lenis, html.lenis body { height: auto; }
 @keyframes rotate-hint { 50% { transform: rotate(-90deg); } }
 
 /* Animated leaf-shadow overlay (procedural; swap for a video if you have one) */
-.shadow-leaves { position: absolute; inset: -10%; pointer-events: none; z-index: 0; opacity: 0.45; mix-blend-mode: multiply; filter: blur(1.5rem); }
-.shadow-leaves:not(.is-light) { mix-blend-mode: soft-light; opacity: 0.35; }
-.shadow-leaves i { position: absolute; border-radius: 50%; background: rgb(30 28 52 / 0.35); }
+.shadow-leaves { position: absolute; inset: -6%; pointer-events: none; z-index: 0; overflow: hidden; container-type: size; mix-blend-mode: multiply; opacity: 0.22; }
+.shadow-leaves .frond { position: absolute; height: auto; overflow: visible; will-change: transform; }
+.shadow-leaves .frond path { fill: rgb(38 34 46); }
 
 /* =========================================================================
    Sections — Home
@@ -910,7 +910,6 @@ html[data-site="light"] .theme_on-dark {
   --accent: var(--c-accent-ink);
 }
 html[data-site="light"] .preloader_logo, html[data-site="light"] .transition_logo { color: var(--c-accent-ink); }
-html[data-site="light"] .shadow-leaves:not(.is-light) { mix-blend-mode: multiply; opacity: 0.4; }
 html[data-site="light"] .projects { background: var(--c-paper); }
 html[data-site="light"] .project-card_dim { background: var(--c-paper); }
 html[data-site="light"] .cookies_card { box-shadow: 0 0 0 1px var(--line); }

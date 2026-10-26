@@ -44,10 +44,3 @@ test('S11 mobile menu opens and closes', { tag: '@quick' }, async ({ page }, tes
   expect(await page.getAttribute('[data-menu-open]', 'aria-expanded')).toBe('false');
 });
 
-test('Theme switcher flips surfaces and persists', async ({ page }) => {
-  await open(page, '/');
-  await page.click('[data-site-set="dark"]');
-  expect(await page.evaluate(() => document.documentElement.dataset.site)).toBe('dark');
-  await page.click('[data-site-set="light"]');
-  expect(await page.evaluate(() => [document.documentElement.dataset.site, localStorage.getItem('arte:site')])).toEqual(['light', 'light']);
-});

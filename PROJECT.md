@@ -4,7 +4,7 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 
 ## Current phase and next action
 - **Phase 4 — Creative evolution** (Fantasive Project Standard v2.1). Phases 1–2 done (Lenval principles reference, runnable prototype); phase 3 rules were implicit and are now recorded in `CREATIVE.md`.
-- **Next action:** creative director runs the Safari device pass (iPad / Mac / iPhone checklist at the end of `qa/reports/2026-10-23-fixes.md`) and reports per item. Then: theme decision → remove switch → `npm run qa` in the chosen theme → creative-lock decision.
+- **Next action:** creative director runs the Safari device pass (iPad / Mac / iPhone checklist at the end of `qa/reports/2026-10-23-fixes.md`) and reports per item. Then: `npm run qa` (light) → creative-lock decision.
 
 ## Confirmed decisions (creative director, Oct 2026)
 - Content/structure from the client handoff document; English UI copy; home copy revised per CD review (hero “Your space, in a new light.”).
@@ -14,12 +14,11 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 - Plain light sections for showrooms and final CTA; FAQ; two showrooms with own pages (Google Maps embed, Call/WhatsApp/Directions).
 - Projects page: clean staggered grid (bbf-inspired). Booking: 5-step wizard (Square-inspired).
 - Footer wordmark removed; wider side gutter.
-- Light theme added with Dark/Light switcher for comparison (`?theme=light|dark`).
+- **Light theme only** (CD, 2026-10-26). Switcher removed; dark CSS kept but unused.
 
 ## Open questions and blockers
 | Item | Owner | Next step |
 |---|---|---|
-| Dark vs light theme | CD + client | Choose; then remove switcher and unused theme |
 | Final hero video and showroom reels | CD | Supply files; agent optimises/replaces `public/video/*` |
 | Copy approval incl. first FAQ answer (temporary treatments) | CD + client | Confirm or replace |
 | Showroom addresses, hours, phones | Client | Confirm (taken from artedellusso.es/contacts) |

@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>
-    /* apply the chosen site theme before first paint (?theme=light|dark or saved choice) */
-    (function () {
-      var t = new URLSearchParams(location.search).get('theme');
-      try { t = t || localStorage.getItem('arte:site'); } catch (e) {}
-      document.documentElement.dataset.site = t === 'light' ? 'light' : 'dark';
-    })();
+    /* light theme only (CD decision 2026-10-26); dark styles are kept but unused */
+    document.documentElement.dataset.site = 'light';
   </script>
   <title>Curtains &amp; voiles — Arte del Lusso</title>
   <meta name="description" content="Made-to-measure curtains and voiles." />
