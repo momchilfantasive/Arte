@@ -19,6 +19,8 @@ function initAutoHide() {
   if (!h) return;
   let last = 0;
   lenis.on('scroll', ({ scroll }) => {
+    // frosted-glass backing once the page has moved off the top
+    h.classList.toggle('is-glass', scroll > 40);
     const delta = scroll - last;
     if (Math.abs(delta) < 4) return;
     const menuOpen = document.querySelector('.modal.is-open');

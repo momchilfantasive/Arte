@@ -197,6 +197,15 @@ html.lenis, html.lenis body { height: auto; }
 }
 .header[data-theme="light"] { --header-fg: var(--c-dark); }
 .header.is-hidden { transform: translateY(-110%); }
+/* iOS-like frosted glass behind the header once scrolled (transparent at the very top) */
+.header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0;
+  background: rgb(30 28 52 / 0.28); border-bottom: 1px solid rgb(255 255 255 / 0.12);
+  -webkit-backdrop-filter: blur(20px) saturate(170%); backdrop-filter: blur(20px) saturate(170%);
+  transition: opacity 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.header.is-glass::before { opacity: 1; }
+.header[data-theme="light"]::before { background: rgb(255 255 255 / 0.55); border-bottom-color: rgb(30 28 52 / 0.08); }
 .header[data-theme="light"] .header_logo { color: var(--c-accent-ink); }
 .header > .container { height: 100%; }
 .header_grid { height: 100%; align-items: center; }
