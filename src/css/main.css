@@ -13,7 +13,7 @@
   --c-success: #1ba64b;
   --c-error: #e23d3d;
 
-  --font-display: "Newsreader", "Times New Roman", serif;
+  --font-display: "Spectral", "Times New Roman", serif;
   --font-body: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
 
   --gap: 1rem;
@@ -88,6 +88,7 @@ html.lenis, html.lenis body { height: auto; }
    Typography
    ========================================================================= */
 .a1, .a2, .h1, .h2 { font-family: var(--font-display); font-weight: 300; }
+.a1, .a2, .h1 { font-weight: 200; } /* Spectral runs heavier than Newsreader: large sizes use ExtraLight */
 .a1 { font-size: 12rem; line-height: 0.75; letter-spacing: -0.032em; }
 .a2 { font-size: 8rem; line-height: 0.82; letter-spacing: -0.032em; }
 .h1 { font-size: 4rem; line-height: 0.9; letter-spacing: -0.032em; }
