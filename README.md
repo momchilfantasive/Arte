@@ -15,7 +15,7 @@
 | Barba.js (page transitions)                | Barba.js 2 + overlay преход                      |
 | Swiper                                     | Swiper 11 (галерия на Projects)                  |
 | Видео сенки на листа, WebGL fluid cursor   | процедурни сенки + лек 2D canvas „светлинна следа“ |
-| Helvetica Now / Financier Display (платени)| Inter Tight / Spectral (Google Fonts)            |
+| Helvetica Now / Financier Display (платени)| Inter Tight / Newsreader (Google Fonts)          |
 
 ## Стартиране
 

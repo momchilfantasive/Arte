@@ -36,7 +36,7 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 
 ## First public preview (retroactive record)
 - Public Vercel preview (`arte-woad.vercel.app`) and an earlier private Claude artifact existed before this record. Public build at time of recording: commit `d2792bc` and later.
-- Originality: code written for this project; no Lenval assets/copy/fonts. Fonts: Spectral, Inter Tight (OFL). Logo, photos, videos and copy: client sources (artedellusso.es, partners.artedellusso.es, Sanity CDN, client handoff document) — use confirmed by the user in chat, not by written client permission.
+- Originality: code written for this project; no Lenval assets/copy/fonts. Fonts: Newsreader, Inter Tight (OFL). Logo, photos, videos and copy: client sources (artedellusso.es, partners.artedellusso.es, Sanity CDN, client handoff document) — use confirmed by the user in chat, not by written client permission.
 - Access control: none (public, unlisted URL).
 - **Outstanding:** human publishing approval and client confirmation of media rights are not recorded. Owner: creative director.
 
