@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* light theme only (CD decision 2026-10-26); dark styles are kept but unused */
+    document.documentElement.dataset.site = 'light';
+  </script>
+  <title>Solutions — Arte del Lusso</title>
+  <meta name="description" content="Curtains, blinds, carpets, wallcoverings and outdoor shading on the Costa del Sol, chosen around the way you live." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Spectral:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+<body>
+<div data-barba="wrapper">
+  <!-- @include partials/shell-top.html -->
+
+  <!-- Category content lives in content/solutions.json (rendered at build time) -->
+  <main data-barba="container" data-barba-namespace="solutions">
+    <!-- 1. HERO (shorter than the homepage hero) -->
+    <section class="section hero is-short theme_on-color" data-bg="color">
+      <div class="hero_bg" data-hero-bg>
+        <img src="img/montemayor.jpg" alt="Sheer voiles and full-length curtains in a bedroom opening onto the garden" class="img" />
+        <div class="hero_shade"></div>
+        <div class="grad-top"></div>
+        <div class="grad-bot"></div>
+      </div>
+      <div class="container hero_c">
+        <div class="grid hero_b">
+          <div class="hero_eyebrow l1" data-hero-fade>Our solutions</div>
+          <h1 class="h1 hero_title" data-hero-title>Details that bring a space together.</h1>
+          <div class="hero_text" data-hero-fade>
+            <p class="p1">Curtains, blinds, carpets and outdoor shading, chosen around the way you live.</p>
+            <a href="#inside" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Explore the solutions</span><span class="l1">Explore the solutions</span></span><span class="dot"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category index: every solution one tap away -->
+    <nav class="section sol-index" data-bg="light" aria-label="Solutions">
+      <div class="container">
+        <div class="grid sol-index_g">
+          <div class="l1 text-muted sol-index_label">Inside</div>
+          <ul class="sol-index_list"><!-- @each content/solutions.json#interior partials/solutions/index-link.html --></ul>
+          <div class="l1 text-muted sol-index_label">Outdoors</div>
+          <ul class="sol-index_list"><!-- @each content/solutions.json#outdoor partials/solutions/index-link.html --></ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. INTERIOR SOLUTIONS: editorial image layout -->
+    <section class="section sol-inside" data-bg="light" id="inside">
+      <div class="container">
+        <div class="u-96"></div>
+        <div class="grid sol-head">
+          <div class="l1 sol-head_eyebrow">01 / Interiors</div>
+          <h2 class="h1 sol-head_title" data-reveal>Inside, made yours.</h2>
+          <p class="p1 sol-head_text" data-reveal-fade>Explore materials, textures and light control that make a room feel right.</p>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid sol-cards">
+          <!-- @each content/solutions.json#interior partials/solutions/interior-card.html -->
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 3. OUTDOOR LIVING: its own chapter, led by the client's outdoor video -->
+    <section class="section sol-out" data-bg="color" id="outdoors">
+      <div class="sol-out_media img-w" data-parallax-img>
+        <video class="img" poster="video/outdoor-poster.jpg" muted loop playsinline preload="metadata" data-inview-play aria-label="An awning extending over a terrace"><source src="video/outdoor.mp4" type="video/mp4" /></video>
+        <div class="grad-bot"></div>
+      </div>
+      <div class="container sol-out_c theme_on-color">
+        <div class="grid sol-out_g">
+          <div class="l1 sol-out_eyebrow">02 / Outdoor living</div>
+          <h2 class="h1 sol-out_title" data-reveal>Make more of the outdoors.</h2>
+          <p class="p1 sol-out_text" data-reveal-fade>Find shade, shelter and comfort for the way you use your terrace.</p>
+          <button type="button" class="l1 sol-out_toggle" data-video-toggle>Pause video</button>
+        </div>
+      </div>
+    </section>
+    <section class="section sol-out-list" data-bg="light">
+      <div class="container">
+        <div class="u-96"></div>
+        <div class="grid sol-entries">
+          <!-- @each content/solutions.json#outdoor partials/solutions/outdoor-entry.html -->
+        </div>
+        <div class="u-48"></div>
+        <p class="p1 text-muted sol-note" data-reveal-fade>Motorisation can be added to many awnings, screens and blinds. We’ll advise on what suits your space.</p>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 4. SOLUTIONS IN A REAL PROJECT: Villa Albinoni -->
+    <section class="section sol-project" data-bg="light">
+      <div class="shadow-leaves" data-leaves aria-hidden="true"></div>
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid sol-project_g">
+          <a href="villa-albinoni.html" class="sol-project_img img-w" data-clip-reveal data-parallax-img data-tip="View project" aria-label="Villa Albinoni — view the project"><img src="img/albinoni3.jpg" alt="Sheer voiles across the double-height windows of the living room at Villa Albinoni" class="img" loading="lazy" /></a>
+          <div class="sol-project_b">
+            <div class="l1">03 / In a real project · Villa Albinoni, Marbella</div>
+            <h2 class="h1" data-reveal>See how it comes together.</h2>
+            <p class="p1" data-reveal-fade>Explore the materials and window treatments behind a completed ARTE project.</p>
+            <ul class="sol-plist" data-reveal-fade><!-- @each content/solutions.json#project partials/solutions/project-item.html --></ul>
+            <a href="villa-albinoni.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">View the project</span><span class="l1">View the project</span></span><span class="dot"></span></a>
+          </div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 5. ADVICE THROUGH INSTALLATION -->
+    <section class="section sol-process" data-bg="light">
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid sol-head">
+          <div class="l1 sol-head_eyebrow">04 / How we work</div>
+          <h2 class="h1 sol-head_title" data-reveal>From the first idea to the finishing details.</h2>
+          <p class="p1 sol-head_text" data-reveal-fade>We help you compare the options, choose materials and bring everything together, with measuring, installation and support afterwards.</p>
+        </div>
+        <div class="u-96"></div>
+        <ol class="grid sol-steps"><!-- @each content/solutions.json#process partials/solutions/process-step.html --></ol>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 6. CLOSING INVITATION -->
+    <section class="section cta is-plain" data-bg="light">
+      <!-- @include partials/bg-logo.html -->
+      <div class="container cta_c">
+        <div class="u-128"></div>
+        <div class="grid">
+          <div class="l1 cta_eyebrow">Start with your space</div>
+          <h2 class="h1 cta_title" data-reveal>Not sure where to start?</h2>
+          <p class="p1 cta_lede" data-reveal-fade>Bring a photo, a plan or an idea. We’ll help you explore the options.</p>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid">
+          <div class="cta_desc">
+            <a href="contact.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
+            <a href="showrooms.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Visit our showrooms</span><span class="l1">Visit our showrooms</span></span></a>
+          </div>
+        </div>
+        <div class="u-48"></div>
+        <div class="grid">
+          <p class="l1 text-muted sol-pro">Working on a client project? <a href="professionals.html" class="sol-pro_link">For professionals</a></p>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- @include partials/footer.html -->
+  </main>
+
+  <!-- @include partials/shell-bottom.html -->
+</div>
+</body>
+</html>

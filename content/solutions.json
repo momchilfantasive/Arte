@@ -1,0 +1,66 @@
+{
+  "_note": "Solutions overview content (rendered at build time by the @each include in vite.config.js). Move to a CMS later. imageSource: 'arte' = ARTE project/client photo, 'supplier-temp' = manufacturer imagery from artedellusso.es used as a temporary placeholder (replace with ARTE photography). To remove or rename a category, edit or delete its entry here.",
+  "interior": [
+    {
+      "id": "curtains", "layout": "is-xl", "name": "Curtains & voiles",
+      "description": "Soft light, texture and privacy, made for your windows.",
+      "href": "curtains.html", "linkLabel": "Explore curtains & voiles",
+      "image": "img/quinta.jpg", "alt": "Floor-to-ceiling sheer voiles in a dining room at Villa in La Quinta",
+      "imageSource": "arte"
+    },
+    {
+      "id": "blinds", "layout": "is-tall", "name": "Blinds & screens",
+      "description": "Control daylight and privacy throughout the day.",
+      "href": "contact.html?interest=blinds", "linkLabel": "Ask about blinds & screens",
+      "image": "img/solutions/blinds-supplier-temp.jpg", "alt": "Day-and-night blinds on tall windows in a bright dining room",
+      "imageSource": "supplier-temp"
+    },
+    {
+      "id": "carpets", "layout": "is-sm", "name": "Carpets & rugs",
+      "description": "Comfort, colour and texture underfoot.",
+      "href": "contact.html?interest=carpets", "linkLabel": "Ask about carpets & rugs",
+      "image": "img/carpets.jpg", "alt": "A textured rug beside sheer curtains",
+      "imageSource": "arte"
+    },
+    {
+      "id": "wallcoverings", "layout": "is-md", "name": "Wallcoverings",
+      "description": "Add depth and character to the room.",
+      "href": "contact.html?interest=wallpaper", "linkLabel": "Ask about wallcoverings",
+      "image": "img/solutions/wallcoverings-supplier-temp.jpg", "alt": "A patterned wallcovering behind an armchair",
+      "imageSource": "supplier-temp"
+    }
+  ],
+  "outdoor": [
+    {
+      "id": "awnings", "name": "Awnings",
+      "description": "Flexible shade for terraces and outdoor seating.",
+      "href": "outdoor.html#awnings", "linkLabel": "Explore awnings"
+    },
+    {
+      "id": "pergolas", "name": "Pergolas",
+      "description": "Create a more defined space for outdoor living.",
+      "href": "outdoor.html#pergolas", "linkLabel": "Explore pergolas"
+    },
+    {
+      "id": "outdoor-screens", "name": "Outdoor screens",
+      "description": "Add shade and privacy where you need them.",
+      "href": "outdoor.html#screens", "linkLabel": "Explore outdoor screens"
+    }
+  ],
+  "project": [
+    {
+      "name": "Curtains & voiles", "note": "Sheer voiles",
+      "href": "curtains.html", "linkLabel": "Explore curtains & voiles"
+    },
+    {
+      "name": "Blinds & tracks", "note": "Motorised blinds",
+      "href": "contact.html?interest=blinds&project=villa-albinoni", "linkLabel": "Ask about blinds & tracks"
+    }
+  ],
+  "process": [
+    { "name": "Personal advice", "description": "Start with your space, your priorities and the way you want it to feel." },
+    { "name": "Materials & finishes", "description": "Compare fabrics, colours and systems with guidance from the team." },
+    { "name": "Measuring & installation", "description": "Bring the choices together with accurate measurements and careful fitting." },
+    { "name": "Aftercare & support", "description": "Keep a direct point of contact after installation." }
+  ]
+}

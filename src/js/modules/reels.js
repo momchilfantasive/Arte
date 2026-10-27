@@ -5,16 +5,28 @@ import { gsap, ScrollTrigger, isTouch, reducedMotion } from '../core.js';
 export function initReels(container) {
   const cleanups = [];
 
-  // Section videos: play muted while in view, rest on the poster otherwise (and always under reduced motion)
-  if (!reducedMotion) {
-    container.querySelectorAll('video[data-inview-play]').forEach((video) => {
-      const st = ScrollTrigger.create({
-        trigger: video, start: 'top bottom', end: 'bottom top',
-        onToggle: ({ isActive }) => (isActive ? video.play?.().catch(() => {}) : video.pause()),
-      });
-      cleanups.push(() => st.kill());
+  // Section videos: play muted while in view, rest on the poster otherwise (and always under reduced motion).
+  // An optional [data-video-toggle] button in the same section pauses/plays it; a manual pause sticks.
+  container.querySelectorAll('video[data-inview-play]').forEach((video) => {
+    const toggle = video.closest('section')?.querySelector('[data-video-toggle]');
+    let userPaused = reducedMotion;
+    const sync = () => {
+      if (!toggle) return;
+      toggle.textContent = video.paused ? 'Play video' : 'Pause video';
+    };
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    sync();
+    toggle?.addEventListener('click', () => {
+      userPaused = !video.paused;
+      if (userPaused) video.pause(); else video.play?.().catch(() => {});
     });
-  }
+    const st = ScrollTrigger.create({
+      trigger: video, start: 'top bottom', end: 'bottom top',
+      onToggle: ({ isActive }) => (isActive && !userPaused ? video.play?.().catch(() => {}) : video.pause()),
+    });
+    cleanups.push(() => st.kill());
+  });
 
   const reels = container.querySelectorAll('[data-reel]');
   if (!reels.length) return () => cleanups.forEach((fn) => fn());

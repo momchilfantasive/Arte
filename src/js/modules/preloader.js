@@ -1,9 +1,10 @@
 import { gsap, Flip, lenis, reducedMotion } from '../core.js';
 
-// Resolves when every <img> on the page has loaded (or failed)
+// Resolves when every eager <img> on the page has loaded (or failed).
+// Lazy images are skipped: they only load near the viewport, so waiting for them would never end.
 const imagesLoaded = () =>
   Promise.all(
-    [...document.images].map((img) =>
+    [...document.images].filter((img) => img.loading !== 'lazy').map((img) =>
       img.complete ? Promise.resolve() : new Promise((r) => img.addEventListener('load', r, { once: true }) || img.addEventListener('error', r, { once: true }))
     )
   );

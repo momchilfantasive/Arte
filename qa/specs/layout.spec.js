@@ -1,9 +1,9 @@
 // Responsive layout & typography on every page: overflow, gutters, minimum text sizes.
 import { test, expect, open, stateShot } from '../helpers.js';
 
-const pages = ['/', '/curtains.html', '/villa-albinoni.html', '/outdoor.html', '/projects.html', '/showrooms.html', '/showroom-interiors.html', '/professionals.html', '/contact.html'];
+const pages = ['/', '/solutions.html', '/curtains.html', '/villa-albinoni.html', '/outdoor.html', '/projects.html', '/showrooms.html', '/showroom-interiors.html', '/professionals.html', '/contact.html'];
 
-const quick = ['/', '/contact.html']; // home (all scenes) + booking
+const quick = ['/', '/solutions.html', '/contact.html']; // home (all scenes) + booking
 
 for (const p of pages) {
   test(`Layout ${p}: no overflow, gutters, readable type`, { tag: quick.includes(p) ? '@quick' : [] }, async ({ page }, testInfo) => {

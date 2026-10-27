@@ -34,6 +34,7 @@ npm run preview
 | Маршрут в документа         | Файл                  |
 | --------------------------- | --------------------- |
 | `/`                         | `index.html`          |
+| `/solutions/`               | `solutions.html` (обзор; съдържание в `content/solutions.json`) |
 | `/solutions/curtains/`      | `curtains.html`       |
 | `/solutions/outdoor/`       | `outdoor.html`        |
 | `/projects/`                | `projects.html`       |

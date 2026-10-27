@@ -2,9 +2,9 @@
 import { test, expect, open, frameRecorder, QUICK } from '../helpers.js';
 
 test.use({ video: QUICK ? 'retain-on-failure' : 'on' }); // full runs keep video as evidence
-const all = ['curtains.html', 'villa-albinoni.html', 'outdoor.html', 'projects.html', 'showrooms.html', 'showroom-interiors.html', 'showroom-outdoor.html', 'professionals.html', 'contact.html'];
+const all = ['solutions.html', 'curtains.html', 'villa-albinoni.html', 'outdoor.html', 'projects.html', 'showrooms.html', 'showroom-interiors.html', 'showroom-outdoor.html', 'professionals.html', 'contact.html'];
 // Quick: one page per template (solution, project, listing, showroom, booking)
-const pages = QUICK ? ['curtains.html', 'villa-albinoni.html', 'projects.html', 'showroom-interiors.html', 'contact.html'] : all;
+const pages = QUICK ? ['solutions.html', 'curtains.html', 'villa-albinoni.html', 'projects.html', 'showroom-interiors.html', 'contact.html'] : all;
 
 test('S11 every page loads through the page transition and history works', { tag: '@quick' }, async ({ page }, testInfo) => {
   await open(page, '/');

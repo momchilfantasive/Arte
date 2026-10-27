@@ -39,6 +39,7 @@ Scene IDs are used in `qa/` tests and reports.
 | S11 | Page transition (Barba) | Overlay wipes up with lines + logo → new page, hero intro | 0.9 s + 1 s | Fixed overlay z100 | Back/forward history | Same |
 | S12 | Booking wizard (contact) | Step fades in, summary updates live; validation inline; done screen | 0.6 s per step | Sticky summary (desktop/tablet) | Back/step tabs | Summary above form on phone |
 | S13 | Showroom page | Hero, quick actions, reel, facts, embedded Google Map | Reveal once | iframe map | — | Stacked |
+| S14 | Solutions overview (`solutions.html`) | Short hero (78vh, image settles + push-back) → category index → editorial interior cards (clip reveal + inner parallax; curtains/blinds largest) → outdoor chapter (client video, plays in view, Pause/Play button) → Villa Albinoni with solution links → 4-step process → plain CTA with outline logo | Reveals once; no pins | Content from `content/solutions.json` via build-time `@each` | Anchors via Lenis; Barba to category pages | Stacked cards, index wraps; reduced motion: no parallax, video on poster |
 
 ## Creative lock
 Status: **not yet approved.** Open creative decisions: dark vs light theme, final reels/hero video, client copy approval. When approved, record commit, date, approver, locked scope and accepted QA gaps here.

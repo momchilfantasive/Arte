@@ -53,6 +53,7 @@ export function initContactForm(container) {
   if (interest === 'curtains') check('products', 'curtains');
   if (interest === 'outdoor') check('products', 'outdoor');
   if (interest === 'several') check('products', 'unsure');
+  else if (interest) check('products', interest); // blinds, carpets, wallpaper, tracks…
   if (PROJECTS[q.get('project')]) form.message.value = `I’m interested in a solution inspired by ${PROJECTS[q.get('project')]}.`;
   check('contact', 'phone'); check('lang', 'en');
 

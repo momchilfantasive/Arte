@@ -939,3 +939,109 @@ html[data-site="light"] .fluid-cursor { mix-blend-mode: multiply; opacity: 0.5; 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* =========================================================================
+   Solutions overview (solutions.html) — content from content/solutions.json
+   ========================================================================= */
+.hero.is-short { height: calc(var(--vh) * 0.78); min-height: 34rem; }
+.hero.is-short .hero_title { font-size: 4.6rem; }
+.hero.is-short .hero_b { grid-template-rows: 1fr auto auto auto 0.5fr; }
+
+/* category index */
+.sol-index { border-bottom: 1px solid var(--line); }
+.sol-index_g { align-items: baseline; row-gap: 0.75rem; padding: 1.25rem 0; }
+.sol-index_label { grid-column: span 1; }
+.sol-index_list { grid-column: span 5; display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; list-style: none; margin: 0; padding: 0; }
+.sol-index_link { display: inline-block; padding: 0.5rem 0; color: var(--fg); background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.5s var(--ease-out); }
+.sol-index_link:hover, .sol-index_link:focus-visible { background-size: 100% 1px; }
+
+/* section heads */
+.sol-head { row-gap: 1.5rem; align-items: end; }
+.sol-head_eyebrow { grid-column: 1 / -1; }
+.sol-head_title { grid-column: 1 / span 6; }
+.sol-head_text { grid-column: 8 / span 4; }
+
+/* interior cards: editorial layout, curtains + blinds lead */
+.sol-cards { row-gap: 7rem; align-items: start; }
+.sol-card { display: grid; gap: 1.5rem; color: inherit; text-decoration: none; }
+.sol-card_img { display: block; position: relative; overflow: hidden; }
+.sol-card_b { display: grid; gap: 0.75rem; justify-items: start; max-width: 30rem; }
+.sol-card_name { display: block; }
+.sol-card_link { margin-top: 0.75rem; }
+.sol-card.is-xl { grid-column: 1 / span 7; }
+.sol-card.is-xl .sol-card_img { aspect-ratio: 4 / 3; }
+.sol-card.is-tall { grid-column: 9 / span 4; margin-top: 12rem; }
+.sol-card.is-tall .sol-card_img { aspect-ratio: 4 / 5; }
+.sol-card.is-sm { grid-column: 2 / span 3; }
+.sol-card.is-sm .sol-card_img { aspect-ratio: 3 / 4; }
+.sol-card.is-md { grid-column: 7 / span 5; margin-top: 8rem; }
+.sol-card.is-md .sol-card_img { aspect-ratio: 3 / 2; }
+.sol-card:focus-visible { outline-offset: 0.75rem; }
+
+/* outdoor chapter */
+.sol-out { height: calc(var(--vh) * 0.9); min-height: 36rem; display: flex; align-items: flex-end; }
+.sol-out_media { position: absolute; inset: 0; }
+.sol-out_media .grad-bot { position: absolute; inset: auto 0 0; height: 60%; background: linear-gradient(transparent, rgb(22 20 40 / 0.6)); }
+.sol-out_c { position: relative; z-index: 1; width: 100%; background: none; padding-bottom: 3rem; }
+.sol-out_g { row-gap: 1.25rem; align-items: end; }
+.sol-out_eyebrow { grid-column: 1 / -1; }
+.sol-out_title { grid-column: 1 / span 7; }
+.sol-out_text { grid-column: 1 / span 4; }
+.sol-out_toggle { grid-column: 11 / span 2; justify-self: end; padding: 0.75rem 0; color: inherit; border-bottom: 1px solid currentColor; }
+.sol-entries { row-gap: 3rem; }
+.sol-entry { grid-column: span 4; display: grid; gap: 0.75rem; justify-items: start; align-content: start; padding-top: 1.5rem; border-top: 1px solid var(--line); color: inherit; text-decoration: none; }
+.sol-entry .link-line { margin-top: 1rem; }
+.sol-note { max-width: 36rem; }
+
+/* real project */
+.sol-project .container { position: relative; z-index: 1; }
+.sol-project_g { row-gap: 3rem; align-items: center; }
+.sol-project_img { grid-column: 1 / span 6; aspect-ratio: 4 / 5; display: block; }
+.sol-project_b { grid-column: 8 / span 5; display: grid; gap: 1.5rem; justify-items: start; }
+.sol-plist { list-style: none; margin: 1rem 0; padding: 0; width: 100%; }
+.sol-pitem { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1.5rem; align-items: baseline; padding: 1.25rem 0; border-top: 1px solid var(--line); color: inherit; text-decoration: none; }
+.sol-plist li:last-child .sol-pitem { border-bottom: 1px solid var(--line); }
+.sol-pitem_note { grid-column: 1; }
+.sol-pitem .link-line { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+
+/* process */
+.sol-steps { list-style: none; margin: 0; padding: 0; row-gap: 3rem; }
+.sol-step { grid-column: span 3; display: grid; gap: 0.75rem; align-content: start; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.sol-step_desc { max-width: 22rem; }
+
+/* closing */
+.sol-pro { grid-column: 7 / span 6; }
+.sol-pro_link { color: var(--fg); border-bottom: 1px solid var(--c-accent); padding-bottom: 0.15rem; margin-left: 0.5rem; }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .sol-head_title { grid-column: 1 / span 8; }
+  .sol-head_text { grid-column: 1 / span 7; }
+  .sol-card.is-tall { grid-column: 8 / span 5; margin-top: 8rem; }
+  .sol-card.is-sm { grid-column: 1 / span 4; }
+  .sol-card.is-md { grid-column: 7 / span 5; margin-top: 6rem; }
+  .sol-index_label { grid-column: span 2; }
+  .sol-index_list { grid-column: span 10; }
+  .sol-project_img { grid-column: 1 / span 6; }
+  .sol-project_b { grid-column: 7 / span 6; }
+  .sol-step { grid-column: span 6; }
+}
+@media (max-width: 767px) {
+  .hero.is-short { height: calc(var(--vh) * 0.82); min-height: 0; }
+  .hero.is-short .hero_title { font-size: 3.4rem; }
+  .sol-index_label, .sol-index_list { grid-column: 1 / -1; }
+  .sol-index_list { gap: 0 1.25rem; }
+  .sol-head_title, .sol-head_text { grid-column: 1 / -1; }
+  .sol-cards { row-gap: 4.5rem; }
+  .sol-card.is-xl, .sol-card.is-tall { grid-column: 1 / -1; margin-top: 0; }
+  .sol-card.is-sm { grid-column: 1 / span 3; }
+  .sol-card.is-md { grid-column: 2 / span 3; margin-top: 0; }
+  .sol-out { height: auto; min-height: calc(var(--vh) * 0.75); }
+  .sol-out_title, .sol-out_text { grid-column: 1 / -1; }
+  .sol-out_toggle { grid-column: 1 / -1; justify-self: start; }
+  .sol-entry { grid-column: 1 / -1; }
+  .sol-project_img, .sol-project_b { grid-column: 1 / -1; }
+  .sol-pitem { grid-template-columns: 1fr; }
+  .sol-pitem .link-line { grid-column: 1; grid-row: auto; margin-top: 0.5rem; }
+  .sol-step { grid-column: 1 / -1; }
+  .sol-pro { grid-column: 1 / -1; }
+}

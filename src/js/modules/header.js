@@ -37,7 +37,7 @@ export function initHeader() {
 }
 
 // Mark the current section in the main nav
-const NAV = { home: null, curtains: 'solutions', outdoor: 'solutions', project: 'projects', projects: 'projects', showrooms: 'showrooms', showroom: 'showrooms', professionals: 'professionals', contact: null };
+const NAV = { home: null, solutions: 'solutions', curtains: 'solutions', outdoor: 'solutions', project: 'projects', projects: 'projects', showrooms: 'showrooms', showroom: 'showrooms', professionals: 'professionals', contact: null };
 export function markNav(namespace) {
   document.querySelectorAll('[data-nav]').forEach((a) => {
     const on = a.dataset.nav === NAV[namespace];
