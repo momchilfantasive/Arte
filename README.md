@@ -35,6 +35,7 @@ npm run preview
 | --------------------------- | --------------------- |
 | `/`                         | `index.html`          |
 | `/solutions/`               | `solutions.html` (обзор; съдържание в `content/solutions.json`) |
+| (шаблон за категория)       | `curtains.html` + `content/curtains.json` + `partials/solution/*` — копирай за outdoor/carpets със свое съдържание и подредба |
 | `/solutions/curtains/`      | `curtains.html`       |
 | `/solutions/outdoor/`       | `outdoor.html`        |
 | `/projects/`                | `projects.html`       |

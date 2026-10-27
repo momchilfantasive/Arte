@@ -27,6 +27,8 @@ Prototype website for Arte del Lusso (curtains, blinds, outdoor shading, carpets
 | Solutions page: category pages for blinds & screens, carpets & rugs, wallcoverings | CD | Until they exist, entries open the booking form with that interest preselected (`content/solutions.json`) |
 | Solutions page temporary images | CD + client | `img/solutions/*-supplier-temp.jpg` are manufacturer images from artedellusso.es (blinds, wallcoverings); replace with ARTE photography. Pergolas/outdoor screens have no imagery yet (text entries) |
 | Solutions page copy: motorisation note | CD + client | Confirm “Motorisation can be added to many awnings, screens and blinds” |
+| Curtains page facts (FAQ + imagery) | Client | Each FAQ entry in `content/curtains.json` has a `confirm` note (measuring/installation charges, lead times, motorised systems, limits, care services, aftersales terms); plus the `confirm` list at the end of that file |
+| Curtain brochures / catalogues | Client | Not published yet; page links to the partner site and a professional enquiry instead of downloads |
 
 ## Prototype reality
 - Booking form sends nothing; calendar slots are deterministic sample availability; `.ics` download works locally.

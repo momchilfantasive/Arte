@@ -1,0 +1,93 @@
+{
+  "_note": "Curtains & voiles page content (rendered at build time by @each / @faq-schema in vite.config.js). Plain-text fields only. 'confirm' lists facts the client must confirm before launch; it is never rendered.",
+  "options": [
+    {
+      "id": "sheers", "layout": "is-lead", "name": "Sheer curtains & voiles",
+      "description": "For softer daylight, texture and a sense of openness. Sheers filter the light without closing the room off from the view.",
+      "goodFor": "Living and dining rooms · Large windows · Rooms you use by day",
+      "image": "img/quinta.jpg", "alt": "Floor-to-ceiling sheer voiles filtering daylight in a dining room"
+    },
+    {
+      "id": "privacy", "layout": "is-second", "name": "Dim-out & blackout",
+      "description": "For rooms where privacy or stronger light control matters. Heavier fabrics and linings soften or block the light when you need it.",
+      "goodFor": "Bedrooms · Media rooms · Rental properties",
+      "image": "img/montemayor.jpg", "alt": "Full-length grey curtains and sheer voiles framing the windows of a bedroom"
+    }
+  ],
+  "details": [
+    { "name": "Fabric & transparency", "description": "How much light passes through, how the weave looks against the window and how the fabric feels in the room." },
+    { "name": "Colour & finish", "description": "Colours change with daylight. Comparing samples in the room or in our showroom makes the choice easier." },
+    { "name": "Heading & fall", "description": "The way the top of the curtain is made decides how the folds form and how the fabric hangs to the floor." },
+    { "name": "Tracks & fitting", "description": "Ceiling or wall, discreet or visible: the track is chosen around the window, the ceiling and how far the curtain should draw back." },
+    { "name": "Manual or motorised", "description": "For tall or hard-to-reach windows, or simply for convenience, curtains can be opened by hand or with a motorised track." }
+  ],
+  "project": [
+    { "name": "The room", "description": "A contemporary villa in Marbella, with tall glazing that opens the living spaces to the light and the view." },
+    { "name": "The treatment", "description": "Sheer voiles across the windows, with motorised blinds for everyday light control." },
+    { "name": "The result", "description": "The feeling of openness is kept, while the light becomes softer and the room more intimate." }
+  ],
+  "process": [
+    { "name": "Talk about the room", "description": "Your windows, the light, the privacy you need and the way you use the space." },
+    { "name": "Compare the options", "description": "See fabrics, colours and tracks side by side, in our showroom or at your property." },
+    { "name": "Measure & propose", "description": "We measure the windows and prepare a proposal for the fabrics, making and fitting." },
+    { "name": "Install & support", "description": "Careful installation and finishing, with a direct point of contact afterwards." }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between sheer, dim-out and blackout curtains?",
+      "a": "Sheers and voiles are light and translucent: they soften daylight and add privacy by day while keeping the view. Dim-out fabrics reduce a large part of the light, which suits living spaces and many bedrooms. Blackout fabrics or linings block most of the light for bedrooms and media rooms. Many rooms combine a sheer with a heavier curtain.",
+      "confirm": "Wording is general; confirm the dim-out and blackout ranges ARTE offers."
+    },
+    {
+      "q": "Can I see and compare fabrics before I choose?",
+      "a": "Yes. You can compare fabrics, colours and tracks in our curtains & blinds showroom in San Pedro de Alcántara, or we can discuss options at your property. Seeing samples against your own windows makes the difference in colour and transparency much easier to judge.",
+      "confirm": "Confirm that samples can be viewed at the property and whether samples can be borrowed."
+    },
+    {
+      "q": "Do you measure and install the curtains?",
+      "a": "Yes. Measuring and installation are part of how we work, so the fabric, the making and the track are planned together. The details and costs are set out in your proposal.",
+      "confirm": "Confirm whether measuring is charged, and whether installation is quoted separately."
+    },
+    {
+      "q": "Can you dress very tall, wide or unusually shaped windows?",
+      "a": "Tall and wide glazing is common in homes on the coast. We look at the window, the ceiling and the fixing points when measuring and advise on the fabrics, tracks and operation that will work for that opening.",
+      "confirm": "Confirm any limits (maximum widths or heights, shaped or angled windows, skylights)."
+    },
+    {
+      "q": "Can curtains be motorised?",
+      "a": "Many curtains can be fitted to a motorised track, which is especially practical for tall windows or rooms you want to control easily. Whether it suits your window depends on the space, the fabric and the power supply, and we’ll advise on the options.",
+      "confirm": "Confirm the motorised systems and control options offered; do not name brands until confirmed."
+    },
+    {
+      "q": "What affects the price of made-to-measure curtains?",
+      "a": "The main factors are the fabric, the size and number of windows, the heading and making, the track or motorisation, and installation. After measuring, we prepare a proposal so you can compare options before deciding.",
+      "confirm": "Do not add prices or ranges without client approval."
+    },
+    {
+      "q": "How long does the process take?",
+      "a": "It depends on the fabrics you choose and the scope of the project. Once the selection is made, we’ll give you an estimated timeline for making and installation.",
+      "confirm": "Provide typical lead times if the client wants to publish them."
+    },
+    {
+      "q": "I’m furnishing a rental or preparing a property for sale. Can you help?",
+      "a": "Yes. We can suggest practical, easy-to-live-with fabrics, coordinate several rooms at once and talk through the scope and timing of the project.",
+      "confirm": "Confirm the services offered to investors and rental owners (e.g. coordination of several properties)."
+    },
+    {
+      "q": "How should I care for my curtains?",
+      "a": "Care depends on the fabric. We’ll share the care guidance for the fabrics you choose, and you can contact us if you’re unsure about cleaning or maintenance.",
+      "confirm": "Confirm whether ARTE offers cleaning, removal or re-hanging services."
+    },
+    {
+      "q": "What support is available after installation?",
+      "a": "You keep a direct point of contact with our team after installation, so adjustments or questions about your curtains and tracks can be handled quickly.",
+      "confirm": "Confirm aftersales terms and any guarantees before publishing more detail."
+    }
+  ],
+  "confirm": [
+    "Showroom address and hours (taken from artedellusso.es/contacts).",
+    "Whether the curtains in the Villa in La Quinta and Montemayor photographs are ARTE installations (they are used here as illustrative imagery without project attribution).",
+    "The video band reuses the homepage hero footage, credited on the site as Villa in La Quinta; confirm that the voiles shown are an ARTE installation.",
+    "Brochures or catalogues for curtains and fabrics that may be published (professionals page lists them as pending)."
+  ]
+}

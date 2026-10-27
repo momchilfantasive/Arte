@@ -19,6 +19,12 @@ const htmlInclude = () => ({
             .map((item, i) => t.replace(/\{\{(\w+)\}\}/g, (__, k) => (k === 'n' ? String(i + 1).padStart(2, '0') : esc(item[k]))))
             .join('');
         })
+        // FAQ structured data from the same entries that render the visible FAQ ({ q, a })
+        .replace(/<!--\s*@faq-schema\s+([\w./-]+)#(\w+)\s*-->/g, (_, json, key) => {
+          const faq = JSON.parse(read(json))[key];
+          const data = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+          return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+        })
         .replace(/<!--\s*@include\s+([\w./-]+)\s*-->/g, (_, file) => include(read(file)));
     },
   },

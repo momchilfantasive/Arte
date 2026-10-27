@@ -1044,3 +1044,111 @@ html[data-site="light"] .fluid-cursor { mix-blend-mode: multiply; opacity: 0.5; 
   .sol-step { grid-column: 1 / -1; }
   .sol-pro { grid-column: 1 / -1; }
 }
+
+/* =========================================================================
+   Solution (service) page — curtains.html first; templates in partials/solution/
+   ========================================================================= */
+.svc-actions { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; align-items: end; }
+
+/* hero: text + portrait close-up */
+.svc-hero { padding-top: calc(var(--header-h) + 3rem); }
+.svc-hero_g { align-items: end; row-gap: 3rem; padding-bottom: 4rem; }
+.svc-hero_t { grid-column: 1 / span 7; min-width: 0; display: grid; gap: 2rem; align-content: end; padding-bottom: 1rem; }
+.svc-hero_title { font-size: 6.4rem; max-width: 9.5em; }
+.svc-hero_text { display: grid; gap: 2rem; max-width: 30rem; }
+.svc-hero_img { grid-column: 9 / span 4; margin: 0; display: grid; gap: 0.75rem; }
+.svc-hero_img .img-w { aspect-ratio: 3 / 4; }
+
+/* options: two families, different scale */
+.svc-options_g { row-gap: 5rem; align-items: start; }
+.svc-option { display: grid; gap: 1.75rem; }
+.svc-option_b { display: grid; gap: 0.75rem; max-width: 32rem; }
+.svc-option_good { margin-top: 0.5rem; }
+.svc-option_good .text-muted { margin-right: 0.75rem; }
+.svc-option.is-lead { grid-column: 1 / span 7; }
+.svc-option.is-lead .svc-option_img { aspect-ratio: 4 / 3; }
+.svc-option.is-second { grid-column: 9 / span 4; margin-top: 10rem; }
+.svc-option.is-second .svc-option_img { aspect-ratio: 4 / 5; }
+.svc-layer { align-items: baseline; row-gap: 1.25rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.svc-layer_label { grid-column: 1 / span 2; }
+.svc-layer_text { grid-column: 3 / span 6; }
+.svc-layer_link { grid-column: 10 / span 3; justify-self: end; }
+
+/* in motion */
+.svc-film { height: calc(var(--vh) * 0.86); min-height: 30rem; display: flex; align-items: flex-end; }
+.svc-film_media { position: absolute; inset: 0; }
+.svc-film_media .grad-bot { position: absolute; inset: auto 0 0; height: 40%; }
+.svc-film_c { position: relative; z-index: 1; width: 100%; padding-bottom: 2rem; }
+.svc-film_cap { grid-column: 1 / span 6; align-self: end; }
+
+/* details: visible list beside an image */
+.svc-details_g { row-gap: 4rem; align-items: start; }
+.svc-details_aside { grid-column: 1 / span 5; display: grid; gap: 2rem; }
+.svc-details_img { aspect-ratio: 4 / 3; margin-top: 2rem; }
+.svc-details_list { grid-column: 7 / span 6; margin: 0; border-top: 1px solid var(--line); }
+.svc-detail { display: grid; grid-template-columns: 3rem 1fr; gap: 0.5rem 0; padding: 1.75rem 0; border-bottom: 1px solid var(--line); }
+.svc-detail dt { display: contents; }
+.svc-detail dt .l1 { grid-column: 1; padding-top: 0.35rem; }
+.svc-detail dt .h3 { grid-column: 2; }
+.svc-detail dd { grid-column: 2; margin: 0; max-width: 34rem; }
+
+/* project: two images + room / treatment / result */
+.svc-project .container { position: relative; z-index: 1; }
+.svc-project_g { row-gap: 3rem; align-items: start; }
+.svc-project_main { grid-column: 1 / span 6; aspect-ratio: 4 / 5; display: block; }
+.svc-project_b { grid-column: 8 / span 5; display: grid; gap: 2.5rem; }
+.svc-facts { margin: 0; border-top: 1px solid var(--line); }
+.svc-fact { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+.svc-fact dd { margin: 0; }
+
+/* professional route */
+.svc-pro { row-gap: 1.5rem; align-items: start; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+.svc-pro_label { grid-column: 1 / span 3; }
+.svc-pro_b { grid-column: 4 / span 5; display: grid; gap: 1rem; }
+.svc-pro_actions { grid-column: 10 / span 3; flex-direction: column; align-items: start; }
+
+/* FAQ: native details/summary, exclusive via name="faq" where supported */
+.svc-faq_list { grid-column: 7 / span 6; border-top: 1px solid var(--line); }
+.svc-faq_item { border-bottom: 1px solid var(--line); }
+.svc-faq_q { list-style: none; cursor: pointer; display: grid; grid-template-columns: 3rem 1fr auto; gap: 1rem; align-items: center; padding: 1.5rem 0; }
+.svc-faq_q::-webkit-details-marker { display: none; }
+.svc-faq_q .h3 { font-size: clamp(19px, 1.35rem, 26px); line-height: 1.25; }
+.svc-faq_item[open] .accordion_ico::after { transform: rotate(0); }
+.svc-faq_item[open] .svc-faq_q .l1 { color: var(--accent); }
+.svc-faq_a { padding: 0 0 2rem 4rem; max-width: 40rem; }
+.svc-faq_q:hover .h3 { color: var(--accent); }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .svc-hero_t { grid-column: 1 / span 7; }
+  .svc-hero_title { font-size: 5.4rem; }
+  .svc-hero_img { grid-column: 8 / span 5; }
+  .svc-option.is-lead { grid-column: 1 / span 7; }
+  .svc-option.is-second { grid-column: 8 / span 5; margin-top: 8rem; }
+  .svc-layer_text { grid-column: 3 / span 10; }
+  .svc-layer_link { grid-column: 3 / span 10; justify-self: start; }
+  .svc-details_aside { grid-column: 1 / span 5; }
+  .svc-details_list { grid-column: 7 / span 6; }
+  .svc-project_main { grid-column: 1 / span 6; }
+  .svc-project_b { grid-column: 7 / span 6; }
+  .svc-pro_label { grid-column: 1 / -1; }
+  .svc-pro_b { grid-column: 1 / span 7; }
+  .svc-pro_actions { grid-column: 9 / span 4; }
+}
+@media (max-width: 767px) {
+  .svc-hero { padding-top: calc(var(--header-h) + 1.5rem); }
+  .svc-hero_t, .svc-hero_img { grid-column: 1 / -1; }
+  .svc-hero_title { font-size: 2.6rem; }
+  .svc-hero_g { padding-bottom: 2.5rem; }
+  .svc-option.is-lead, .svc-option.is-second { grid-column: 1 / -1; margin-top: 0; }
+  .svc-layer_label, .svc-layer_text, .svc-layer_link { grid-column: 1 / -1; justify-self: start; }
+  .svc-film { height: auto; min-height: calc(var(--vh) * 0.6); }
+  .svc-film_cap, .svc-film_toggle { grid-column: 1 / -1; justify-self: start; }
+  .svc-details_aside, .svc-details_list { grid-column: 1 / -1; }
+  .svc-detail { grid-template-columns: 2.25rem 1fr; }
+  .svc-project_main, .svc-project_b { grid-column: 1 / -1; }
+  .svc-fact { grid-template-columns: 1fr; gap: 0.25rem; }
+  .svc-pro_label, .svc-pro_b, .svc-pro_actions { grid-column: 1 / -1; }
+  .svc-faq_list { grid-column: 1 / -1; }
+  .svc-faq_q { grid-template-columns: 2.25rem 1fr auto; padding: 1.25rem 0; }
+  .svc-faq_a { padding-left: 2.25rem; }
+}

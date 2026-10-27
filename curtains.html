@@ -7,8 +7,8 @@
     /* light theme only (CD decision 2026-10-26); dark styles are kept but unused */
     document.documentElement.dataset.site = 'light';
   </script>
-  <title>Curtains &amp; voiles — Arte del Lusso</title>
-  <meta name="description" content="Made-to-measure curtains and voiles." />
+  <title>Made-to-measure curtains &amp; voiles, Marbella — Arte del Lusso</title>
+  <meta name="description" content="Sheer voiles, dim-out and blackout curtains made to measure for homes on the Costa del Sol. Compare fabrics in our San Pedro de Alcántara showroom and book a consultation." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,82 +19,116 @@
 <div data-barba="wrapper">
   <!-- @include partials/shell-top.html -->
 
+  <!-- Content: content/curtains.json (options, details, project, process, FAQ). Section layout lives here. -->
   <main data-barba="container" data-barba-namespace="curtains">
-    <!-- 1. INTRO -->
-    <section class="section page-hero theme_on-dark" data-bg="dark">
-      <svg class="bg-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" data-bg-lines>
-        <line x1="50" y1="0" x2="50" y2="100" />      </svg>
-      <div class="container page-hero_c">
-        <nav class="breadcrumb l1" aria-label="Breadcrumb" data-hero-fade><a href="index.html">Arte</a> / <a href="solutions.html">Solutions</a> / Curtains &amp; voiles</nav>
-        <h1 class="a2 page-hero_title" data-hero-title>Curtains &amp; voiles</h1>
-        <div class="grid page-hero_b">
-          <div class="page-hero_text" data-hero-fade>
-            <div class="l1">Made-to-measure curtains &amp; voiles</div>
-            <p class="p1">Texture, movement and a softer kind of daylight. Curtains considered around your windows, your room and your life.</p>
-            <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your room</span><span class="l1">Discuss your room</span></span><span class="dot"></span></a>
+    <!-- 1. HERO: text + portrait close-up (split composition) -->
+    <section class="section svc-hero" data-bg="light">
+      <div class="container">
+        <div class="grid svc-hero_g">
+          <div class="svc-hero_t">
+            <nav class="breadcrumb l1" aria-label="Breadcrumb" data-hero-fade><a href="index.html">Arte</a> / <a href="solutions.html">Solutions</a> / Curtains &amp; voiles</nav>
+            <h1 class="a2 svc-hero_title" data-hero-title>Made&#8209;to&#8209;measure curtains &amp; voiles</h1>
+            <div class="svc-hero_text" data-hero-fade>
+              <p class="p1">The right light, the privacy you need and a finish that belongs to the room — made for your windows on the Costa del Sol.</p>
+              <div class="svc-actions">
+                <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Discuss your room</span><span class="l1">Discuss your room</span></span><span class="dot"></span></a>
+                <a href="#project" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">See it in Villa Albinoni</span><span class="l1">See it in Villa Albinoni</span></span></a>
+              </div>
+            </div>
           </div>
+          <figure class="svc-hero_img">
+            <div class="img-w" data-clip-reveal data-parallax-img><img src="img/albinoni.jpg" alt="Sheer voiles along the full-height windows of an open living space at Villa Albinoni, with the sea beyond" class="img" /></div>
+            <figcaption class="l1 text-muted">Sheer voiles · Villa Albinoni, Marbella</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- 2. HERO IMAGE -->
-    <section class="section page-media theme_on-color" data-bg="color">
-      <a href="villa-albinoni.html" class="page-media_img img-w" data-parallax-bg data-tip="View project" aria-label="Explore Villa Albinoni"><img src="img/albinoni.jpg" alt="Sheer curtains in the completed Villa Albinoni project" class="img" /></a>
-      <div class="container page-media_c">
-        <div class="l1">Seen in Villa Albinoni</div>
-        <a href="villa-albinoni.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Explore this project</span><span class="l1">Explore this project</span></span></a>
-      </div>
-    </section>
-
-    <!-- 3. ON THIS PAGE -->
-    <nav class="section anchors theme_on-dark" data-bg="dark" aria-label="On this page">
-      <div class="container grid anchors_g">
-        <div class="l1 text-muted">On this page</div>
-        <a href="#choose" class="link-line" data-scroll-to data-hover-roll><span class="nav-item_label"><span class="l1">Find your feeling</span><span class="l1">Find your feeling</span></span></a>
-        <a href="#details" class="link-line" data-scroll-to data-hover-roll><span class="nav-item_label"><span class="l1">The details</span><span class="l1">The details</span></span></a>
-        <a href="#in-practice" class="link-line" data-scroll-to data-hover-roll><span class="nav-item_label"><span class="l1">In a real home</span><span class="l1">In a real home</span></span></a>
-        <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Talk to us</span><span class="l1">Talk to us</span></span></a>
+    <!-- On this page -->
+    <nav class="section sol-index" data-bg="light" aria-label="On this page">
+      <div class="container">
+        <div class="grid sol-index_g">
+          <div class="l1 text-muted sol-index_label">On this page</div>
+          <ul class="sol-index_list svc-index_list">
+            <li><a href="#options" class="l1 sol-index_link">Options</a></li>
+            <li><a href="#details" class="l1 sol-index_link">Details</a></li>
+            <li><a href="#project" class="l1 sol-index_link">In a real project</a></li>
+            <li><a href="#process" class="l1 sol-index_link">How we work</a></li>
+            <li><a href="#faq" class="l1 sol-index_link">Questions</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <!-- 4. FIND YOUR FEELING: tabs -->
-    <section class="section services" data-bg="light" id="choose">
-      <div class="shadow-leaves is-light" data-leaves aria-hidden="true"></div>
-      <div class="container" data-tabs>
-        <div class="u-128"></div>
-        <div class="grid services_head">
-          <div class="l1">01 / Find your feeling · Start with what you need</div>
-          <h2 class="h1 services_title" data-reveal>Find the right balance.</h2>
+    <!-- 2. OPTIONS: two families + layering -->
+    <section class="section svc-options" data-bg="light" id="options">
+      <div class="container">
+        <div class="u-96"></div>
+        <div class="grid sol-head">
+          <div class="l1 sol-head_eyebrow">01 / Start with what the room needs</div>
+          <h2 class="h1 sol-head_title" data-reveal>Softer light or more privacy?</h2>
+          <p class="p1 sol-head_text" data-reveal-fade>Most choices start here. Tell us how you use the room and we’ll narrow down the fabrics with you.</p>
         </div>
         <div class="u-96"></div>
-        <div class="grid services_grid">
-          <figure class="services_img">
-            <div class="img-w" data-tab-img><img src="img/albinoni2.jpg" alt="Sheer voile detail at Villa Albinoni" class="img" /></div>
-            <figcaption class="l1 services_cap">Material in context / Villa Albinoni</figcaption>
-          </figure>
-          <div class="services_list" role="tablist" aria-label="What do you need">
-            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-light"><span>01</span><span>Light &amp; airy</span><i class="dot"></i></button>
-            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-privacy"><span>02</span><span>Calm &amp; private</span><i class="dot"></i></button>
-            <button class="services_tab l1" data-tab-trigger role="tab" id="tab-ease"><span>03</span><span>Easy every day</span><i class="dot"></i></button>
+        <div class="grid svc-options_g"><!-- @each content/curtains.json#options partials/solution/option.html --></div>
+        <div class="u-96"></div>
+        <div class="grid svc-layer" data-reveal-fade>
+          <div class="l1 text-muted svc-layer_label">Or both</div>
+          <p class="h2 svc-layer_text">Many rooms combine a sheer for the day with a heavier curtain for the evening.</p>
+          <a href="contact.html?interest=curtains" class="link-line svc-layer_link" data-hover-roll><span class="nav-item_label"><span class="l1">Ask what suits your room</span><span class="l1">Ask what suits your room</span></span></a>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 3. IN MOTION: client footage of a completed interior -->
+    <section class="section svc-film theme_on-color" data-bg="color">
+      <div class="svc-film_media img-w">
+        <video class="img" poster="video/hero-poster.jpg" muted loop playsinline preload="metadata" data-inview-play aria-label="Sheer voiles moving in the daylight of the dining room at Villa in La Quinta"><source src="video/hero.mp4" type="video/mp4" /><source src="video/hero.webm" type="video/webm" /></video>
+        <div class="grad-bot"></div>
+      </div>
+      <div class="container svc-film_c">
+        <div class="grid">
+          <p class="l1 svc-film_cap">In motion · Villa in La Quinta, Benahavís</p>
+          <button type="button" class="l1 sol-out_toggle svc-film_toggle" data-video-toggle>Pause video</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DETAILS: what shapes the result (always visible) -->
+    <section class="section svc-details" data-bg="light" id="details">
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid svc-details_g">
+          <div class="svc-details_aside">
+            <div class="l1">02 / Materials &amp; finishing details</div>
+            <h2 class="h1" data-reveal>What shapes the result.</h2>
+            <div class="svc-details_img img-w" data-clip-reveal data-parallax-img><img src="img/about.jpg" alt="Light sheer curtains drawn beside a full-height window with a view over the hills" class="img" loading="lazy" /></div>
           </div>
-          <div class="services_content">
-            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-light">
-              <div class="l1">Sheers &amp; voiles</div>
-              <h3 class="h1">Daylight, softened.</h3>
-              <p class="p1">Keep the sense of openness while adding texture and gentle movement. We’ll help compare transparency, weave and the way each fabric looks against your windows.</p>
-              <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Find the right option</span><span class="l1">Find the right option</span></span><span class="dot"></span></a>
-            </div>
-            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-privacy">
-              <div class="l1">Privacy &amp; light control</div>
-              <h3 class="h1">A room of your own.</h3>
-              <p class="p1">Discuss layered curtains, dim-out and blackout options around the privacy and light control your room needs. Compare samples before choosing a fabric and finish.</p>
-              <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Find the right option</span><span class="l1">Find the right option</span></span><span class="dot"></span></a>
-            </div>
-            <div class="services_panel" data-tab-content role="tabpanel" aria-labelledby="tab-ease">
-              <div class="l1">Tracks &amp; operation</div>
-              <h3 class="h1">Consider the everyday.</h3>
-              <p class="p1">Think about tall windows, hard-to-reach tracks and your daily routine. We’ll help you consider manual or motorised operation alongside the fabric and the room.</p>
-              <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Find the right option</span><span class="l1">Find the right option</span></span><span class="dot"></span></a>
+          <dl class="svc-details_list"><!-- @each content/curtains.json#details partials/solution/detail.html --></dl>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 5. COMPLETED PROJECT: room → treatment → result -->
+    <section class="section svc-project" data-bg="light" id="project">
+      <div class="shadow-leaves" data-leaves aria-hidden="true"></div>
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid sol-head">
+          <div class="l1 sol-head_eyebrow">03 / In a real project · Villa Albinoni, Marbella</div>
+          <h2 class="h1 sol-head_title" data-reveal>From the window to the finished room.</h2>
+          <p class="p1 sol-head_text" data-reveal-fade>A completed ARTE project where sheer voiles shape the light in a contemporary villa.</p>
+        </div>
+        <div class="u-96"></div>
+        <div class="grid svc-project_g">
+          <a href="villa-albinoni.html" class="svc-project_main img-w" data-clip-reveal data-parallax-img data-tip="View project" aria-label="Villa Albinoni — view the project"><img src="img/albinoni3.jpg" alt="The living room at Villa Albinoni, with sheer voiles along the double-height glazing" class="img" loading="lazy" /></a>
+          <div class="svc-project_b">
+            <dl class="svc-facts"><!-- @each content/curtains.json#project partials/solution/fact.html --></dl>
+            <div class="svc-actions">
+              <a href="villa-albinoni.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Step inside Villa Albinoni</span><span class="l1">Step inside Villa Albinoni</span></span><span class="dot"></span></a>
+              <a href="contact.html?interest=curtains&amp;project=villa-albinoni" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Ask about a similar solution</span><span class="l1">Ask about a similar solution</span></span></a>
             </div>
           </div>
         </div>
@@ -102,70 +136,67 @@
       </div>
     </section>
 
-    <!-- 5. DETAILS: accordion -->
-    <section class="section details theme_on-dark" data-bg="dark" id="details">
+    <!-- 6. PROCESS + professional route -->
+    <section class="section svc-process" data-bg="light" id="process">
+      <div class="container">
+        <div class="u-128"></div>
+        <div class="grid sol-head">
+          <div class="l1 sol-head_eyebrow">04 / From selection to installation</div>
+          <h2 class="h1 sol-head_title" data-reveal>Guided from the first sample to the final fitting.</h2>
+        </div>
+        <div class="u-96"></div>
+        <ol class="grid sol-steps"><!-- @each content/curtains.json#process partials/solutions/process-step.html --></ol>
+        <div class="u-128"></div>
+        <div class="grid svc-pro" data-reveal-fade>
+          <div class="l1 text-muted svc-pro_label">For architects &amp; designers</div>
+          <div class="svc-pro_b">
+            <h2 class="h2">Specifying for a project?</h2>
+            <p class="p1">Explore product information on our professional site, or speak to our team about your requirements, samples and site coordination.</p>
+          </div>
+          <div class="svc-actions svc-pro_actions">
+            <a href="https://partners.artedellusso.es/en" class="link-line" target="_blank" rel="noopener" data-barba-prevent data-hover-roll><span class="nav-item_label"><span class="l1">Professional site (opens in a new tab)</span><span class="l1">Professional site (opens in a new tab)</span></span></a>
+            <a href="contact.html?type=professional&amp;interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Speak to the team</span><span class="l1">Speak to the team</span></span></a>
+          </div>
+        </div>
+        <div class="u-128"></div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ (native <details>: readable without JS or animation; entries in content/curtains.json) -->
+    <section class="section svc-faq" data-bg="light" id="faq">
       <div class="container">
         <div class="u-128"></div>
         <div class="grid details_g">
-          <div class="details_head">
-            <div class="l1">02 / A good fit, in every sense · Advice to installation</div>
-            <h2 class="h1" data-reveal>Considered in detail.</h2>
+          <div class="details_head svc-faq_head">
+            <div class="l1">05 / Questions &amp; answers</div>
+            <h2 class="h1" data-reveal>Curtains &amp; voiles, answered.</h2>
+            <p class="p1 text-muted">Something else on your mind? Our team is happy to help.</p>
+            <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Ask a question</span><span class="l1">Ask a question</span></span></a>
           </div>
-          <div class="accordion" data-accordion>
-            <div class="accordion_item">
-              <h3><button class="accordion_btn" aria-expanded="false" data-accordion-btn><span class="l1">01</span><span class="h2">Fabric &amp; finish</span><span class="accordion_ico" aria-hidden="true"></span></button></h3>
-              <div class="accordion_panel" data-accordion-panel hidden><p class="p1">Compare colour, texture and transparency in the context of the room. We’ll guide the selection around daylight, privacy and your preferred finish.</p></div>
-            </div>
-            <div class="accordion_item">
-              <h3><button class="accordion_btn" aria-expanded="false" data-accordion-btn><span class="l1">02</span><span class="h2">Tracks &amp; operation</span><span class="accordion_ico" aria-hidden="true"></span></button></h3>
-              <div class="accordion_panel" data-accordion-panel hidden><p class="p1">Consider the window, the ceiling and how you will use the curtains. Discuss manual and motorised options with the team before selecting a system.</p></div>
-            </div>
-            <div class="accordion_item">
-              <h3><button class="accordion_btn" aria-expanded="false" data-accordion-btn><span class="l1">03</span><span class="h2">Measure &amp; installation</span><span class="accordion_ico" aria-hidden="true"></span></button></h3>
-              <div class="accordion_panel" data-accordion-panel hidden><p class="p1">Accurate measurements and careful fitting bring the choices together. Your consultation is the starting point for a solution tailored to the space.</p></div>
-            </div>
-            <div class="accordion_item">
-              <h3><button class="accordion_btn" aria-expanded="false" data-accordion-btn><span class="l1">04</span><span class="h2">Care &amp; aftersales</span><span class="accordion_ico" aria-hidden="true"></span></button></h3>
-              <div class="accordion_panel" data-accordion-panel hidden><p class="p1">Ask us about care guidance for your selected fabric and system, and contact the team for support after installation.</p></div>
-            </div>
-          </div>
+          <div class="svc-faq_list"><!-- @each content/curtains.json#faq partials/solution/faq-item.html --></div>
         </div>
         <div class="u-128"></div>
       </div>
+      <!-- @faq-schema content/curtains.json#faq -->
     </section>
 
-    <!-- 6. IN PRACTICE -->
-    <section class="section mission theme_on-dark" data-bg="dark" id="in-practice">
-      <div class="container">
-        <div class="l1 section-eyebrow">03 / From the fabric to the finished room · A real Arte project</div>
-        <div class="u-48"></div>
-        <div class="grid">
-          <a href="villa-albinoni.html" class="mission_img is-tall img-w" data-clip-reveal data-tip="View project" aria-label="Villa Albinoni"><img src="img/albinoni3.jpg" alt="Window treatments at Villa Albinoni" class="img" data-parallax-inner /></a>
-          <div class="mission_content">
-            <div class="l1">Marbella / Residential</div>
-            <h2 class="h1" data-reveal>Villa Albinoni</h2>
-            <p class="p1" data-reveal-fade>See sheer voiles and motorised blinds as part of a complete interior, with a closer look at the materials and the result.</p>
-            <div class="l1 text-muted">Sheer voiles · Motorised blinds</div>
-            <a href="villa-albinoni.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Step inside the project</span><span class="l1">Step inside the project</span></span></a>
-          </div>
-        </div>
-        <div class="u-128"></div>
-      </div>
-    </section>
-
-    <!-- 7. CTA -->
-    <section class="section cta theme_on-color" data-bg="color">
-      <div class="cta_bg img-w" data-parallax-bg><img src="img/albinoni2.jpg" alt="" class="img" /><div class="overlay-30"></div></div>
+    <!-- 8. CONSULTATION / SHOWROOM -->
+    <section class="section cta is-plain" data-bg="light">
+      <!-- @include partials/bg-logo.html -->
       <div class="container cta_c">
         <div class="u-128"></div>
         <div class="grid">
-          <div class="l1 cta_eyebrow">Bring a plan, a photo or an idea</div>
-          <h2 class="h1 cta_title" data-reveal>A room of your own.</h2>
+          <div class="l1 cta_eyebrow">Bring a photo, a plan or an idea</div>
+          <h2 class="h1 cta_title" data-reveal>Let’s find what works for your room.</h2>
+          <p class="p1 cta_lede" data-reveal-fade>Talk to us online, at your property or in our curtains &amp; blinds showroom in San Pedro de Alcántara.</p>
         </div>
         <div class="u-96"></div>
-        <div class="grid"><div class="cta_desc">
-          <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
-        </div></div>
+        <div class="grid">
+          <div class="cta_desc">
+            <a href="contact.html?interest=curtains" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Book a consultation</span><span class="l1">Book a consultation</span></span><span class="dot"></span></a>
+            <a href="showroom-interiors.html" class="link-line" data-hover-roll><span class="nav-item_label"><span class="l1">Visit the showroom</span><span class="l1">Visit the showroom</span></span></a>
+          </div>
+        </div>
         <div class="u-128"></div>
       </div>
     </section>
